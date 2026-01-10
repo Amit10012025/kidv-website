@@ -299,21 +299,68 @@ nav a {
     filter: drop-shadow(0 15px 30px rgba(0,0,0,0.08));
 }
 
-/* Responsiveness */
-@media (max-width: 1100px) {
-    .solution-info { max-width: 100%; }
-    .solution-image { display: none; } /* Better for tablet view */
+/* --- 📱 Mobile & Tablet Responsive Fixes --- */
+
+@media (max-width: 1024px) {
+    .hero-content { flex: 0 0 100%; text-align: center; }
+    .hero-right { display: none; } /* ટેબલેટ અને મોબાઈલમાં હીરો ઈમેજ છુપાવવી સારી રહેશે */
+    .hero-overlay { background: rgba(2, 6, 23, 0.9); }
+    .hero-wrapper { justify-content: center; }
 }
 
 @media (max-width: 768px) {
-    .content-grid { flex-direction: column; }
-    .hero-content h1 { font-size: 36px; }
+    /* Header Fix */
+    .header-container { flex-direction: column; gap: 15px; text-align: center; }
+    nav a { margin: 0 10px; font-size: 13px; }
 
+    /* Hero Section Fix */
+    .hero-section { height: auto; padding: 100px 5%; min-height: 600px; }
+    .hero-content h1 { font-size: 34px; }
+    .hero-features li { justify-content: center; }
+    .desc { margin: 0 auto 25px; }
+
+    /* Solutions Section Fix - આનાથી એલાઈમેન્ટ હલશે નહીં */
+    .vertical-solution-item { 
+        flex-direction: column; 
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .solution-info { 
+        max-width: 100%; 
+        width: 100%; 
+    }
+
+    .icon-box { margin: 0 auto 20px; }
+
+    /* Content Grid Fix */
+    .content-grid { 
+        flex-direction: column; 
+        gap: 20px; 
+        text-align: left; /* લિસ્ટને ડાબી બાજુ રાખવું વાંચવામાં સરળ રહે છે */
+    }
+
+    .content-col ul li b { 
+        min-width: auto; 
+        margin-right: 5px; 
+    }
+
+    /* Image Handling */
+    .solution-image { 
+        display: block; 
+        width: 100%; 
+        justify-content: center; 
+        margin-top: 25px; 
+        flex: none;
+    }
+
+    .solution-image img {
+        max-width: 250px; /* મોબાઈલમાં ઈમેજ નાની કરવા માટે */
+        margin: 0 auto;
+    }
 }
-@media (max-width: 768px) {
-  /* અહીં મોબાઈલ માટેના સુધારા લખો */
-  .container {
-    width: 100%; /* ફૂલ વિડ્થ કરવા માટે */
-    padding: 10px;
-  }
+
+@media (max-width: 480px) {
+    .hero-content h1 { font-size: 28px; }
+    .btn-quote { width: 100%; text-align: center; }
 }
