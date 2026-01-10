@@ -308,4 +308,12 @@ nav a {
 @media (max-width: 768px) {
     .content-grid { flex-direction: column; }
     .hero-content h1 { font-size: 36px; }
+
+}
+@media (max-width: 768px) {
+  /* અહીં મોબાઈલ માટેના સુધારા લખો */
+  .container {
+    width: 100%; /* ફૂલ વિડ્થ કરવા માટે */
+    padding: 10px;
+  }
 }
