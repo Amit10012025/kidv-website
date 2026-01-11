@@ -7,10 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    
     <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
-
-    <link rel="apple-touch-icon" sizes="48x48" href="android-icon-48x48.png">
-    <meta name="msapplication-TileImage" content="android-icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="36x36" href="android-icon-36x36.png">
 </head>
 <body>
 
@@ -18,16 +17,13 @@
     <div class="header-container">
         <div class="logo"><img src="logo.png" alt="KIDV Tech"></div>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Company</a>
-            <a href="#">IT Solutions</a>
-            <a href="#">IT Blogs</a>
-            <a href="#">Contact Us</a>
-        </nav>
+            <a href="index.html">Home</a>
+            <a href="company.html">Company</a>
+            <a href="contact.html">Contact Us</a> </nav>
     </div>
 </header>
 
-<section class="hero-section">
+<section class="hero-section" id="home">
     <div class="hero-overlay"></div>
     <div class="hero-wrapper">
         <div class="hero-content">
@@ -39,202 +35,230 @@
             <p class="desc">
                 We provide ERPNext, HR Software, AI Automation, Biometric Attendance, Mobile App Integration & Business Management Systems to save your time, reduce cost & increase profit.
             </p>
-            <ul class="hero-features">
+            <ul class="hero-list">
                 <li><i class="fas fa-check-circle"></i> AI-Powered Business Automation Solutions</li>
                 <li><i class="fas fa-check-circle"></i> Custom ERPNext Setup for Your Industry</li>
                 <li><i class="fas fa-check-circle"></i> Automated HR & Payroll Management System</li>
                 <li><i class="fas fa-check-circle"></i> Scalable & Secure Cloud IT Infrastructure</li>
             </ul>
-            <a href="#" class="btn-quote">Get Free Consultation</a>
-        </div>
-        <div class="hero-right">
-            <img src="man_photo.png" class="hero-man">
-        </div>
+            <a href="contact.html" class="btn-quote">Get Free Consultation</a> </div>
     </div>
 </section>
 
-<section class="solutions-section">
-    <div class="container-fluid">
-        <p class="sub-heading">Our Expertise</p>
+<section class="solutions-section" id="solutions">
+    <div class="container">
+        <p class="sub-heading">OUR EXPERTISE</p>
         <h2 class="main-heading">Solutions We Provide</h2>
         
-        <div class="vertical-solutions-list">
+        <div class="card-stack">
             
-            <div class="vertical-solution-item">
-                <div class="solution-info">
-                    <div class="icon-box web-icon"><i class="fas fa-desktop"></i></div>
+            <div class="service-card theme-blue">
+                <div class="card-header-bar">
+                    <i class="fas fa-desktop"></i>
                     <h3>Website Development</h3>
-                    <p class="main-desc">Build fast, secure and result-driven websites for your business growth.</p>
-                    <p class="sub-desc">KIDV Tech delivers high-performance, visually stunning and scalable websites that help businesses attract customers, generate leads and increase revenue.</p>
-
-                    <div class="content-grid">
-                        <div class="content-col">
+                </div>
+                <div class="card-body">
+                    <h4>Build fast, secure and result-driven websites for your business growth.</h4>
+                    <p>KIDV Tech delivers high-performance, visually stunning and scalable websites that help businesses attract customers, generate leads and increase revenue.</p>
+                    <div class="card-info-grid">
+                        <div class="info-col">
                             <h4>🚀 What We Offer</h4>
                             <ul>
-                                <li><span class="list-title"><b>Business Websites:</b></span> <span class="list-desc">Corporate & portfolio designs.</span></li>
-                                <li><span class="list-title"><b>E-Commerce:</b></span> <span class="list-desc">Online stores with payment gateways.</span></li>
-                                <li><span class="list-title"><b>Speed & SEO:</b></span> <span class="list-desc">Optimized for Google PageSpeed.</span></li>
-                                <li><span class="list-title"><b>Security:</b></span> <span class="list-desc">SSL & Firewall protection.</span></li>
+                                <li><b>Business Websites:</b> Corporate & portfolio designs.</li>
+                                <li><b>E-Commerce:</b> Online stores with payment gateways.</li>
+                                <li><b>Speed & SEO:</b> Optimized for Google PageSpeed.</li>
+                                <li><b>Security:</b> SSL & Firewall protection.</li>
                             </ul>
                         </div>
-                        <div class="content-col">
+                        <div class="info-col">
                             <h4>🎯 Why Choose Us?</h4>
                             <ul>
-                                <li><span class="list-desc">100% Custom Design</span></li>
-                                <li><span class="list-desc">Mobile-First Approach</span></li>
-                                <li><span class="list-desc">Affordable Pricing</span></li>
-                                <li><span class="list-desc">Dedicated Support</span></li>
+                                <li>100% Custom Design</li>
+                                <li>Mobile-First Approach</li>
+                                <li>Affordable Pricing</li>
+                                <li>Dedicated Support</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="tech-stack">
-                        <i class="fas fa-tools"></i> <strong>Tech:</strong> HTML5, CSS3, JS, PHP, MySQL, WordPress, Cloud Hosting.
-                    </div>
                 </div>
-                <div class="solution-image"><img src="websitedevlopment.png" alt="Website"></div>
+                <div class="tech-tag"><i class="fas fa-tools"></i> Tech: HTML5, CSS3, JS, PHP, MySQL, WordPress, Cloud Hosting.</div>
             </div>
 
-            <div class="vertical-solution-item">
-                <div class="solution-info">
-                    <div class="icon-box app-icon"><i class="fas fa-mobile-alt"></i></div>
+            <div class="service-card theme-purple">
+                <div class="card-header-bar">
+                    <i class="fas fa-mobile-alt"></i>
                     <h3>Mobile Apps Development</h3>
-                    <p class="main-desc">Powerful, secure, and custom-built mobile applications for Android & iOS.</p>
-                    <p class="sub-desc">KIDV Tech develops high-performance mobile apps that help businesses connect with customers and automate field operations.</p>
-
-                    <div class="content-grid">
-                        <div class="content-col">
+                </div>
+                <div class="card-body">
+                    <h4>Powerful, secure, and custom-built mobile applications for Android & iOS.</h4>
+                    <p>KIDV Tech develops high-performance mobile apps that help businesses connect with customers and automate field operations.</p>
+                    <div class="card-info-grid">
+                        <div class="info-col">
                             <h4>🚀 What We Offer</h4>
                             <ul>
-                                <li><span class="list-title"><b>Native & Hybrid:</b></span> <span class="list-desc">Apps for Android & iOS.</span></li>
-                                <li><span class="list-title"><b>ERP Integration:</b></span> <span class="list-desc">Live data sync with ERPNext.</span></li>
-                                <li><span class="list-title"><b>HR Tracking:</b></span> <span class="list-desc">GPS-based attendance solutions.</span></li>
-                                <li><span class="list-title"><b>E-Commerce:</b></span> <span class="list-desc">Secure integrated payment gateways.</span></li>
+                                <li><b>Native & Hybrid:</b> Apps for Android & iOS.</li>
+                                <li><b>ERP Integration:</b> Live data sync with ERPNext.</li>
+                                <li><b>HR Tracking:</b> GPS-based attendance solutions.</li>
+                                <li><b>E-Commerce:</b> Secure integrated payment gateways.</li>
                             </ul>
                         </div>
-                        <div class="content-col">
+                        <div class="info-col">
                             <h4>🎯 Why Choose Us?</h4>
                             <ul>
-                                <li><span class="list-desc">Custom UI/UX Design</span></li>
-                                <li><span class="list-desc">Secure & Scalable Code</span></li>
-                                <li><span class="list-desc">Store Deployment Support</span></li>
-                                <li><span class="list-desc">Reliable Post-Sales Support</span></li>
+                                <li>Custom UI/UX Design</li>
+                                <li>Secure & Scalable Code</li>
+                                <li>Store Deployment Support</li>
+                                <li>Reliable Post-Sales Support</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="tech-stack">
-                        <i class="fas fa-code"></i> <strong>Tech:</strong> Flutter, Android Studio, Swift, Firebase, ERPNext API.
-                    </div>
                 </div>
-                <div class="solution-image"><img src="mobileapps.png" alt="Mobile"></div>
+                <div class="tech-tag"><i class="fas fa-code"></i> Tech: Flutter, Android Studio, Swift, Firebase, ERPNext API.</div>
             </div>
 
-            <div class="vertical-solution-item">
-                <div class="solution-info">
-                    <div class="icon-box erp-icon"><i class="fas fa-cog"></i></div>
+            <div class="service-card theme-dark">
+                <div class="card-header-bar">
+                    <i class="fas fa-cog"></i>
                     <h3>ERPNext Solutions</h3>
-                    <p class="main-desc">End-to-end ERPNext implementation & customization services.</p>
-                    <p class="sub-desc">KIDV Tech provides complete ERPNext solutions to automate processes and give you real-time business control.</p>
-
-                    <div class="content-grid">
-                        <div class="content-col">
+                </div>
+                <div class="card-body">
+                    <h4>End-to-end ERPNext implementation & customization services.</h4>
+                    <p>KIDV Tech provides complete ERPNext solutions to automate processes and give you real-time business control.</p>
+                    <div class="card-info-grid">
+                        <div class="info-col">
                             <h4>🚀 What We Offer</h4>
                             <ul>
-                                <li><span class="list-title"><b>Deployment:</b></span> <span class="list-desc">On-premise & Cloud setup with security.</span></li>
-                                <li><span class="list-title"><b>Manufacturing:</b></span> <span class="list-desc">BOM, Job Cards & Operations management.</span></li>
-                                <li><span class="list-title"><b>Accounting:</b></span> <span class="list-desc">GST ready automated accounts.</span></li>
-                                <li><span class="list-title"><b>API Sync:</b></span> <span class="list-desc">Real-time data sync with Mobile Apps.</span></li>
+                                <li><b>Deployment:</b> On-premise & Cloud setup with security.</li>
+                                <li><b>Manufacturing:</b> BOM, Job Cards & Operations management.</li>
+                                <li><b>Accounting:</b> GST ready automated accounts.</li>
+                                <li><b>API Sync:</b> Real-time data sync with Mobile Apps.</li>
                             </ul>
                         </div>
-                        <div class="content-col">
+                        <div class="info-col">
                             <h4>🎯 Why Choose Us?</h4>
                             <ul>
-                                <li><span class="list-desc">Industry-Specific Customization</span></li>
-                                <li><span class="list-desc">Affordable Implementation</span></li>
-                                <li><span class="list-desc">Data Security & Backups</span></li>
-                                <li><span class="list-desc">Dedicated ERP Support Team</span></li>
+                                <li>Industry-Specific Customization</li>
+                                <li>Affordable Implementation</li>
+                                <li>Data Security & Backups</li>
+                                <li>Dedicated ERP Support Team</li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="tech-stack">
-                        <i class="fas fa-layer-group"></i> <strong>Tech:</strong> ERPNext, Frappe, Python, MariaDB, REST API.
                     </div>
                 </div>
-                <div class="solution-image"><img src="erpnext.png" alt="ERP"></div>
+                <div class="tech-tag"><i class="fas fa-layer-group"></i> Tech: ERPNext, Frappe, Python, MariaDB, REST API.</div>
             </div>
 
-            <div class="vertical-solution-item">
-                <div class="solution-info">
-                    <div class="icon-box hr-icon"><i class="fas fa-users"></i></div>
-                    <h3>HR Software Solutions</h3>
-                    <p class="main-desc">Advanced Biometric, Attendance & Payroll Management System.</p>
-                    <p class="sub-desc">Simplify employee management and ensure 100% statutory compliance with our complete HR solution.</p>
-
-                    <div class="content-grid">
-                        <div class="content-col">
-                            <h4>🚀 What We Offer</h4>
-                            <ul>
-                                <li><span class="list-title"><b>Attendance:</b></span> <span class="list-desc">Biometric & GPS tracking integration.</span></li>
-                                <li><span class="list-title"><b>Payroll:</b></span> <span class="list-desc">Automated PF, ESIC & TDS calculations.</span></li>
-                                <li><span class="list-title"><b>Workflows:</b></span> <span class="list-desc">Online leave approval & management.</span></li>
-                                <li><span class="list-title"><b>Portal:</b></span> <span class="list-desc">Mobile & Web employee self-service.</span></li>
-                            </ul>
-                        </div>
-                        <div class="content-col">
-                            <h4>🎯 Why Choose Us?</h4>
-                            <ul>
-                                <li><span class="list-desc">Fully Customizable Policies</span></li>
-                                <li><span class="list-desc">Government Compliance Ready</span></li>
-                                <li><span class="list-desc">Secure Architecture</span></li>
-                                <li><span class="list-desc">Reliable Technical Support</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="tech-stack">
-                        <i class="fas fa-fingerprint"></i> <strong>Tech:</strong> PHP, MySQL, Biometric API, Cloud Hosting.
-                    </div>
-                </div>
-                <div class="solution-image"><img src="hrsoftware.png" alt="HR"></div>
-            </div>
-
-            <div class="vertical-solution-item">
-                <div class="solution-info">
-                    <div class="icon-box ai-icon"><i class="fas fa-robot"></i></div>
+            <div class="service-card theme-pink">
+                <div class="card-header-bar">
+                    <i class="fas fa-robot"></i>
                     <h3>AI Solutions</h3>
-                    <p class="main-desc">Leveraging Artificial Intelligence for Smart Business Automation.</p>
-                    <p class="sub-desc">Automate complex tasks and deliver smarter customer experiences with next-gen AI technology.</p>
-
-                    <div class="content-grid">
-                        <div class="content-col">
+                </div>
+                <div class="card-body">
+                    <h4>Leveraging Artificial Intelligence for Smart Business Automation.</h4>
+                    <p>Automate complex tasks and deliver smarter customer experiences with next-gen AI technology.</p>
+                    <div class="card-info-grid">
+                        <div class="info-col">
                             <h4>🚀 What We Offer</h4>
                             <ul>
-                                <li><span class="list-title"><b>AI Chatbots:</b></span> <span class="list-desc">24x7 WhatsApp & Web support bot.</span></li>
-                                <li><span class="list-title"><b>Analytics:</b></span> <span class="list-desc">AI-powered trend & data predictions.</span></li>
-                                <li><span class="list-title"><b>OCR Reader:</b></span> <span class="list-desc">Automated document reading system.</span></li>
-                                <li><span class="list-title"><b>ERP AI:</b></span> <span class="list-desc">Smart forecasting for ERPNext data.</span></li>
+                                <li><b>AI Chatbots:</b> 24x7 WhatsApp & Web support bot.</li>
+                                <li><b>Analytics:</b> AI-powered trend & data predictions.</li>
+                                <li><b>OCR Reader:</b> Automated document reading system.</li>
+                                <li><b>ERP AI:</b> Smart forecasting for ERPNext data.</li>
                             </ul>
                         </div>
-                        <div class="content-col">
+                        <div class="info-col">
                             <h4>🎯 Why Choose Us?</h4>
                             <ul>
-                                <li><span class="list-desc">Future-Ready Transformation</span></li>
-                                <li><span class="list-desc">Easy Software Integration</span></li>
-                                <li><span class="list-desc">Cost Reduction Strategies</span></li>
-                                <li><span class="list-desc">Data-Driven Insights</span></li>
+                                <li>Future-Ready Transformation</li>
+                                <li>Easy Software Integration</li>
+                                <li>Cost Reduction Strategies</li>
+                                <li>Data-Driven Insights</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="tech-stack">
-                        <i class="fas fa-brain"></i> <strong>Tech:</strong> OpenAI, Python, ML, NLP, Computer Vision.
-                    </div>
                 </div>
-                <div class="solution-image"><img src="aisolutins.png" alt="AI"></div>
+                <div class="tech-tag"><i class="fas fa-brain"></i> Tech: OpenAI, Python, ML, NLP, Computer Vision.</div>
             </div>
 
+            <div class="service-card theme-orange">
+                <div class="card-header-bar">
+                    <i class="fas fa-users"></i>
+                    <h3>HR Software Solutions</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Advanced Biometric, Attendance & Payroll Management System.</h4>
+                    <p>Simplify employee management and ensure 100% statutory compliance with our complete HR solution.</p>
+                    <div class="card-info-grid">
+                        <div class="info-col">
+                            <h4>🚀 What We Offer</h4>
+                            <ul>
+                                <li><b>Attendance:</b> Biometric & GPS tracking integration.</li>
+                                <li><b>Payroll:</b> Automated PF, ESIC & TDS calculations.</li>
+                                <li><b>Workflows:</b> Online leave approval & management.</li>
+                                <li><b>Portal:</b> Mobile & Web employee self-service.</li>
+                            </ul>
+                        </div>
+                        <div class="info-col">
+                            <h4>🎯 Why Choose Us?</h4>
+                            <ul>
+                                <li>Fully Customizable Policies</li>
+                                <li>Government Compliance Ready</li>
+                                <li>Secure Architecture</li>
+                                <li>Reliable Technical Support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-tag"><i class="fas fa-fingerprint"></i> Tech: PHP, MySQL, Biometric API, Cloud Hosting.</div>
+            </div>
+
+            <div class="service-card theme-teal">
+                <div class="card-header-bar">
+                    <i class="fas fa-server"></i>
+                    <h3>Cloud Hosting Solutions</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Secure, scalable, and high-performance cloud infrastructure for IT apps.</h4>
+                    <p>KIDV Tech delivers managed server reliability and flexible resources for growing businesses.</p>
+                    <div class="card-info-grid">
+                        <div class="info-col">
+                            <h4>🚀 What We Offer</h4>
+                            <ul>
+                                <li><b>99.9% Uptime:</b> Managed server reliability.</li>
+                                <li><b>Data Security:</b> Automated backups & SSL protection.</li>
+                                <li><b>Managed VPS:</b> High performance Cloud servers.</li>
+                                <li><b>Scalable:</b> Flexible resources for growing business.</li>
+                            </ul>
+                        </div>
+                        <div class="info-col">
+                            <h4>🎯 Why Choose Us?</h4>
+                            <ul>
+                                <li>Fast Global Edge Network</li>
+                                <li>24x7 Infrastructure Monitoring</li>
+                                <li>DDoS Protection Included</li>
+                                <li>One-Click App Deployment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-tag"><i class="fas fa-cloud"></i> Tech: AWS, Google Cloud, DigitalOcean, Managed VPS.</div>
+            </div>
+            
         </div>
     </div>
 </section>
 
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </body>
-
 </html>
-
