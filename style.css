@@ -9,6 +9,7 @@ body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     overflow-x: hidden;
     background-color: #fff;
+    width: 100%;
 }
 
 /* --- Header & Navigation --- */
@@ -24,10 +25,7 @@ header {
     align-items: center;
 }
 
-.logo img {
-    height: 65px;
-    display: block;
-}
+.logo img { height: 65px; display: block; }
 
 nav a {
     margin-left: 25px;
@@ -40,8 +38,8 @@ nav a {
 /* --- Hero Section --- */
 .hero-section {
     position: relative;
-    height: 90vh;
-    min-height: 750px;
+    min-height: 90vh; /* height ને બદલે min-height */
+    padding: 60px 0; 
     background: url('office-bg.png') center/cover no-repeat;
     background-color: #020617;
     display: flex;
@@ -52,17 +50,14 @@ nav a {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, 
-        rgba(2, 6, 23, 1) 0%, 
-        rgba(2, 6, 23, 0.98) 35%, 
-        rgba(2, 6, 23, 0.6) 65%, 
-        transparent 100%);
+    background: linear-gradient(90deg, rgba(2, 6, 23, 1) 0%, rgba(2, 6, 23, 0.98) 35%, rgba(2, 6, 23, 0.6) 65%, transparent 100%);
     z-index: 1;
 }
 
 .hero-wrapper {
     position: relative;
     display: flex;
+    flex-wrap: wrap; /* લખાણ નીચે ઉતારવા માટે */
     width: 100%;
     padding: 0 5%; 
     align-items: center;
@@ -70,12 +65,7 @@ nav a {
     height: 100%;
 }
 
-.hero-content {
-    flex: 0 0 60%; 
-    max-width: 800px; 
-    color: #fff;
-    text-align: left;
-}
+.hero-content { flex: 0 0 60%; max-width: 800px; color: #fff; text-align: left; }
 
 .badge {
     background: #2563eb;
@@ -88,33 +78,13 @@ nav a {
     margin-bottom: 20px;
 }
 
-.hero-content h1 {
-    font-size: 52px; 
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.hero-content h1 span { 
-    color: #3b82f6; 
-    display: block; 
-    margin-top: 5px;
-}
-
+.hero-content h1 { font-size: 52px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+.hero-content h1 span { color: #3b82f6; display: block; margin-top: 5px; }
 .tagline { color: #60a5fa; font-weight: 700; margin-bottom: 10px; font-size: 16px; }
-
 .desc { color: #cbd5e1; margin-bottom: 25px; line-height: 1.6; font-size: 15px; max-width: 600px; }
 
 .hero-features { list-style: none; margin-bottom: 30px; }
-
-.hero-features li {
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    color: #fff;
-}
-
+.hero-features li { margin-bottom: 12px; display: flex; align-items: center; font-size: 15px; color: #fff; }
 .hero-features i { color: #22c55e; margin-right: 12px; font-size: 18px; }
 
 .btn-quote {
@@ -130,237 +100,101 @@ nav a {
 
 .hero-right {
     position: absolute;
-    right: 0; 
-    bottom: 0;
-    height: 100%;
-    width: 45%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    right: 0; bottom: 0; height: 100%; width: 45%;
+    display: flex; justify-content: flex-end; align-items: flex-end;
 }
 
-.hero-man {
-    height: 100%; 
-    width: auto;
-    object-fit: contain;
-    mask-image: linear-gradient(to left, black 85%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to left, black 85%, transparent 100%);
-    filter: drop-shadow(-20px 0 50px rgba(0,0,0,0.6));
-}
+.hero-man { height: 100%; width: auto; object-fit: contain; mask-image: linear-gradient(to left, black 85%, transparent 100%); -webkit-mask-image: linear-gradient(to left, black 85%, transparent 100%); filter: drop-shadow(-20px 0 50px rgba(0,0,0,0.6)); }
 
-/* --- Solutions We Provide Section --- */
+/* --- Solutions Section --- */
 .solutions-section { padding: 80px 5%; background-color: #fff; }
-
 .sub-heading { font-size: 14px; font-weight: 700; color: #2563eb; text-transform: uppercase; margin-bottom: 10px; }
-
 .main-heading { font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 40px; }
-
-.vertical-solutions-list {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
+.vertical-solutions-list { display: flex; flex-direction: column; gap: 50px; }
 
 .vertical-solution-item {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     background: #f8fafc;
-    padding: 40px 50px; /* Adjusted padding */
+    padding: 40px 50px;
     border-radius: 24px;
-    transition: 0.4s ease;
     border: 1px solid #f1f5f9;
+    transition: 0.4s ease;
 }
 
-.vertical-solution-item:hover {
-    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-    background: #fff;
-}
+.vertical-solution-item:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.06); background: #fff; }
+.solution-info { flex: 1; max-width: 65%; }
+.icon-box { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; }
 
-/* Content Area - Optimized for alignment */
-.solution-info {
-    flex: 1; /* Automatically takes available space */
-    max-width: 65%; /* Restricts wide stretching */
-}
-
-.icon-box { 
-    width: 52px; 
-    height: 52px; 
-    border-radius: 12px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    margin-bottom: 20px; 
-    font-size: 24px; 
-}
-
-/* Module Specific Colors */
 .web-icon { background: #eff6ff; color: #2563eb; }
 .app-icon { background: #f5f3ff; color: #7c3aed; }
 .erp-icon { background: #f0fdf4; color: #16a34a; }
 .hr-icon { background: #fff7ed; color: #ea580c; }
 .ai-icon { background: #fdf2f8; color: #db2777; }
 
-.solution-info h3 {
-    font-size: 28px;
-    font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 15px;
-}
+.solution-info h3 { font-size: 28px; font-weight: 800; color: #0f172a; margin-bottom: 15px; }
+.main-desc { font-weight: 700; color: #1e293b; margin-bottom: 12px; font-size: 17px; line-height: 1.4; }
+.sub-desc { font-size: 15px; color: #64748b; margin-bottom: 30px; line-height: 1.6; }
 
-.main-desc {
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 12px;
-    font-size: 17px;
-    line-height: 1.4;
-}
+.content-grid { display: flex; gap: 30px; margin-bottom: 30px; }
+.content-col { flex: 1; }
+.content-col h4 { font-size: 16px; font-weight: 800; margin-bottom: 15px; color: #0f172a; }
+.content-col ul { list-style: none; }
+.content-col ul li { font-size: 14px; color: #475569; margin-bottom: 12px; display: flex; align-items: flex-start; line-height: 1.5; }
+.content-col ul li b, .content-col ul li strong { min-width: 130px; display: inline-block; flex-shrink: 0; color: #0f172a; }
+.content-col ul li::before { content: "✔"; color: #22c55e; font-weight: 900; margin-right: 10px; flex-shrink: 0; }
 
-.sub-desc {
-    font-size: 15px;
-    color: #64748b;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
+.tech-stack { background: #f1f5f9; padding: 12px 20px; border-radius: 10px; font-size: 13px; color: #334155; display: inline-flex; align-items: center; gap: 10px; border: 1px solid #e2e8f0; }
 
-/* Feature Grid - Fixed alignment for "What We Offer" */
-.content-grid {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 30px;
-}
+.solution-image { flex: 0 0 30%; display: flex; justify-content: flex-end; align-self: center; }
+.solution-image img { max-width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.08)); }
 
-.content-col {
-    flex: 1;
-}
-
-.content-col h4 {
-    font-size: 16px;
-    font-weight: 800;
-    margin-bottom: 15px;
-    color: #0f172a;
-}
-
-.content-col ul {
-    list-style: none;
-}
-
-.content-col ul li {
-    font-size: 14px;
-    color: #475569;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: flex-start;
-    line-height: 1.5;
-}
-
-/* Alignment Fix: Ensuring bold titles have space and don't break lines */
-.content-col ul li b, 
-.content-col ul li strong {
-    min-width: 130px; /* Adjust this value if needed */
-    display: inline-block;
-    flex-shrink: 0;
-    color: #0f172a;
-}
-
-.content-col ul li::before {
-    content: "✔";
-    color: #22c55e;
-    font-weight: 900;
-    margin-right: 10px;
-    flex-shrink: 0;
-}
-
-/* Technology Badge Stack */
-.tech-stack {
-    background: #f1f5f9;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-size: 13px;
-    color: #334155;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #e2e8f0;
-}
-
-/* Image Handling */
-.solution-image {
-    flex: 0 0 30%; /* Balanced width */
-    display: flex;
-    justify-content: flex-end;
-    align-self: center;
-}
-
-.solution-image img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.08));
-}
-
-/* --- 📱 Mobile & Tablet Responsive Fixes --- */
+/* --- 📱 MOBILE RESPONSIVE FIX (100% WORKING) --- */
 
 @media (max-width: 1024px) {
-    .hero-content { flex: 0 0 100%; text-align: center; }
-    .hero-right { display: none; } /* ટેબલેટ અને મોબાઈલમાં હીરો ઈમેજ છુપાવવી સારી રહેશે */
-    .hero-overlay { background: rgba(2, 6, 23, 0.9); }
-    .hero-wrapper { justify-content: center; }
+    .hero-content { flex: 0 0 100% !important; text-align: center !important; }
+    .hero-right { display: none !important; } /* ટેબલેટ/મોબાઈલમાં હીરો ઈમેજ છુપાવી */
+    .hero-wrapper { justify-content: center !important; }
 }
 
 @media (max-width: 768px) {
-    /* Header Fix */
-    .header-container { flex-direction: column; gap: 15px; text-align: center; }
-    nav a { margin: 0 10px; font-size: 13px; }
+    .header-container { flex-direction: column !important; gap: 15px !important; }
+    nav a { margin: 0 10px !important; }
 
-    /* Hero Section Fix */
-    .hero-section { height: auto; padding: 100px 5%; min-height: 600px; }
-    .hero-content h1 { font-size: 34px; }
-    .hero-features li { justify-content: center; }
-    .desc { margin: 0 auto 25px; }
-
-    /* Solutions Section Fix - આનાથી એલાઈમેન્ટ હલશે નહીં */
+    .hero-section { height: auto !important; min-height: 500px !important; padding: 60px 5% !important; }
+    .hero-content h1 { font-size: 32px !important; }
+    .hero-features li { justify-content: center !important; }
+    
     .vertical-solution-item { 
-        flex-direction: column; 
-        padding: 30px 20px;
-        text-align: center;
+        flex-direction: column !important; /* આડા બોક્સ ઉભા કરવા માટે */
+        padding: 30px 20px !important; 
+        text-align: center !important; 
     }
-
+    
     .solution-info { 
-        max-width: 100%; 
-        width: 100%; 
+        max-width: 100% !important; 
+        width: 100% !important; 
+        margin-bottom: 20px !important;
     }
 
-    .icon-box { margin: 0 auto 20px; }
+    .icon-box { margin: 0 auto 20px !important; }
 
-    /* Content Grid Fix */
     .content-grid { 
-        flex-direction: column; 
-        gap: 20px; 
-        text-align: left; /* લિસ્ટને ડાબી બાજુ રાખવું વાંચવામાં સરળ રહે છે */
+        flex-direction: column !important; /* ગ્રીડને સિંગલ કોલમમાં ફેરવી */
+        text-align: left !important; 
     }
 
-    .content-col ul li b { 
-        min-width: auto; 
-        margin-right: 5px; 
-    }
-
-    /* Image Handling */
     .solution-image { 
-        display: block; 
-        width: 100%; 
-        justify-content: center; 
-        margin-top: 25px; 
-        flex: none;
+        display: block !important; 
+        width: 100% !important; 
+        text-align: center !important; 
     }
-
-    .solution-image img {
-        max-width: 250px; /* મોબાઈલમાં ઈમેજ નાની કરવા માટે */
-        margin: 0 auto;
-    }
+    
+    .solution-image img { max-width: 250px !important; margin: 0 auto !important; }
 }
 
 @media (max-width: 480px) {
-    .hero-content h1 { font-size: 28px; }
-    .btn-quote { width: 100%; text-align: center; }
+    .hero-content h1 { font-size: 28px !important; }
+    .btn-quote { width: 100% !important; text-align: center !important; }
 }
