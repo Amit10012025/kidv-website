@@ -1,16 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Contact Us</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | KIDV Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <link rel="icon" type="image/png" href="android-icon-36x36.png">
 </head>
 <body>
-<header><nav><a href="index.html">Home</a></nav></header>
-<section class="hero">
-<h1>Contact Us</h1>
-<p>Email: info@kdit.com</p>
-<p>Phone: +91 98765 43210</p>
+
+<header>
+    <div class="header-container">
+        <div class="logo"><img src="logo.png" alt="KIDV Tech"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="company.html">Company</a> <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+</header>
+
+<section class="contact-section" id="contact">
+    <div class="container">
+        <p class="sub-heading">GET IN TOUCH</p>
+        <h2 class="main-heading">Ready to Grow Your Business?</h2>
+        
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Our Location</h4>
+                        <p>Ahmedabad, Gujarat, India</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>contact@kidvtech.com</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p>+91 XXXXX XXXXX</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-box">
+                <form id="kidvContactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select name="solution" required>
+                            <option value="" disabled selected>Select Solution</option>
+                            <option value="website">Website Development</option>
+                            <option value="mobile">Mobile Apps Development</option>
+                            <option value="erp">ERPNext Solutions</option>
+                            <option value="ai">AI Solutions</option>
+                            <option value="hr">HR Software Solutions</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-quote">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </section>
-<footer>© 2026 KD Information Technology</footer>
+
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
