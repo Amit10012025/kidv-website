@@ -7,6 +7,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* સક્સેસ મેસેજ માટેની સ્ટાઇલ */
+        #formStatus {
+            display: none; /* શરૂઆતમાં છુપાયેલું રહેશે */
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .status-success {
+            display: block !important;
+            background-color: #dcfce7;
+            color: #15803d;
+            border: 1px solid #bbf7d0;
+        }
+        .status-error {
+            display: block !important;
+            background-color: #fee2e2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+    </style>
 </head>
 <body>
 
@@ -63,9 +86,9 @@
                         <textarea name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
                     </div>
                     
-                    <button type="submit" class="btn-quote">Send Message</button>
+                    <button type="submit" id="submitBtn" class="btn-quote">Send Message</button>
 
-                    <div id="formStatus" style="margin-top: 20px; font-weight: 600;"></div>
+                    <div id="formStatus"></div>
                 </form>
             </div>
         </div>
@@ -81,19 +104,21 @@
 <script>
   const form = document.getElementById('kidvContactForm');
   const statusEl = document.getElementById('formStatus');
-  const submitBtn = form.querySelector('button[type="submit"]');
+  const submitBtn = document.getElementById('submitBtn');
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault(); // Formspree ના પેજ પર રીડાયરેક્ટ થતું અટકાવશે
     
     statusEl.textContent = 'Sending...';
-    statusEl.style.color = '#3b82f6';
+    statusEl.className = 'status-success'; // કામચલાઉ બ્લુ કલર જેવું દેખાશે
+    statusEl.style.backgroundColor = '#f1f5f9';
+    statusEl.style.color = '#475569';
     submitBtn.disabled = true;
 
     const formData = new FormData(form);
 
     try {
-      const resp = await fetch("https://formspree.io/f/xzddbrjp", {
+      const resp = await fetch(form.action, {
         method: 'POST',
         body: formData,
         headers: {
@@ -102,20 +127,20 @@
       });
 
       if (resp.ok) {
-        // સફળતાનો મેસેજ તમારી સાઈટ પર જ બતાવશે
-        statusEl.textContent = 'Thank you! Your message has been sent successfully.';
-        statusEl.style.color = '#157f2e';
+        // સફળતાનો મેસેજ તમારી સાઈટ પર
+        statusEl.textContent = 'Thank you! Your message has been sent successfully to KIDV Tech.';
+        statusEl.className = 'status-success';
+        statusEl.style.backgroundColor = '#dcfce7'; // ગ્રીન કલર
         form.reset(); 
       } else {
         statusEl.textContent = 'Oops! There was a problem. Please try again.';
-        statusEl.style.color = '#b21f2d';
+        statusEl.className = 'status-error';
       }
     } catch (err) {
       statusEl.textContent = 'Network error. Please check your connection.';
-      statusEl.style.color = '#b21f2d';
+      statusEl.className = 'status-error';
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message';
     }
   });
 </script>
