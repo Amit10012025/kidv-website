@@ -43,7 +43,7 @@
             </div>
 
             <div class="contact-form-box">
-                <form action="https://formspree.io/f/xzddbrjp" method="POST">
+                <form id="kidvContactForm" action="https://formspree.io/f/xzddbrjp" method="POST">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
                     </div>
@@ -64,6 +64,8 @@
                     </div>
                     
                     <button type="submit" class="btn-quote">Send Message</button>
+
+                    <div id="formStatus" style="margin-top: 20px; font-weight: 600;"></div>
                 </form>
             </div>
         </div>
@@ -75,6 +77,48 @@
         <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
     </div>
 </footer>
+
+<script>
+  const form = document.getElementById('kidvContactForm');
+  const statusEl = document.getElementById('formStatus');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault(); // Formspree ના પેજ પર રીડાયરેક્ટ થતું અટકાવશે
+    
+    statusEl.textContent = 'Sending...';
+    statusEl.style.color = '#3b82f6';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(form);
+
+    try {
+      const resp = await fetch("https://formspree.io/f/xzddbrjp", {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (resp.ok) {
+        // સફળતાનો મેસેજ તમારી સાઈટ પર જ બતાવશે
+        statusEl.textContent = 'Thank you! Your message has been sent successfully.';
+        statusEl.style.color = '#157f2e';
+        form.reset(); 
+      } else {
+        statusEl.textContent = 'Oops! There was a problem. Please try again.';
+        statusEl.style.color = '#b21f2d';
+      }
+    } catch (err) {
+      statusEl.textContent = 'Network error. Please check your connection.';
+      statusEl.style.color = '#b21f2d';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    }
+  });
+</script>
 
 </body>
 </html>
