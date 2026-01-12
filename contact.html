@@ -6,30 +6,7 @@
     <title>Contact Us | KIDV Tech</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"> 
-    <style>
-        /* સક્સેસ મેસેજ માટેની સ્ટાઇલ */
-        #formStatus {
-            display: none; /* શરૂઆતમાં છુપાયેલું રહેશે */
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-align: center;
-        }
-        .status-success {
-            display: block !important;
-            background-color: #dcfce7;
-            color: #15803d;
-            border: 1px solid #bbf7d0;
-        }
-        .status-error {
-            display: block !important;
-            background-color: #fee2e2;
-            color: #b91c1c;
-            border: 1px solid #fecaca;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> <link rel="icon" type="image/png" href="android-icon-36x36.png">
 </head>
 <body>
 
@@ -38,8 +15,7 @@
         <div class="logo"><img src="logo.png" alt="KIDV Tech"></div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="company.html">Company</a> 
-            <a href="contact.html">Contact Us</a>
+            <a href="company.html">Company</a> <a href="contact.html">Contact Us</a>
         </nav>
     </div>
 </header>
@@ -53,20 +29,29 @@
             <div class="contact-info">
                 <div class="info-card">
                     <i class="fas fa-map-marker-alt"></i>
-                    <div><h4>Our Location</h4><p>Ahmedabad, Gujarat, India</p></div>
+                    <div>
+                        <h4>Our Location</h4>
+                        <p>Ahmedabad, Gujarat, India</p>
+                    </div>
                 </div>
                 <div class="info-card">
                     <i class="fas fa-envelope"></i>
-                    <div><h4>Email Us</h4><p>amit@kidvtech.com</p></div>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>contact@kidvtech.com</p>
+                    </div>
                 </div>
                 <div class="info-card">
                     <i class="fas fa-phone-alt"></i>
-                    <div><h4>Call Us</h4><p>+91 79844 86885</p></div>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p>+91 XXXXX XXXXX</p>
+                    </div>
                 </div>
             </div>
 
             <div class="contact-form-box">
-                <form id="kidvContactForm" action="https://formspree.io/f/xzddbrjp" method="POST">
+                <form id="kidvContactForm">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
                     </div>
@@ -76,19 +61,17 @@
                     <div class="form-group">
                         <select name="solution" required>
                             <option value="" disabled selected>Select Solution</option>
-                            <option value="Website">Website Development</option>
-                            <option value="Mobile">Mobile Apps Development</option>
-                            <option value="ERP">ERPNext Solutions</option>
-                            <option value="AI">AI Solutions</option>
+                            <option value="website">Website Development</option>
+                            <option value="mobile">Mobile Apps Development</option>
+                            <option value="erp">ERPNext Solutions</option>
+                            <option value="ai">AI Solutions</option>
+                            <option value="hr">HR Software Solutions</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <textarea name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
                     </div>
-                    
-                    <button type="submit" id="submitBtn" class="btn-quote">Send Message</button>
-
-                    <div id="formStatus"></div>
+                    <button type="submit" class="btn-quote">Send Message</button>
                 </form>
             </div>
         </div>
@@ -97,53 +80,15 @@
 
 <footer class="main-footer">
     <div class="container">
-        <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+        <div class="footer-content">
+            <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
     </div>
 </footer>
-
-<script>
-  const form = document.getElementById('kidvContactForm');
-  const statusEl = document.getElementById('formStatus');
-  const submitBtn = document.getElementById('submitBtn');
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault(); // Formspree ના પેજ પર રીડાયરેક્ટ થતું અટકાવશે
-    
-    statusEl.textContent = 'Sending...';
-    statusEl.className = 'status-success'; // કામચલાઉ બ્લુ કલર જેવું દેખાશે
-    statusEl.style.backgroundColor = '#f1f5f9';
-    statusEl.style.color = '#475569';
-    submitBtn.disabled = true;
-
-    const formData = new FormData(form);
-
-    try {
-      const resp = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (resp.ok) {
-        // સફળતાનો મેસેજ તમારી સાઈટ પર
-        statusEl.textContent = 'Thank you! Your message has been sent successfully to KIDV Tech.';
-        statusEl.className = 'status-success';
-        statusEl.style.backgroundColor = '#dcfce7'; // ગ્રીન કલર
-        form.reset(); 
-      } else {
-        statusEl.textContent = 'Oops! There was a problem. Please try again.';
-        statusEl.className = 'status-error';
-      }
-    } catch (err) {
-      statusEl.textContent = 'Network error. Please check your connection.';
-      statusEl.className = 'status-error';
-    } finally {
-      submitBtn.disabled = false;
-    }
-  });
-</script>
 
 </body>
 </html>
