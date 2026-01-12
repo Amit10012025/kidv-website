@@ -132,9 +132,8 @@
         statusEl.textContent = 'Thanks! Your inquiry has been submitted successfully.';
         form.reset();
       } else {
-        const data = await resp.json();
         statusEl.classList.add('error');
-        statusEl.textContent = data.error || 'Oops! There was a problem submitting your form.';
+        statusEl.textContent = 'Oops! There was a problem submitting your form.';
       }
     } catch (err) {
       statusEl.classList.add('error');
