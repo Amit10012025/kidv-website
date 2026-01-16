@@ -6,10 +6,34 @@
     <title>Contact Us | KIDV Tech</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"> <link rel="icon" type="image/png" href="android-icon-48x48.png">
-    
-    <link rel="icon" type="image/png" sizes="48x48" href="android-icon-48x48.png">
-    <link rel="apple-touch-icon" sizes="48x48" href="android-icon-48x48.png">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
+    <link rel="apple-touch-icon" sizes="36x36" href="android-icon-36x36.png">
+    <style>
+        .contact-section { padding: 80px 20px; font-family: 'Plus Jakarta Sans', sans-serif; background: #fdfdfd; }
+        .contact-wrapper { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-top: 50px; }
+        .contact-info { flex: 1; min-width: 300px; max-width: 450px; }
+        
+        /* Clickable Card Styling */
+        .contact-link { text-decoration: none; color: inherit; display: block; margin-bottom: 20px; transition: 0.3s; }
+        .contact-link:hover .info-card { transform: translateY(-5px); border-color: #1a73e8; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        
+        .info-card { display: flex; align-items: center; gap: 20px; background: #fff; padding: 25px; border-radius: 15px; border: 1px solid transparent; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .info-card i { font-size: 1.8rem; color: #1a73e8; background: #e8f0fe; padding: 15px; border-radius: 12px; }
+        
+        .contact-form-box { flex: 1.5; min-width: 350px; background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .form-group { margin-bottom: 20px; }
+        .form-group input, .form-group select, .form-group textarea { 
+            width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: inherit; font-size: 1rem; outline: none; transition: 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #1a73e8; box-shadow: 0 0 8px rgba(26, 115, 232, 0.2); }
+        
+        .btn-quote { 
+            width: 100%; background: #1a73e8; color: #fff; padding: 15px; border: none; border-radius: 10px; 
+            font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: 0.3s;
+        }
+        .btn-quote:hover { background: #1557b0; transform: translateY(-2px); }
+    </style>
 </head>
 <body>
 
@@ -18,39 +42,51 @@
         <div class="logo"><img src="logo.png" alt="KIDV Tech"></div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="company.html">Company</a> <a href="contact.html">Contact Us</a>
+            <a href="company.html">Company</a>
+            <a href="product.html">Product</a>
+            <a href="contact.html">Contact Us</a>
         </nav>
     </div>
 </header>
 
 <section class="contact-section" id="contact">
-    <div class="container">
-        <p class="sub-heading">GET IN TOUCH</p>
-        <h2 class="main-heading">Ready to Grow Your Business?</h2>
+    <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
+        <p class="sub-heading" style="color: #1a73e8; font-weight: 800; letter-spacing: 2px;">GET IN TOUCH</p>
+        <h2 class="main-heading" style="font-size: 2.5rem; margin-top: 10px; font-weight: 800;">Ready to Grow Your Business?</h2>
         
         <div class="contact-wrapper">
             <div class="contact-info">
-                <div class="info-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h4>Our Location</h4>
-                        <p>Ahmedabad, Gujarat, India</p>
+                
+                <a href="https://www.google.com/maps?q=Ahmedabad,Gujarat,India" target="_blank" class="contact-link">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div style="text-align: left;">
+                            <h4>Our Location</h4>
+                            <p>Ahmedabad, Gujarat, India</p>
+                        </div>
                     </div>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email Us</h4>
-                        <p>amit@kidvtech.com</p>
+                </a>
+
+                <a href="mailto:amit@kidvtech.com" class="contact-link">
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <div style="text-align: left;">
+                            <h4>Email Us</h4>
+                            <p>amit@kidvtech.com</p>
+                        </div>
                     </div>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-phone-alt"></i>
-                    <div>
-                        <h4>Call Us</h4>
-                        <p>+91 79844 86885</p>
+                </a>
+
+                <a href="tel:+917984486885" class="contact-link">
+                    <div class="info-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <div style="text-align: left;">
+                            <h4>Call Us</h4>
+                            <p>+91 79844 86885</p>
+                        </div>
                     </div>
-                </div>
+                </a>
+
             </div>
 
             <div class="contact-form-box">
@@ -63,16 +99,17 @@
                     </div>
                     <div class="form-group">
                         <select name="solution" required>
-                            <option value="" disabled selected>Select Solution</option>
+                            <option value="" disabled selected>Select Solution You Need</option>
                             <option value="website">Website Development</option>
-                            <option value="mobile">Mobile Apps Development</option>
                             <option value="erp">ERPNext Solutions</option>
-                            <option value="ai">AI Solutions</option>
-                            <option value="hr">HR Software Solutions</option>
+                            <option value="hr-payroll">HR, Payroll & Biometric</option>
+                            <option value="ai-automation">AI Business Automation</option>
+                            <option value="mobile-app">Mobile App Integration</option>
+                            <option value="cloud-hosting">Cloud Hosting Services</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+                        <textarea name="message" placeholder="Tell us about your project requirements..." rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn-quote">Send Message</button>
                 </form>
@@ -83,7 +120,7 @@
 
 <footer class="main-footer">
     <div class="container">
-        <div class="footer-content">
+        <div class="footer-content" style="text-align: center;">
             <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
             <div class="footer-links">
                 <a href="#">Privacy Policy</a>
@@ -95,5 +132,3 @@
 
 </body>
 </html>
-
-
