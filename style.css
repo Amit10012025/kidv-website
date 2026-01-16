@@ -268,3 +268,13 @@ nav a { text-decoration: none; font-weight: 700; color: var(--text-dark); margin
         gap: 40px;
     }
 }
+.web-card {
+    cursor: pointer; /* માઉસ લઈ જતાં હાથનું નિશાન આવશે */
+    transition: 0.3s;
+}
+
+.web-card:hover {
+    transform: translateY(-5px); /* કાર્ડ થોડું ઉપર જશે */
+    border-color: #1a73e8; /* બોર્ડરનો કલર બદલાશે */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* પડછાયો આવશે */
+}
