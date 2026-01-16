@@ -4,12 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KIDV Tech | Smart Business Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
     <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
     <link rel="apple-touch-icon" sizes="36x36" href="android-icon-36x36.png">
+    <style>
+        /* ડાબી બાજુ લખાણ અને પ્રીમિયમ લુક માટે CSS */
+        .hero-section {
+            text-align: left !important;
+            padding: 120px 8% 80px;
+        }
+        .hero-content {
+            max-width: 950px;
+            margin: 0 !important;
+        }
+        .hero-list {
+            margin: 30px 0;
+            padding: 0;
+            list-style: none;
+        }
+        .hero-list li {
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #cbd5e1;
+            transition: 0.3s;
+        }
+        /* આઈકોન માટે સ્પેશિયલ સ્ટાઈલ */
+        .hero-list li i {
+            color: #3b82f6 !important; 
+            font-size: 1.4rem;
+            width: 25px; /* આઈકોન પ્રોપર લાઈનમાં રહે તે માટે */
+            display: inline-block;
+        }
+        .hero-list li:hover {
+            color: #ffffff;
+            transform: translateX(10px);
+        }
+
+        /* Connectivity Section CSS */
+        .connectivity-section {
+            padding: 100px 8%;
+            background: #f8fafc;
+            text-align: left !important;
+            border-bottom: 1px solid #eee;
+        }
+        .connectivity-section h2 {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        .connectivity-section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 80px;
+            height: 4px;
+            background: #1a73e8;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section, .connectivity-section { text-align: center !important; }
+            .hero-list li { justify-content: center; }
+            .connectivity-section h2::after { left: 50%; transform: translateX(-50%); }
+        }
+    </style>
 </head>
 <body>
 
@@ -19,7 +83,9 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="company.html">Company</a>
-            <a href="contact.html">Contact Us</a> </nav>
+            <a href="product.html">Product</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
     </div>
 </header>
 
@@ -28,35 +94,42 @@
     <div class="hero-wrapper">
         <div class="hero-content">
             <span class="badge">WE HELP YOUR BUSINESS GROW 🚀</span>
-            <h1>Grow Your Business Faster With <br>
-                <span>Smart IT & Automation Solutions</span>
+            <h1 style="font-size: 3.8rem; line-height: 1.1; font-weight: 800;">Grow Your Business Faster With <br>
+                <span style="color: #1a73e8;">Smart IT & Automation Solutions</span>
             </h1>
             <p class="tagline">KIDV Tech – Your Trusted Digital Transformation Partner</p>
             <p class="desc">
-                We provide ERPNext, HR Software, AI Automation, Biometric Attendance, Mobile App Integration & Business Management Systems to save your time, reduce cost & increase profit.
+                We provide ERPNext, HR & Payroll Software, AI Automation, Biometric Attendance, Mobile App Integration & Business Management Systems to save your time, reduce cost & increase profit.
             </p>
+            
             <ul class="hero-list">
-                <li><i class="fas fa-check-circle"></i> AI-Powered Business Automation Solutions</li>
-                <li><i class="fas fa-check-circle"></i> Custom ERPNext Setup for Your Industry</li>
-                <li><i class="fas fa-check-circle"></i> Automated HR & Payroll Management System</li>
-                <li><i class="fas fa-check-circle"></i> Scalable & Secure Cloud IT Infrastructure</li>
+                <li><i class="fa-solid fa-shield-halved"></i> AI-Powered Business Automation Solutions</li>
+                <li><i class="fa-solid fa-shield-halved"></i> Custom ERPNext Setup for Your Industry</li>
+                <li><i class="fa-solid fa-shield-halved"></i> Automated HR & Payroll Management System</li>
+                <li><i class="fa-solid fa-shield-halved"></i> Scalable & Secure Cloud IT Infrastructure</li>
             </ul>
-            <a href="contact.html" class="btn-quote">Get Free Consultation</a> </div>
+            
+            <a href="contact.html" class="btn-quote">Get Free Consultation</a> 
+        </div>
     </div>
+</section>
+
+<section class="connectivity-section">
+    <p class="sub-heading" style="color: #1a73e8; font-weight: 800; letter-spacing: 2px;">SEAMLESS CONNECTIVITY</p>
+    <h2 class="main-heading" style="font-size: 2.8rem; font-weight: 800; color: #0f172a;">One Centralized System for Everything</h2>
+    <p style="color: #475569; max-width: 900px; font-size: 1.25rem; line-height: 1.8; margin-top: 15px;">
+        Our solutions bridge the gap between your Web, Mobile, ERP, and CRM platforms in real-time. We empower businesses by centralizing data, allowing for smarter decisions and efficient team collaboration from any device, anywhere.
+    </p>
 </section>
 
 <section class="solutions-section" id="solutions">
     <div class="container">
-        <p class="sub-heading">OUR EXPERTISE</p>
-        <h2 class="main-heading">Solutions We Provide</h2>
+        <p class="sub-heading" style="text-align: center;">OUR EXPERTISE</p>
+        <h2 class="main-heading" style="text-align: center;">Solutions We Provide</h2>
         
         <div class="card-stack">
-            
             <div class="service-card theme-blue">
-                <div class="card-header-bar">
-                    <i class="fas fa-desktop"></i>
-                    <h3>Website Development</h3>
-                </div>
+                <div class="card-header-bar"><i class="fas fa-desktop"></i><h3>Website Development</h3></div>
                 <div class="card-body">
                     <h4>Build fast, secure and result-driven websites for your business growth.</h4>
                     <p>KIDV Tech delivers high-performance, visually stunning and scalable websites that help businesses attract customers, generate leads and increase revenue.</p>
@@ -85,10 +158,7 @@
             </div>
 
             <div class="service-card theme-purple">
-                <div class="card-header-bar">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile Apps Development</h3>
-                </div>
+                <div class="card-header-bar"><i class="fas fa-mobile-alt"></i><h3>Mobile Apps Development</h3></div>
                 <div class="card-body">
                     <h4>Powerful, secure, and custom-built mobile applications for Android & iOS.</h4>
                     <p>KIDV Tech develops high-performance mobile apps that help businesses connect with customers and automate field operations.</p>
@@ -117,10 +187,7 @@
             </div>
 
             <div class="service-card theme-dark">
-                <div class="card-header-bar">
-                    <i class="fas fa-cog"></i>
-                    <h3>ERPNext Solutions</h3>
-                </div>
+                <div class="card-header-bar"><i class="fas fa-cog"></i><h3>ERPNext Solutions</h3></div>
                 <div class="card-body">
                     <h4>End-to-end ERPNext implementation & customization services.</h4>
                     <p>KIDV Tech provides complete ERPNext solutions to automate processes and give you real-time business control.</p>
@@ -149,10 +216,7 @@
             </div>
 
             <div class="service-card theme-pink">
-                <div class="card-header-bar">
-                    <i class="fas fa-robot"></i>
-                    <h3>AI Solutions</h3>
-                </div>
+                <div class="card-header-bar"><i class="fas fa-robot"></i><h3>AI Solutions</h3></div>
                 <div class="card-body">
                     <h4>Leveraging Artificial Intelligence for Smart Business Automation.</h4>
                     <p>Automate complex tasks and deliver smarter customer experiences with next-gen AI technology.</p>
@@ -181,13 +245,10 @@
             </div>
 
             <div class="service-card theme-orange">
-                <div class="card-header-bar">
-                    <i class="fas fa-users"></i>
-                    <h3>HR Software Solutions</h3>
-                </div>
+                <div class="card-header-bar"><i class="fas fa-users"></i><h3>HR & Payroll Software</h3></div>
                 <div class="card-body">
                     <h4>Advanced Biometric, Attendance & Payroll Management System.</h4>
-                    <p>Simplify employee management and ensure 100% statutory compliance with our complete HR solution.</p>
+                    <p>Simplify employee management and ensure 100% statutory compliance with our complete HR & Payroll Software.</p>
                     <div class="card-info-grid">
                         <div class="info-col">
                             <h4>🚀 What We Offer</h4>
@@ -213,10 +274,7 @@
             </div>
 
             <div class="service-card theme-teal">
-                <div class="card-header-bar">
-                    <i class="fas fa-server"></i>
-                    <h3>Cloud Hosting Solutions</h3>
-                </div>
+                <div class="card-header-bar"><i class="fas fa-server"></i><h3>Cloud Hosting Solutions</h3></div>
                 <div class="card-body">
                     <h4>Secure, scalable, and high-performance cloud infrastructure for IT apps.</h4>
                     <p>KIDV Tech delivers managed server reliability and flexible resources for growing businesses.</p>
@@ -243,14 +301,13 @@
                 </div>
                 <div class="tech-tag"><i class="fas fa-cloud"></i> Tech: AWS, Google Cloud, DigitalOcean, Managed VPS.</div>
             </div>
-            
         </div>
     </div>
 </section>
 
 <footer class="main-footer">
     <div class="container">
-        <div class="footer-content">
+        <div class="footer-content" style="text-align: center;">
             <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
             <div class="footer-links">
                 <a href="#">Privacy Policy</a>
