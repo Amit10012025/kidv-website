@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Business Automation | KIDV Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
+    <link rel="apple-touch-icon" sizes="36x36" href="android-icon-36x36.png">
+    <style>
+        .list-container { max-width: 1250px; margin: 40px auto; padding: 20px; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-header h1 { color: #1a73e8; font-size: 2.8rem; font-weight: 800; }
+        
+        /* 20 AI Modules Grid */
+        .ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .web-card { 
+            background: #fff; border: 1px solid #f0f0f0; border-radius: 16px; padding: 30px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.3s;
+        }
+        .web-card:hover { transform: translateY(-8px); border-color: #1a73e8; box-shadow: 0 10px 25px rgba(26, 115, 232, 0.1); }
+        .web-card i { font-size: 2.2rem; color: #1a73e8; margin-bottom: 18px; display: block; }
+        .web-card h3 { font-size: 1.3rem; margin-bottom: 15px; font-weight: 700; }
+        .web-card ul { padding-left: 20px; color: #555; font-size: 0.95rem; list-style: none; }
+        .web-card li { margin-bottom: 7px; position: relative; }
+        .web-card li::before { content: "⚡"; color: #1a73e8; position: absolute; left: -20px; font-size: 0.8rem; }
+
+        /* Key Benefits Styling */
+        .benefit-section { background: #f0f7ff; padding: 50px 20px; border-radius: 20px; margin: 50px 0; text-align: center; }
+        .benefit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
+        .benefit-item { padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .benefit-item i { color: #28a745; font-size: 2rem; margin-bottom: 10px; }
+
+        /* Future Section Styling */
+        .future-box { border-left: 6px solid #1a73e8; background: #fff; padding: 35px; margin-bottom: 50px; border-radius: 0 20px 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .future-box h2 { color: #1a73e8; margin-bottom: 15px; font-size: 1.8rem; }
+        .future-box p { font-size: 1.1rem; line-height: 1.7; color: #444; }
+
+        /* Use Cases */
+        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .case-item { background: #f9f9f9; padding: 20px; border-radius: 10px; border: 1px dashed #ddd; font-size: 1rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo"><img src="logo.png" alt="KIDV Tech"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="company.html">Company</a>
+            <a href="product.html">Product</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+</header>
+
+<div class="list-container">
+    <div class="page-header">
+        <h1>AI Business Automation</h1>
+        <p>Future-proof your business with smart, adaptive, and predictive systems.</p>
+    </div>
+
+    <div class="ai-grid">
+        <div class="web-card"><i class="fas fa-robot"></i><h3>Smart Workflows</h3><ul><li>Automates Repetitive Tasks</li><li>Approval Workflows (HR, Finance)</li><li>Auto Task Assignment</li></ul></div>
+        <div class="web-card"><i class="fas fa-comments"></i><h3>AI Chatbots</h3><ul><li>24x7 Multi-language Support</li><li>WhatsApp & Web Integration</li><li>Lead Capture & Auto Follow-up</li></ul></div>
+        <div class="web-card"><i class="fas fa-industry"></i><h3>Industrial AI</h3><ul><li>Demand Forecasting</li><li>Machine Downtime Prediction</li><li>Quality Defect Detection</li></ul></div>
+        
+        <div class="web-card"><i class="fas fa-bullhorn"></i><h3>Sales Automation</h3><ul><li>Lead Scoring & Segmentation</li><li>Auto Email & WhatsApp Campaigns</li><li>Sales Prediction Analysis</li></ul></div>
+        
+        <div class="web-card"><i class="fas fa-file-invoice-dollar"></i><h3>Finance Automation</h3><ul><li>Invoice Data Extraction</li><li>Expense Classification</li><li>Auto Payment Reminders</li></ul></div>
+        
+        <div class="web-card"><i class="fas fa-user-check"></i><h3>HR Automation</h3><ul><li>AI Resume Screening</li><li>Attendance Anomaly Detection</li><li>Employee Performance Analytics</li></ul></div>
+        
+        <div class="web-card"><i class="fas fa-link"></i><h3>ERP Integration</h3><ul><li>ERPNext AI Integration</li><li>CRM & Inventory Intelligence</li><li>Seamless Data Synchronization</li></ul></div>
+    </div>
+
+    <div class="benefit-section">
+        <h2>🚀 Key Benefits</h2>
+        <div class="benefit-grid">
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><p>Saves Operational Cost</p></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><p>Improves Productivity</p></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><p>Reduces Manual Errors</p></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><p>Faster Decision Making</p></div>
+        </div>
+    </div>
+
+    <div class="future-box">
+        <h2>🔮 Why Future-Proof Your Business?</h2>
+        <p>Traditional systems rely on manual work and static rules. AI-powered businesses are <b>adaptive, predictive, and self-learning</b>. AI doesn’t replace people – it empowers them to focus on high-value growth strategies.</p>
+    </div>
+
+    <div style="margin-bottom: 50px;">
+        <h2 style="text-align: center;">🧠 Example Use-Cases</h2>
+        <div class="case-grid">
+            <div class="case-item"><b>Sales:</b> Auto reply & lead follow-up</div>
+            <div class="case-item"><b>Reports:</b> Predictive sales forecasts</div>
+            <div class="case-item"><b>HR:</b> Attendance anomaly alerts</div>
+            <div class="case-item"><b>Stock:</b> Inventory reorder suggestions</div>
+        </div>
+    </div>
+</div>
+
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-content" style="text-align: center;">
+            <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

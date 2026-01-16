@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | KIDV Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
+    <link rel="apple-touch-icon" sizes="36x36" href="android-icon-36x36.png">
+    <style>
+        .product-section { padding: 60px 20px; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; }
+        /* કન્ટેનરને ફ્લેક્સ રાખવું જરૂરી છે જેથી કાર્ડ્સ લાઈનમાં આવે */
+        .product-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px; }
+        
+        /* કાર્ડની કોમન ડિઝાઈન */
+        .simple-card { 
+            border: 1px solid #eee; padding: 30px; width: 300px; border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; background: #fff;
+            cursor: pointer;
+        }
+        .simple-card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); border-color: #1a73e8; }
+        .simple-card i { font-size: 2.5rem; color: #1a73e8; margin-bottom: 15px; }
+        .simple-card h3 { margin-bottom: 10px; color: #333; font-weight: 700; }
+        .simple-card p { color: #666; font-size: 0.95rem; line-height: 1.5; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo"><img src="logo.png" alt="KIDV Tech"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="company.html">Company</a>
+            <a href="product.html">Product</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+</header>
+
+<section class="product-section">
+    <h1>Our Innovative Products</h1>
+    <p>Advanced Technology Solutions for Your Business Growth</p>
+
+    <div class="product-container">
+        
+        <div class="simple-card" onclick="window.location.href='website-list.html';">
+            <i class="fas fa-desktop"></i>
+            <h3>Website Development</h3>
+            <p>High-performance, SEO-friendly, and responsive websites.</p>
+        </div>
+
+        <div class="simple-card" onclick="window.location.href='erp-list.html';">
+            <i class="fas fa-desktop"></i>
+            <h3>ERPNext Solutions</h3>
+            <p>Complete business management software for sales, inventory, and accounting.</p>
+        </div>
+
+        <div class="simple-card" onclick="window.location.href='hr-payroll-list.html';">
+            <i class="fas fa-fingerprint"></i>
+            <h3>HR, Payroll & Biometric</h3>
+            <p>Automate attendance, leaves, and salary processing with integrated biometric systems.</p>
+        </div>
+
+        <div class="simple-card" onclick="window.location.href='ai-automation-list.html';">
+            <i class="fas fa-robot"></i>
+            <h3>AI Business Automation</h3>
+            <p>Smart AI-powered decisions and predictive analytics for modern enterprises.</p>
+        </div>
+
+        <div class="simple-card" onclick="window.location.href='mobile-app-list.html';">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Mobile App Integration</h3>
+            <p>Bring your business to mobile for a seamless user experience.</p>
+        </div>
+
+        <div class="simple-card" onclick="window.location.href='cloud-hosting-list.html';">
+            <i class="fas fa-server"></i>
+            <h3>Cloud Hosting</h3>
+            <p>Secure and lightning-fast cloud hosting with 99.9% uptime.</p>
+        </div>
+
+    </div> </section>
+
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-content" style="text-align: center;">
+            <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
