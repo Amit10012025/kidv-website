@@ -1,655 +1,394 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIDV Tech | Smart Business Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
-    <link rel="apple-touch-icon" sizes="36x36" href="android-icon-36x36.png">
-    <style>
-        /* ડાબી બાજુ લખાણ અને પ્રીમિયમ લુક માટે CSS */<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIDV Tech | Smart Business Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
-    <style>
-    :root {
-        --bg: #04071a;
-        --bg2: #060c22;
-        --surface: rgba(255,255,255,0.04);
-        --surface2: rgba(255,255,255,0.07);
-        --border: rgba(255,255,255,0.08);
-        --border-blue: rgba(59,130,246,0.3);
-        --blue: #3b82f6;
-        --blue-b: #60a5fa;
-        --cyan: #06b6d4;
-        --white: #ffffff;
-        --text: #e2e8f0;
-        --muted: #64748b;
-        --muted2: #94a3b8;
-        --green: #10b981;
-    }
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { font-family:'Outfit',sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden; }
-    /* GLOBAL LINK RESET — remove ALL browser default styles */
-    a, a:link, a:visited, a:hover, a:active, a:focus {
-        text-decoration: none !important;
-        color: inherit;
-        outline: none;
-    }
-    ::-webkit-scrollbar { width:4px; }
-    ::-webkit-scrollbar-thumb { background:var(--blue); border-radius:99px; }
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KIDV Tech | Smart Business Solutions</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
+        <style>
+        :root {
+            --bg: #04071a;
+            --bg2: #060c22;
+            --surface: rgba(255,255,255,0.04);
+            --surface2: rgba(255,255,255,0.07);
+            --border: rgba(255,255,255,0.08);
+            --border-blue: rgba(59,130,246,0.3);
+            --blue: #3b82f6;
+            --blue-b: #60a5fa;
+            --cyan: #06b6d4;
+            --white: #ffffff;
+            --text: #e2e8f0;
+            --muted: #64748b;
+            --muted2: #94a3b8;
+            --green: #10b981;
+        }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body { font-family:'Outfit',sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden; }
+        /* GLOBAL LINK RESET — remove ALL browser default styles */
+        a, a:link, a:visited, a:hover, a:active, a:focus {
+            text-decoration: none !important;
+            color: inherit;
+            outline: none;
+        }
+        ::-webkit-scrollbar { width:4px; }
+        ::-webkit-scrollbar-thumb { background:var(--blue); border-radius:99px; }
 
-    /* PARTICLES */
-    #particles { position:fixed; inset:0; z-index:0; pointer-events:none; }
+        /* PARTICLES */
+        #particles { position:fixed; inset:0; z-index:0; pointer-events:none; }
 
-    /* HEADER */
-    header {
-        position:fixed; top:14px; left:50%; transform:translateX(-50%);
-        width:calc(100% - 40px); max-width:1320px; z-index:1000;
-        padding:0 26px; height:72px;
-        display:flex; align-items:center; justify-content:space-between;
-        background:rgba(4,7,26,0.75); backdrop-filter:blur(24px);
-        border:1px solid rgba(59,130,246,0.18); border-radius:16px;
-        transition:all 0.4s;
-    }
-    header.scrolled { background:rgba(4,7,26,0.97); box-shadow:0 0 0 1px rgba(59,130,246,0.25),0 20px 60px rgba(59,130,246,0.1); }
-    header::after {
-        content:''; position:absolute; bottom:0; left:10%; right:10%; height:1px;
-        background:linear-gradient(90deg,transparent,rgba(59,130,246,0.5),rgba(6,182,212,0.5),transparent);
-    }
+        /* HEADER */
+        header {
+            position:fixed; top:14px; left:50%; transform:translateX(-50%);
+            width:calc(100% - 40px); max-width:1320px; z-index:1000;
+            padding:0 26px; height:72px;
+            display:flex; align-items:center; justify-content:space-between;
+            background:rgba(4,7,26,0.75); backdrop-filter:blur(24px);
+            border:1px solid rgba(59,130,246,0.18); border-radius:16px;
+            transition:all 0.4s;
+        }
+        header.scrolled { background:rgba(4,7,26,0.97); box-shadow:0 0 0 1px rgba(59,130,246,0.25),0 20px 60px rgba(59,130,246,0.1); }
+        header::after {
+            content:''; position:absolute; bottom:0; left:10%; right:10%; height:1px;
+            background:linear-gradient(90deg,transparent,rgba(59,130,246,0.5),rgba(6,182,212,0.5),transparent);
+        }
 
-    .logo { display:flex; align-items:center; gap:12px; text-decoration:none !important; }
-    .logo-img {
-        width:48px; height:48px;
-        border-radius:12px;
-        object-fit:contain;
-        background:rgba(255,255,255,0.05);
-        border:1.5px solid rgba(59,130,246,0.35);
-        padding:4px;
-        flex-shrink:0;
-        display:block;
-    }
-    .logo-fallback {
-        width:46px; height:46px; border-radius:11px; flex-shrink:0;
-        background:linear-gradient(135deg,#3b82f6,#06b6d4);
-        border:1px solid rgba(59,130,246,0.5);
-        display:none; align-items:center; justify-content:center;
-        font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-0.5px;
-    }
-    .logo-name { font-size:1.15rem; font-weight:800; color:var(--white); letter-spacing:-0.3px; display:block; }
-    .logo-name em { color:var(--blue-b); font-style:normal; }
-    .logo-sub { font-size:0.58rem; font-weight:600; color:var(--muted); letter-spacing:2px; text-transform:uppercase; display:block; margin-top:2px; }
-    .logo-name { font-size:1.05rem; font-weight:800; color:var(--white); letter-spacing:-0.3px; display:block; }
-    .logo-name em { color:var(--blue-b); font-style:normal; }
-    .logo-sub { font-size:0.6rem; font-weight:500; color:var(--muted); letter-spacing:1.8px; text-transform:uppercase; display:block; }
+        .logo { display:flex; align-items:center; gap:12px; text-decoration:none !important; }
+        .logo-img {
+            width:48px; height:48px;
+            border-radius:12px;
+            object-fit:contain;
+            background:rgba(255,255,255,0.05);
+            border:1.5px solid rgba(59,130,246,0.35);
+            padding:4px;
+            flex-shrink:0;
+            display:block;
+        }
+        .logo-fallback {
+            width:46px; height:46px; border-radius:11px; flex-shrink:0;
+            background:linear-gradient(135deg,#3b82f6,#06b6d4);
+            border:1px solid rgba(59,130,246,0.5);
+            display:none; align-items:center; justify-content:center;
+            font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-0.5px;
+        }
+        .logo-name { font-size:1.15rem; font-weight:800; color:var(--white); letter-spacing:-0.3px; display:block; }
+        .logo-name em { color:var(--blue-b); font-style:normal; }
+        .logo-sub { font-size:0.58rem; font-weight:600; color:var(--muted); letter-spacing:2px; text-transform:uppercase; display:block; margin-top:2px; }
+        .logo-name { font-size:1.05rem; font-weight:800; color:var(--white); letter-spacing:-0.3px; display:block; }
+        .logo-name em { color:var(--blue-b); font-style:normal; }
+        .logo-sub { font-size:0.6rem; font-weight:500; color:var(--muted); letter-spacing:1.8px; text-transform:uppercase; display:block; }
 
-    nav { display:flex; align-items:center; gap:4px; }
-    nav a,
-    nav a:link,
-    nav a:visited,
-    nav a:active,
-    nav a:hover {
-        font-size:0.9rem; font-weight:500;
-        color:var(--muted2) !important;
-        text-decoration:none !important;
-        padding:8px 16px; border-radius:8px;
-        transition:all 0.2s; letter-spacing:0.2px;
-    }
-    nav a:hover { color:var(--white) !important; background:var(--surface2); }
-    .btn-nav,
-    .btn-nav:link,
-    .btn-nav:visited,
-    .btn-nav:active {
-        background:var(--blue) !important;
-        color:var(--white) !important;
-        font-weight:700 !important;
-        padding:10px 24px !important;
-        border-radius:10px !important;
-        box-shadow:0 0 24px rgba(59,130,246,0.45);
-        margin-left:8px;
-        text-decoration:none !important;
-    }
-    .btn-nav:hover {
-        background:#2563eb !important;
-        transform:translateY(-1px) !important;
-        box-shadow:0 0 40px rgba(59,130,246,0.65) !important;
-        color:var(--white) !important;
-    }
-    .hamburger { display:none; background:none; border:none; color:var(--white); font-size:1.3rem; cursor:pointer; }
+        nav { display:flex; align-items:center; gap:4px; }
+        nav a,
+        nav a:link,
+        nav a:visited,
+        nav a:active,
+        nav a:hover {
+            font-size:0.9rem; font-weight:500;
+            color:var(--muted2) !important;
+            text-decoration:none !important;
+            padding:8px 16px; border-radius:8px;
+            transition:all 0.2s; letter-spacing:0.2px;
+        }
+        nav a:hover { color:var(--white) !important; background:var(--surface2); }
+        .btn-nav,
+        .btn-nav:link,
+        .btn-nav:visited,
+        .btn-nav:active {
+            background:var(--blue) !important;
+            color:var(--white) !important;
+            font-weight:700 !important;
+            padding:10px 24px !important;
+            border-radius:10px !important;
+            box-shadow:0 0 24px rgba(59,130,246,0.45);
+            margin-left:8px;
+            text-decoration:none !important;
+        }
+        .btn-nav:hover {
+            background:#2563eb !important;
+            transform:translateY(-1px) !important;
+            box-shadow:0 0 40px rgba(59,130,246,0.65) !important;
+            color:var(--white) !important;
+        }
+        .hamburger { display:none; background:none; border:none; color:var(--white); font-size:1.3rem; cursor:pointer; }
 
-    /* MOBILE NAV */
-    .m-nav { display:none; position:fixed; inset:0; background:rgba(4,7,26,0.97); backdrop-filter:blur(20px); z-index:9998; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
-    .m-nav.open { display:flex; }
-    .m-nav a { font-size:1.8rem; font-weight:800; color:var(--white); text-decoration:none; }
-    .m-nav a:hover { color:var(--blue-b); }
-    .m-close { position:absolute; top:22px; right:22px; background:none; border:none; color:var(--muted2); font-size:1.5rem; cursor:pointer; }
+        /* MOBILE NAV */
+        .m-nav { display:none; position:fixed; inset:0; background:rgba(4,7,26,0.97); backdrop-filter:blur(20px); z-index:9998; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+        .m-nav.open { display:flex; }
+        .m-nav a { font-size:1.8rem; font-weight:800; color:var(--white); text-decoration:none; }
+        .m-nav a:hover { color:var(--blue-b); }
+        .m-close { position:absolute; top:22px; right:22px; background:none; border:none; color:var(--muted2); font-size:1.5rem; cursor:pointer; }
 
-    /* RINGS */
-    .ring { position:fixed; border-radius:50%; border:1px solid rgba(59,130,246,0.06); pointer-events:none; z-index:0; animation:rpulse 8s ease-in-out infinite; }
-    .r1 { width:600px; height:600px; top:50%; left:35%; transform:translate(-50%,-50%); }
-    .r2 { width:950px; height:950px; top:50%; left:35%; transform:translate(-50%,-50%); animation-delay:1.5s; }
-    @keyframes rpulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+        /* RINGS */
+        .ring { position:fixed; border-radius:50%; border:1px solid rgba(59,130,246,0.06); pointer-events:none; z-index:0; animation:rpulse 8s ease-in-out infinite; }
+        .r1 { width:600px; height:600px; top:50%; left:35%; transform:translate(-50%,-50%); }
+        .r2 { width:950px; height:950px; top:50%; left:35%; transform:translate(-50%,-50%); animation-delay:1.5s; }
+        @keyframes rpulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
 
-    /* HERO */
-    .hero {
-        min-height:100vh; display:grid; grid-template-columns:1fr 1fr;
-        align-items:center; gap:50px;
-        padding:120px 6% 80px; position:relative; z-index:1;
-        max-width:1380px; margin:0 auto;
-    }
+        /* HERO */
+        .hero {
+            min-height:100vh; display:grid; grid-template-columns:1fr 1fr;
+            align-items:center; gap:50px;
+            padding:120px 6% 80px; position:relative; z-index:1;
+            max-width:1380px; margin:0 auto;
+        }
 
-    .hero-left { position:relative; z-index:2; }
+        .hero-left { position:relative; z-index:2; }
 
-    .badge {
-        display:inline-flex; align-items:center; gap:8px;
-        background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.22);
-        color:var(--blue-b); font-size:0.72rem; font-weight:600;
-        letter-spacing:2px; text-transform:uppercase;
-        padding:7px 14px; border-radius:99px; margin-bottom:26px;
-        animation:up 0.6s 0.2s ease both;
-    }
-    .bdot { width:7px; height:7px; background:var(--green); border-radius:50%; box-shadow:0 0 8px var(--green); animation:blink 1.5s infinite; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+        .badge {
+            display:inline-flex; align-items:center; gap:8px;
+            background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.22);
+            color:var(--blue-b); font-size:0.72rem; font-weight:600;
+            letter-spacing:2px; text-transform:uppercase;
+            padding:7px 14px; border-radius:99px; margin-bottom:26px;
+            animation:up 0.6s 0.2s ease both;
+        }
+        .bdot { width:7px; height:7px; background:var(--green); border-radius:50%; box-shadow:0 0 8px var(--green); animation:blink 1.5s infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
 
-    h1 {
-        font-size:clamp(2.5rem,4.2vw,3.7rem); font-weight:900;
-        line-height:1.06; letter-spacing:-1.5px; color:var(--white);
-        margin-bottom:22px; animation:up 0.7s 0.35s ease both;
-    }
-    .grad { background:linear-gradient(135deg,var(--blue-b),var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        h1 {
+            font-size:clamp(2.5rem,4.2vw,3.7rem); font-weight:900;
+            line-height:1.06; letter-spacing:-1.5px; color:var(--white);
+            margin-bottom:22px; animation:up 0.7s 0.35s ease both;
+        }
+        .grad { background:linear-gradient(135deg,var(--blue-b),var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
-    .hdesc { font-size:1.03rem; color:var(--muted2); line-height:1.8; max-width:520px; margin-bottom:34px; animation:up 0.7s 0.5s ease both; }
+        .hdesc { font-size:1.03rem; color:var(--muted2); line-height:1.8; max-width:520px; margin-bottom:34px; animation:up 0.7s 0.5s ease both; }
 
-    .chips { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:38px; animation:up 0.7s 0.65s ease both; }
-    .chip { display:inline-flex; align-items:center; gap:7px; background:var(--surface); border:1px solid var(--border); color:var(--text); font-size:0.82rem; font-weight:500; padding:8px 14px; border-radius:8px; transition:all 0.25s; }
-    .chip i { color:var(--blue-b); font-size:0.78rem; }
-    .chip:hover { border-color:var(--border-blue); background:rgba(59,130,246,0.08); transform:translateY(-2px); }
+        .chips { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:38px; animation:up 0.7s 0.65s ease both; }
+        .chip { display:inline-flex; align-items:center; gap:7px; background:var(--surface); border:1px solid var(--border); color:var(--text); font-size:0.82rem; font-weight:500; padding:8px 14px; border-radius:8px; transition:all 0.25s; }
+        .chip i { color:var(--blue-b); font-size:0.78rem; }
+        .chip:hover { border-color:var(--border-blue); background:rgba(59,130,246,0.08); transform:translateY(-2px); }
 
-    .hbtns { display:flex; gap:13px; flex-wrap:wrap; animation:up 0.7s 0.8s ease both; }
-    .btn-p { display:inline-flex; align-items:center; gap:8px; background:var(--blue); color:var(--white); text-decoration:none; font-weight:700; font-size:0.92rem; padding:14px 28px; border-radius:12px; box-shadow:0 0 40px rgba(59,130,246,0.4); transition:all 0.3s; position:relative; overflow:hidden; }
-    .btn-p::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,255,255,0.15),transparent); opacity:0; transition:opacity 0.3s; }
-    .btn-p:hover { transform:translateY(-3px); box-shadow:0 0 65px rgba(59,130,246,0.6); }
-    .btn-p:hover::before { opacity:1; }
-    .btn-g { display:inline-flex; align-items:center; gap:8px; color:var(--muted2); text-decoration:none; font-weight:600; font-size:0.92rem; padding:14px 26px; border-radius:12px; border:1px solid var(--border); transition:all 0.3s; }
-    .btn-g:hover { border-color:var(--border-blue); color:var(--white); transform:translateY(-3px); }
+        .hbtns { display:flex; gap:13px; flex-wrap:wrap; animation:up 0.7s 0.8s ease both; }
+        .btn-p { display:inline-flex; align-items:center; gap:8px; background:var(--blue); color:var(--white); text-decoration:none; font-weight:700; font-size:0.92rem; padding:14px 28px; border-radius:12px; box-shadow:0 0 40px rgba(59,130,246,0.4); transition:all 0.3s; position:relative; overflow:hidden; }
+        .btn-p::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,255,255,0.15),transparent); opacity:0; transition:opacity 0.3s; }
+        .btn-p:hover { transform:translateY(-3px); box-shadow:0 0 65px rgba(59,130,246,0.6); }
+        .btn-p:hover::before { opacity:1; }
+        .btn-g { display:inline-flex; align-items:center; gap:8px; color:var(--muted2); text-decoration:none; font-weight:600; font-size:0.92rem; padding:14px 26px; border-radius:12px; border:1px solid var(--border); transition:all 0.3s; }
+        .btn-g:hover { border-color:var(--border-blue); color:var(--white); transform:translateY(-3px); }
 
-    @keyframes up { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes up { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
 
-    /* HERO RIGHT — DASHBOARD */
-    .hero-right { position:relative; z-index:2; animation:up 0.9s 0.5s ease both; }
+        /* HERO RIGHT — DASHBOARD */
+        .hero-right { position:relative; z-index:2; animation:up 0.9s 0.5s ease both; }
 
-    .dash {
-        background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1);
-        border-radius:20px; padding:22px; backdrop-filter:blur(20px);
-        box-shadow:0 30px 80px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.08);
-        position:relative; overflow:hidden;
-    }
-    .dash::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(59,130,246,0.6),rgba(6,182,212,0.5),transparent); }
+        .dash {
+            background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1);
+            border-radius:20px; padding:22px; backdrop-filter:blur(20px);
+            box-shadow:0 30px 80px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.08);
+            position:relative; overflow:hidden;
+        }
+        .dash::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(59,130,246,0.6),rgba(6,182,212,0.5),transparent); }
 
-    .dash-hdr { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
-    .dots { display:flex; gap:6px; }
-    .dots span { width:10px; height:10px; border-radius:50%; display:block; }
-    .dr { background:#ff5f57; } .dy { background:#febc2e; } .dg { background:#28c840; }
-    .dash-t { font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--muted); letter-spacing:1px; }
+        .dash-hdr { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
+        .dots { display:flex; gap:6px; }
+        .dots span { width:10px; height:10px; border-radius:50%; display:block; }
+        .dr { background:#ff5f57; } .dy { background:#febc2e; } .dg { background:#28c840; }
+        .dash-t { font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--muted); letter-spacing:1px; }
 
-    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:18px; }
-    .mbox { background:var(--surface2); border:1px solid var(--border); border-radius:11px; padding:13px 10px; text-align:center; transition:all 0.3s; }
-    .mbox:hover { border-color:var(--border-blue); transform:translateY(-2px); }
-    .mval { font-size:1.5rem; font-weight:800; color:var(--white); display:block; line-height:1; margin-bottom:4px; }
-    .mval.bl { color:var(--blue-b); } .mval.gr { color:var(--green); } .mval.cy { color:var(--cyan); }
-    .mlb { font-size:0.68rem; font-weight:500; color:var(--muted); }
+        .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:18px; }
+        .mbox { background:var(--surface2); border:1px solid var(--border); border-radius:11px; padding:13px 10px; text-align:center; transition:all 0.3s; }
+        .mbox:hover { border-color:var(--border-blue); transform:translateY(-2px); }
+        .mval { font-size:1.5rem; font-weight:800; color:var(--white); display:block; line-height:1; margin-bottom:4px; }
+        .mval.bl { color:var(--blue-b); } .mval.gr { color:var(--green); } .mval.cy { color:var(--cyan); }
+        .mlb { font-size:0.68rem; font-weight:500; color:var(--muted); }
 
-    .chart-lbl { font-size:0.7rem; font-weight:600; color:var(--muted2); margin-bottom:10px; letter-spacing:0.5px; }
-    .bars { display:flex; align-items:flex-end; gap:7px; height:65px; margin-bottom:18px; }
-    .bar { flex:1; border-radius:5px 5px 0 0; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.18); position:relative; overflow:hidden; }
-    .bar::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(59,130,246,0.65),rgba(6,182,212,0.3)); animation:bg 1.2s ease both; transform-origin:bottom; }
-    @keyframes bg { from{transform:scaleY(0)} to{transform:scaleY(1)} }
-    .bar:nth-child(1)::after{animation-delay:0.1s} .bar:nth-child(2)::after{animation-delay:0.2s}
-    .bar:nth-child(3)::after{animation-delay:0.3s} .bar:nth-child(4)::after{animation-delay:0.4s}
-    .bar:nth-child(5)::after{animation-delay:0.5s} .bar:nth-child(6)::after{animation-delay:0.6s}
-    .bar:nth-child(7)::after{animation-delay:0.7s}
+        .chart-lbl { font-size:0.7rem; font-weight:600; color:var(--muted2); margin-bottom:10px; letter-spacing:0.5px; }
+        .bars { display:flex; align-items:flex-end; gap:7px; height:65px; margin-bottom:18px; }
+        .bar { flex:1; border-radius:5px 5px 0 0; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.18); position:relative; overflow:hidden; }
+        .bar::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(59,130,246,0.65),rgba(6,182,212,0.3)); animation:bg 1.2s ease both; transform-origin:bottom; }
+        @keyframes bg { from{transform:scaleY(0)} to{transform:scaleY(1)} }
+        .bar:nth-child(1)::after{animation-delay:0.1s} .bar:nth-child(2)::after{animation-delay:0.2s}
+        .bar:nth-child(3)::after{animation-delay:0.3s} .bar:nth-child(4)::after{animation-delay:0.4s}
+        .bar:nth-child(5)::after{animation-delay:0.5s} .bar:nth-child(6)::after{animation-delay:0.6s}
+        .bar:nth-child(7)::after{animation-delay:0.7s}
 
-    .srows { display:flex; flex-direction:column; gap:8px; }
-    .srow { display:flex; align-items:center; gap:10px; padding:9px 12px; background:var(--surface); border:1px solid var(--border); border-radius:9px; transition:all 0.25s; }
-    .srow:hover { border-color:var(--border-blue); }
-    .sico { width:29px; height:29px; border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.82rem; flex-shrink:0; }
-    .ic-bl { background:rgba(59,130,246,0.15); color:#60a5fa; }
-    .ic-pk { background:rgba(236,72,153,0.15); color:#f472b6; }
-    .ic-am { background:rgba(245,158,11,0.15); color:#fbbf24; }
-    .slbl { font-size:0.78rem; font-weight:600; color:var(--text); flex:1; }
-    .sbadge { font-family:'JetBrains Mono',monospace; font-size:0.62rem; font-weight:600; padding:3px 8px; border-radius:99px; }
-    .sba-gr { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:#34d399; }
-    .sba-bl { background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.25); color:#60a5fa; }
-    .sba-am { background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.25); color:#fbbf24; }
+        .srows { display:flex; flex-direction:column; gap:8px; }
+        .srow { display:flex; align-items:center; gap:10px; padding:9px 12px; background:var(--surface); border:1px solid var(--border); border-radius:9px; transition:all 0.25s; }
+        .srow:hover { border-color:var(--border-blue); }
+        .sico { width:29px; height:29px; border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.82rem; flex-shrink:0; }
+        .ic-bl { background:rgba(59,130,246,0.15); color:#60a5fa; }
+        .ic-pk { background:rgba(236,72,153,0.15); color:#f472b6; }
+        .ic-am { background:rgba(245,158,11,0.15); color:#fbbf24; }
+        .slbl { font-size:0.78rem; font-weight:600; color:var(--text); flex:1; }
+        .sbadge { font-family:'JetBrains Mono',monospace; font-size:0.62rem; font-weight:600; padding:3px 8px; border-radius:99px; }
+        .sba-gr { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:#34d399; }
+        .sba-bl { background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.25); color:#60a5fa; }
+        .sba-am { background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.25); color:#fbbf24; }
 
-    /* Floating cards */
-    .fc { position:absolute; background:rgba(4,7,26,0.88); border:1px solid rgba(59,130,246,0.3); border-radius:13px; padding:11px 14px; backdrop-filter:blur(20px); box-shadow:0 10px 40px rgba(0,0,0,0.35); z-index:10; animation:float 3s ease-in-out infinite; }
-    .fc-l { left:-50px; bottom:70px; animation-delay:0.5s; }
-    .fc-t { right:-40px; top:40px; animation-delay:1s; }
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-    .fcv { font-size:1.25rem; font-weight:800; display:block; }
-    .fcl { font-size:0.66rem; font-weight:500; color:var(--muted2); display:block; margin-top:2px; }
-    .fci { font-size:0.7rem; margin-bottom:3px; display:block; }
-    .pdot { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:3px; position:relative; }
-    .pdot::after { content:''; position:absolute; inset:-3px; border-radius:50%; border:2px solid currentColor; opacity:0.4; animation:pr 1.5s infinite; }
-    @keyframes pr { 0%{transform:scale(1);opacity:0.4} 100%{transform:scale(1.8);opacity:0} }
+        /* Floating cards */
+        .fc { position:absolute; background:rgba(4,7,26,0.88); border:1px solid rgba(59,130,246,0.3); border-radius:13px; padding:11px 14px; backdrop-filter:blur(20px); box-shadow:0 10px 40px rgba(0,0,0,0.35); z-index:10; animation:float 3s ease-in-out infinite; }
+        .fc-l { left:-50px; bottom:70px; animation-delay:0.5s; }
+        .fc-t { right:-40px; top:40px; animation-delay:1s; }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+        .fcv { font-size:1.25rem; font-weight:800; display:block; }
+        .fcl { font-size:0.66rem; font-weight:500; color:var(--muted2); display:block; margin-top:2px; }
+        .fci { font-size:0.7rem; margin-bottom:3px; display:block; }
+        .pdot { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:3px; position:relative; }
+        .pdot::after { content:''; position:absolute; inset:-3px; border-radius:50%; border:2px solid currentColor; opacity:0.4; animation:pr 1.5s infinite; }
+        @keyframes pr { 0%{transform:scale(1);opacity:0.4} 100%{transform:scale(1.8);opacity:0} }
 
-    /* STATS */
-    .stats { position:relative; z-index:2; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:linear-gradient(135deg,rgba(59,130,246,0.05),rgba(6,182,212,0.03)); }
-    .stats-in { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); }
-    .si { padding:38px 28px; text-align:center; border-right:1px solid var(--border); position:relative; overflow:hidden; transition:all 0.3s; }
-    .si:last-child { border-right:none; }
-    .si:hover { background:rgba(59,130,246,0.04); }
-    .si::after { content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:0; height:2px; background:linear-gradient(90deg,var(--blue),var(--cyan)); transition:width 0.4s; }
-    .si:hover::after { width:60%; }
-    .sn { font-size:2.6rem; font-weight:900; display:block; line-height:1; background:linear-gradient(135deg,#fff 40%,#94a3b8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-    .sn sup { font-size:1.1rem; -webkit-text-fill-color:var(--blue-b); }
-    .slb { font-size:0.8rem; font-weight:500; color:var(--muted); margin-top:5px; }
+        /* STATS */
+        .stats { position:relative; z-index:2; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:linear-gradient(135deg,rgba(59,130,246,0.05),rgba(6,182,212,0.03)); }
+        .stats-in { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); }
+        .si { padding:38px 28px; text-align:center; border-right:1px solid var(--border); position:relative; overflow:hidden; transition:all 0.3s; }
+        .si:last-child { border-right:none; }
+        .si:hover { background:rgba(59,130,246,0.04); }
+        .si::after { content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:0; height:2px; background:linear-gradient(90deg,var(--blue),var(--cyan)); transition:width 0.4s; }
+        .si:hover::after { width:60%; }
+        .sn { font-size:2.6rem; font-weight:900; display:block; line-height:1; background:linear-gradient(135deg,#fff 40%,#94a3b8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .sn sup { font-size:1.1rem; -webkit-text-fill-color:var(--blue-b); }
+        .slb { font-size:0.8rem; font-weight:500; color:var(--muted); margin-top:5px; }
 
-    /* SECTION COMMONS */
-    section { position:relative; z-index:2; }
-    .slabel { font-size:0.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--cyan); display:block; margin-bottom:14px; }
-    .stitle { font-size:clamp(1.9rem,3.2vw,2.7rem); font-weight:900; color:var(--white); letter-spacing:-1px; line-height:1.1; margin-bottom:16px; }
-    .sdesc { font-size:0.98rem; color:var(--muted2); line-height:1.8; max-width:620px; }
+        /* SECTION COMMONS */
+        section { position:relative; z-index:2; }
+        .slabel { font-size:0.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--cyan); display:block; margin-bottom:14px; }
+        .stitle { font-size:clamp(1.9rem,3.2vw,2.7rem); font-weight:900; color:var(--white); letter-spacing:-1px; line-height:1.1; margin-bottom:16px; }
+        .sdesc { font-size:0.98rem; color:var(--muted2); line-height:1.8; max-width:620px; }
 
-    /* WHAT WE DO */
-    .what { padding:110px 6%; background:var(--bg2); border-top:1px solid var(--border); }
-    .what-in { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
-    .what-l { position:sticky; top:100px; }
-    .ptags { display:flex; flex-wrap:wrap; gap:8px; margin-top:32px; }
-    .ptag { display:flex; align-items:center; gap:6px; background:var(--surface); border:1px solid var(--border); color:var(--muted2); font-size:0.77rem; font-weight:600; padding:7px 12px; border-radius:8px; transition:all 0.25s; }
-    .ptag i { color:var(--blue-b); }
-    .ptag:hover { border-color:var(--border-blue); color:var(--white); }
+        /* WHAT WE DO */
+        .what { padding:110px 6%; background:var(--bg2); border-top:1px solid var(--border); }
+        .what-in { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+        .what-l { position:sticky; top:100px; }
+        .ptags { display:flex; flex-wrap:wrap; gap:8px; margin-top:32px; }
+        .ptag { display:flex; align-items:center; gap:6px; background:var(--surface); border:1px solid var(--border); color:var(--muted2); font-size:0.77rem; font-weight:600; padding:7px 12px; border-radius:8px; transition:all 0.25s; }
+        .ptag i { color:var(--blue-b); }
+        .ptag:hover { border-color:var(--border-blue); color:var(--white); }
 
-    .svcstack { display:flex; flex-direction:column; gap:11px; }
-    .svc { background:var(--surface); border:1px solid var(--border); border-radius:15px; overflow:hidden; transition:all 0.35s; cursor:pointer; }
-    .svc:hover { border-color:var(--border-blue); transform:translateX(5px); box-shadow:-4px 0 30px rgba(59,130,246,0.1); }
-    .svc.open { border-color:var(--border-blue); background:rgba(59,130,246,0.05); }
-    .svch { display:flex; align-items:center; gap:13px; padding:17px 18px; }
-    .svci { width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; transition:all 0.3s; }
-    .svc:hover .svci,.svc.open .svci { transform:scale(1.1) rotate(-5deg); }
-    .i-bl { background:rgba(59,130,246,0.15); color:#60a5fa; }
-    .i-pk { background:rgba(236,72,153,0.15); color:#f472b6; }
-    .i-pu { background:rgba(139,92,246,0.15); color:#a78bfa; }
-    .i-am { background:rgba(245,158,11,0.15); color:#fbbf24; }
-    .i-in { background:rgba(99,102,241,0.15); color:#818cf8; }
-    .i-te { background:rgba(20,184,166,0.15); color:#2dd4bf; }
-    .svct { font-size:0.97rem; font-weight:700; color:var(--white); flex:1; }
-    .svca { color:var(--muted); font-size:0.78rem; transition:all 0.3s; }
-    .svc:hover .svca,.svc.open .svca { transform:translateX(3px); color:var(--blue-b); }
-    .svcb { display:none; padding:0 18px 16px; }
-    .svc.open .svcb { display:block; }
-    .svcb p { font-size:0.86rem; color:var(--muted2); line-height:1.7; margin-bottom:10px; }
-    .stags { display:flex; flex-wrap:wrap; gap:6px; }
-    .stag { font-family:'JetBrains Mono',monospace; font-size:0.66rem; font-weight:500; padding:4px 9px; border-radius:5px; background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.2); color:var(--blue-b); }
+        .svcstack { display:flex; flex-direction:column; gap:11px; }
+        .svc { background:var(--surface); border:1px solid var(--border); border-radius:15px; overflow:hidden; transition:all 0.35s; cursor:pointer; }
+        .svc:hover { border-color:var(--border-blue); transform:translateX(5px); box-shadow:-4px 0 30px rgba(59,130,246,0.1); }
+        .svc.open { border-color:var(--border-blue); background:rgba(59,130,246,0.05); }
+        .svch { display:flex; align-items:center; gap:13px; padding:17px 18px; }
+        .svci { width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; transition:all 0.3s; }
+        .svc:hover .svci,.svc.open .svci { transform:scale(1.1) rotate(-5deg); }
+        .i-bl { background:rgba(59,130,246,0.15); color:#60a5fa; }
+        .i-pk { background:rgba(236,72,153,0.15); color:#f472b6; }
+        .i-pu { background:rgba(139,92,246,0.15); color:#a78bfa; }
+        .i-am { background:rgba(245,158,11,0.15); color:#fbbf24; }
+        .i-in { background:rgba(99,102,241,0.15); color:#818cf8; }
+        .i-te { background:rgba(20,184,166,0.15); color:#2dd4bf; }
+        .svct { font-size:0.97rem; font-weight:700; color:var(--white); flex:1; }
+        .svca { color:var(--muted); font-size:0.78rem; transition:all 0.3s; }
+        .svc:hover .svca,.svc.open .svca { transform:translateX(3px); color:var(--blue-b); }
+        .svcb { display:none; padding:0 18px 16px; }
+        .svc.open .svcb { display:block; }
+        .svcb p { font-size:0.86rem; color:var(--muted2); line-height:1.7; margin-bottom:10px; }
+        .stags { display:flex; flex-wrap:wrap; gap:6px; }
+        .stag { font-family:'JetBrains Mono',monospace; font-size:0.66rem; font-weight:500; padding:4px 9px; border-radius:5px; background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.2); color:var(--blue-b); }
 
-    /* WHY */
-    .why { padding:110px 6%; background:var(--bg); border-top:1px solid var(--border); }
-    .why-hd { text-align:center; max-width:650px; margin:0 auto 58px; }
-    .wgrid { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-    .wcard { background:var(--surface); border:1px solid var(--border); border-radius:17px; padding:28px; transition:all 0.35s; position:relative; overflow:hidden; }
-    .wcard::after { content:''; position:absolute; inset:0; border-radius:17px; background:linear-gradient(135deg,rgba(59,130,246,0.06),transparent); opacity:0; transition:opacity 0.3s; }
-    .wcard:hover { border-color:var(--border-blue); transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.25); }
-    .wcard:hover::after { opacity:1; }
-    .wnum { font-family:'JetBrains Mono',monospace; font-size:0.66rem; font-weight:600; color:var(--muted); letter-spacing:2px; margin-bottom:14px; display:block; }
-    .wico { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.15rem; margin-bottom:16px; background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.2); color:var(--blue-b); transition:all 0.3s; }
-    .wcard:hover .wico { transform:rotate(-8deg) scale(1.1); }
-    .wtitle { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:9px; }
-    .wdesc { font-size:0.83rem; color:var(--muted2); line-height:1.7; }
-    .wcard.feat { grid-column:span 2; display:flex; gap:28px; align-items:center; background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(6,182,212,0.04)); border-color:rgba(59,130,246,0.22); }
-    .feat-vis { width:110px; height:110px; border-radius:50%; background:rgba(59,130,246,0.15); border:2px solid rgba(59,130,246,0.3); display:flex; align-items:center; justify-content:center; font-size:2.4rem; flex-shrink:0; animation:spin 12s linear infinite; color:var(--blue-b); }
-    @keyframes spin { 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
+        /* WHY */
+        .why { padding:110px 6%; background:var(--bg); border-top:1px solid var(--border); }
+        .why-hd { text-align:center; max-width:650px; margin:0 auto 58px; }
+        .wgrid { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+        .wcard { background:var(--surface); border:1px solid var(--border); border-radius:17px; padding:28px; transition:all 0.35s; position:relative; overflow:hidden; }
+        .wcard::after { content:''; position:absolute; inset:0; border-radius:17px; background:linear-gradient(135deg,rgba(59,130,246,0.06),transparent); opacity:0; transition:opacity 0.3s; }
+        .wcard:hover { border-color:var(--border-blue); transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.25); }
+        .wcard:hover::after { opacity:1; }
+        .wnum { font-family:'JetBrains Mono',monospace; font-size:0.66rem; font-weight:600; color:var(--muted); letter-spacing:2px; margin-bottom:14px; display:block; }
+        .wico { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.15rem; margin-bottom:16px; background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.2); color:var(--blue-b); transition:all 0.3s; }
+        .wcard:hover .wico { transform:rotate(-8deg) scale(1.1); }
+        .wtitle { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:9px; }
+        .wdesc { font-size:0.83rem; color:var(--muted2); line-height:1.7; }
+        .wcard.feat { grid-column:span 2; display:flex; gap:28px; align-items:center; background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(6,182,212,0.04)); border-color:rgba(59,130,246,0.22); }
+        .feat-vis { width:110px; height:110px; border-radius:50%; background:rgba(59,130,246,0.15); border:2px solid rgba(59,130,246,0.3); display:flex; align-items:center; justify-content:center; font-size:2.4rem; flex-shrink:0; animation:spin 12s linear infinite; color:var(--blue-b); }
+        @keyframes spin { 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
 
-    /* PROCESS */
-    .process { padding:110px 6%; background:var(--bg2); border-top:1px solid var(--border); }
-    .proc-in { max-width:1280px; margin:0 auto; }
-    .proc-hd { text-align:center; margin-bottom:65px; }
-    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; }
-    .steps::before { content:''; position:absolute; top:35px; left:12.5%; right:12.5%; height:1px; background:linear-gradient(90deg,transparent,var(--blue),var(--cyan),transparent); z-index:0; }
-    .step { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 18px; position:relative; z-index:1; }
-    .stepn { width:70px; height:70px; border-radius:50%; background:var(--bg2); border:2px solid var(--border-blue); display:flex; align-items:center; justify-content:center; font-size:1.35rem; font-weight:900; color:var(--blue-b); margin-bottom:22px; transition:all 0.3s; box-shadow:0 0 20px rgba(59,130,246,0.2); }
-    .step:hover .stepn { background:var(--blue); color:var(--white); transform:scale(1.1); box-shadow:0 0 40px rgba(59,130,246,0.55); }
-    .step h4 { font-size:0.97rem; font-weight:700; color:var(--white); margin-bottom:9px; }
-    .step p { font-size:0.81rem; color:var(--muted2); line-height:1.6; }
+        /* PROCESS */
+        .process { padding:110px 6%; background:var(--bg2); border-top:1px solid var(--border); }
+        .proc-in { max-width:1280px; margin:0 auto; }
+        .proc-hd { text-align:center; margin-bottom:65px; }
+        .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; }
+        .steps::before { content:''; position:absolute; top:35px; left:12.5%; right:12.5%; height:1px; background:linear-gradient(90deg,transparent,var(--blue),var(--cyan),transparent); z-index:0; }
+        .step { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 18px; position:relative; z-index:1; }
+        .stepn { width:70px; height:70px; border-radius:50%; background:var(--bg2); border:2px solid var(--border-blue); display:flex; align-items:center; justify-content:center; font-size:1.35rem; font-weight:900; color:var(--blue-b); margin-bottom:22px; transition:all 0.3s; box-shadow:0 0 20px rgba(59,130,246,0.2); }
+        .step:hover .stepn { background:var(--blue); color:var(--white); transform:scale(1.1); box-shadow:0 0 40px rgba(59,130,246,0.55); }
+        .step h4 { font-size:0.97rem; font-weight:700; color:var(--white); margin-bottom:9px; }
+        .step p { font-size:0.81rem; color:var(--muted2); line-height:1.6; }
 
-    /* TECH SCROLL */
-    .tech { padding:75px 6%; border-top:1px solid var(--border); background:var(--bg); overflow:hidden; }
-    .tscroll { overflow:hidden; margin-top:36px; }
-    .ttrack { display:flex; gap:14px; animation:scroll 25s linear infinite; width:max-content; }
-    .ttrack:hover { animation-play-state:paused; }
-    @keyframes scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-    .tpill { display:inline-flex; align-items:center; gap:7px; background:var(--surface); border:1px solid var(--border); border-radius:99px; padding:9px 18px; font-size:0.83rem; font-weight:600; color:var(--muted2); white-space:nowrap; transition:all 0.25s; }
-    .tpill i { color:var(--blue-b); }
-    .tpill:hover { border-color:var(--border-blue); color:var(--white); }
+        /* TECH SCROLL */
+        .tech { padding:75px 6%; border-top:1px solid var(--border); background:var(--bg); overflow:hidden; }
+        .tscroll { overflow:hidden; margin-top:36px; }
+        .ttrack { display:flex; gap:14px; animation:scroll 25s linear infinite; width:max-content; }
+        .ttrack:hover { animation-play-state:paused; }
+        @keyframes scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+        .tpill { display:inline-flex; align-items:center; gap:7px; background:var(--surface); border:1px solid var(--border); border-radius:99px; padding:9px 18px; font-size:0.83rem; font-weight:600; color:var(--muted2); white-space:nowrap; transition:all 0.25s; }
+        .tpill i { color:var(--blue-b); }
+        .tpill:hover { border-color:var(--border-blue); color:var(--white); }
 
-    /* CTA */
-    .cta { padding:120px 6%; text-align:center; border-top:1px solid var(--border); position:relative; overflow:hidden; }
-    .cta-glow { position:absolute; width:750px; height:750px; border-radius:50%; background:radial-gradient(circle,rgba(59,130,246,0.12),transparent 70%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; animation:gp 4s ease-in-out infinite; }
-    @keyframes gp { 0%,100%{opacity:0.6;transform:translate(-50%,-50%) scale(1)} 50%{opacity:1;transform:translate(-50%,-50%) scale(1.08)} }
-    .cta-in { position:relative; z-index:2; max-width:720px; margin:0 auto; }
-    .ctitle { font-size:clamp(2.2rem,4vw,3.4rem); font-weight:900; color:var(--white); letter-spacing:-1.2px; line-height:1.1; margin-bottom:18px; }
-    .cdesc { font-size:1.02rem; color:var(--muted2); line-height:1.8; margin-bottom:42px; }
-    .cbtns { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; }
-    .cinfo { display:flex; justify-content:center; gap:28px; margin-top:38px; flex-wrap:wrap; }
-    .ci { display:flex; align-items:center; gap:9px; color:var(--muted2); font-size:0.87rem; font-weight:500; }
-    .ci i { color:var(--blue-b); font-size:0.95rem; }
+        /* CTA */
+        .cta { padding:120px 6%; text-align:center; border-top:1px solid var(--border); position:relative; overflow:hidden; }
+        .cta-glow { position:absolute; width:750px; height:750px; border-radius:50%; background:radial-gradient(circle,rgba(59,130,246,0.12),transparent 70%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; animation:gp 4s ease-in-out infinite; }
+        @keyframes gp { 0%,100%{opacity:0.6;transform:translate(-50%,-50%) scale(1)} 50%{opacity:1;transform:translate(-50%,-50%) scale(1.08)} }
+        .cta-in { position:relative; z-index:2; max-width:720px; margin:0 auto; }
+        .ctitle { font-size:clamp(2.2rem,4vw,3.4rem); font-weight:900; color:var(--white); letter-spacing:-1.2px; line-height:1.1; margin-bottom:18px; }
+        .cdesc { font-size:1.02rem; color:var(--muted2); line-height:1.8; margin-bottom:42px; }
+        .cbtns { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; }
+        .cinfo { display:flex; justify-content:center; gap:28px; margin-top:38px; flex-wrap:wrap; }
+        .ci { display:flex; align-items:center; gap:9px; color:var(--muted2); font-size:0.87rem; font-weight:500; }
+        .ci i { color:var(--blue-b); font-size:0.95rem; }
 
-    /* FOOTER */
-    footer { background:var(--bg2); border-top:1px solid var(--border); padding:34px 6%; }
-    .fin { max-width:1280px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; }
-    .fcopy { font-size:0.8rem; color:var(--muted); }
-    .flinks { display:flex; gap:18px; }
-    .flinks a { font-size:0.8rem; color:var(--muted); text-decoration:none; transition:color 0.2s; }
-    .flinks a:hover { color:var(--white); }
+        /* FOOTER */
+        footer { background:var(--bg2); border-top:1px solid var(--border); padding:34px 6%; }
+        .fin { max-width:1280px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; }
+        .fcopy { font-size:0.8rem; color:var(--muted); }
+        .flinks { display:flex; gap:18px; }
+        .flinks a { font-size:0.8rem; color:var(--muted); text-decoration:none; transition:color 0.2s; }
+        .flinks a:hover { color:var(--white); }
 
-    /* REVEAL */
-    .rv { opacity:0; transform:translateY(26px); transition:opacity 0.65s ease,transform 0.65s ease; }
-    .rv.vis { opacity:1 !important; transform:none !important; }
+        /* REVEAL */
+        .rv { opacity:0; transform:translateY(26px); transition:opacity 0.65s ease,transform 0.65s ease; }
+        .rv.vis { opacity:1 !important; transform:none !important; }
 
-    /* RESPONSIVE */
-    @media(max-width:1024px) {
-        .hero { grid-template-columns:1fr; padding-top:110px; gap:50px; }
-        .hero-right { max-width:540px; margin:0 auto; }
-        .fc-l,.fc-t { display:none; }
-        .what-in { grid-template-columns:1fr; gap:50px; }
-        .what-l { position:static; }
-        .wgrid { grid-template-columns:repeat(2,1fr); }
-        .wcard.feat { grid-column:span 2; }
-        .stats-in { grid-template-columns:repeat(2,1fr); }
-        .si:nth-child(2) { border-right:none; }
-        .si:nth-child(3) { border-right:1px solid var(--border); }
-        .si:nth-child(1),.si:nth-child(2) { border-bottom:1px solid var(--border); }
-        .steps { grid-template-columns:repeat(2,1fr); gap:40px; }
-        .steps::before { display:none; }
-    }
-    @media(max-width:768px) {
-        header { top:8px; width:calc(100% - 20px); padding:0 16px; }
-        nav { display:none; }
-        .hamburger { display:block; }
-        .wgrid { grid-template-columns:1fr; }
-        .wcard.feat { grid-column:span 1; flex-direction:column; text-align:center; }
-        h1 { font-size:2.2rem; }
-        .hero-right { display:none; }
-        .steps { grid-template-columns:1fr 1fr; }
-        .stats-in { grid-template-columns:repeat(2,1fr); }
-    }
-    </style>
-</head>
-<body>
+        /* RESPONSIVE */
+        @media(max-width:1024px) {
+            .hero { grid-template-columns:1fr; padding-top:110px; gap:50px; }
+            .hero-right { max-width:540px; margin:0 auto; }
+            .fc-l,.fc-t { display:none; }
+            .what-in { grid-template-columns:1fr; gap:50px; }
+            .what-l { position:static; }
+            .wgrid { grid-template-columns:repeat(2,1fr); }
+            .wcard.feat { grid-column:span 2; }
+            .stats-in { grid-template-columns:repeat(2,1fr); }
+            .si:nth-child(2) { border-right:none; }
+            .si:nth-child(3) { border-right:1px solid var(--border); }
+            .si:nth-child(1),.si:nth-child(2) { border-bottom:1px solid var(--border); }
+            .steps { grid-template-columns:repeat(2,1fr); gap:40px; }
+            .steps::before { display:none; }
+        }
+        @media(max-width:768px) {
+            header { top:8px; width:calc(100% - 20px); padding:0 16px; }
+            nav { display:none; }
+            .hamburger { display:block; }
+            .wgrid { grid-template-columns:1fr; }
+            .wcard.feat { grid-column:span 1; flex-direction:column; text-align:center; }
+            h1 { font-size:2.2rem; }
+            .hero-right { display:none; }
+            .steps { grid-template-columns:1fr 1fr; }
+            .stats-in { grid-template-columns:repeat(2,1fr); }
+        }
+        </style>
+    </head>
+    <body>
 
-<canvas id="particles"></canvas>
-<div class="ring r1"></div>
-<div class="ring r2"></div>
+    <canvas id="particles"></canvas>
+    <div class="ring r1"></div>
+    <div class="ring r2"></div>
 
-<!-- MOBILE NAV -->
-<div class="m-nav" id="mnav">
-    <button class="m-close" onclick="cmnav()">✕</button>
-    <a href="index.html" onclick="cmnav()">Home</a>
-    <a href="company.html" onclick="cmnav()">Company</a>
-    <a href="product.html" onclick="cmnav()">Product</a>
-    <a href="contact.html" onclick="cmnav()">Contact</a>
-</div>
-
-<!-- HEADER -->
-<header id="hdr">
-    <a class="logo" href="index.html">
-        <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="logo-fallback">KT</div>
-        <div>
-            <span class="logo-name">KIDV <em>Tech</em></span>
-            <span class="logo-sub">Smart Business Solutions</span>
-        </div>
-    </a>
-        <a href="index.html">Home</a>
-        <a href="company.html">Company</a>
-        <a href="product.html">Product</a>
-        <a href="contact.html" class="btn-nav">Get in Touch</a>
-    </nav>
-    <button class="hamburger" onclick="omnav()"><i class="fas fa-bars"></i></button>
-</header>
-
-<!-- HERO -->
-<div class="hero" id="home">
-    <div class="hero-left">
-        <span class="badge"><span class="bdot"></span> Trusted Digital Transformation Partner</span>
-        <h1>Grow Your<br>Business With<br><span class="grad">Smart IT &amp;<br>Automation</span></h1>
-        <p class="hdesc">KIDV Tech delivers ERPNext, AI Automation, HR &amp; Payroll, Biometric Attendance, Mobile Apps &amp; Cloud Infrastructure — cutting costs, saving time, boosting profit.</p>
-        <div class="chips">
-            <div class="chip"><i class="fas fa-robot"></i> AI Automation</div>
-            <div class="chip"><i class="fas fa-layer-group"></i> ERPNext</div>
-            <div class="chip"><i class="fas fa-fingerprint"></i> HR &amp; Payroll</div>
-            <div class="chip"><i class="fas fa-cloud"></i> Cloud Hosting</div>
-            <div class="chip"><i class="fas fa-mobile-alt"></i> Mobile Apps</div>
-        </div>
-        <div class="hbtns">
-            <a href="contact.html" class="btn-p"><i class="fas fa-calendar-check"></i> Free Consultation</a>
-            <a href="product.html" class="btn-g"><i class="fas fa-th-large"></i> Our Solutions</a>
-        </div>
+    <!-- MOBILE NAV -->
+    <div class="m-nav" id="mnav">
+        <button class="m-close" onclick="cmnav()">✕</button>
+        <a href="index.html" onclick="cmnav()">Home</a>
+        <a href="company.html" onclick="cmnav()">Company</a>
+        <a href="product.html" onclick="cmnav()">Product</a>
+        <a href="contact.html" onclick="cmnav()">Contact</a>
     </div>
 
-    <div class="hero-right">
-        <div class="fc fc-t">
-            <span class="fci" style="color:var(--green)"><span class="pdot" style="background:var(--green);color:var(--green)"></span>Live</span>
-            <span class="fcv" style="color:var(--green)">+38%</span>
-            <span class="fcl">Revenue Growth</span>
-        </div>
-        <div class="fc fc-l">
-            <span class="fci" style="color:var(--blue-b)"><i class="fas fa-shield-alt"></i> Uptime</span>
-            <span class="fcv" style="color:var(--blue-b)">99.9%</span>
-            <span class="fcl">SLA Guaranteed</span>
-        </div>
-        <div class="dash">
-            <div class="dash-hdr">
-                <div class="dots"><span class="dr"></span><span class="dy"></span><span class="dg"></span></div>
-                <span class="dash-t">KIDVTECH — BUSINESS DASHBOARD</span>
-                <span style="font-size:0.68rem;color:var(--muted)">v3.2</span>
-            </div>
-            <div class="metrics">
-                <div class="mbox"><span class="mval bl">200<sup style="font-size:0.85rem;color:var(--blue-b)">+</sup></span><span class="mlb">Clients Served</span></div>
-                <div class="mbox"><span class="mval gr">₹2.4Cr</span><span class="mlb">Cost Saved</span></div>
-                <div class="mbox"><span class="mval cy">6+</span><span class="mlb">Core Services</span></div>
-            </div>
-            <div class="chart-lbl">📊 BUSINESS GROWTH TREND</div>
-            <div class="bars">
-                <div class="bar" style="height:45%"></div>
-                <div class="bar" style="height:52%"></div>
-                <div class="bar" style="height:48%"></div>
-                <div class="bar" style="height:68%"></div>
-                <div class="bar" style="height:62%"></div>
-                <div class="bar" style="height:84%"></div>
-                <div class="bar" style="height:100%"></div>
-            </div>
-            <div class="srows">
-                <div class="srow"><div class="sico ic-bl"><i class="fas fa-cog"></i></div><span class="slbl">ERPNext</span><span class="sbadge sba-gr">Active</span></div>
-                <div class="srow"><div class="sico ic-pk"><i class="fas fa-robot"></i></div><span class="slbl">AI Automation</span><span class="sbadge sba-bl">Running</span></div>
-                <div class="srow"><div class="sico ic-am"><i class="fas fa-fingerprint"></i></div><span class="slbl">HR &amp; Payroll</span><span class="sbadge sba-am">Syncing</span></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- STATS -->
-<div class="stats">
-    <div class="stats-in">
-        <div class="si rv"><span class="sn">200<sup>+</sup></span><span class="slb">Happy Clients</span></div>
-        <div class="si rv" style="transition-delay:0.1s"><span class="sn">6<sup>+</sup></span><span class="slb">Core Services</span></div>
-        <div class="si rv" style="transition-delay:0.2s"><span class="sn">99.9<sup>%</sup></span><span class="slb">Uptime SLA</span></div>
-        <div class="si rv" style="transition-delay:0.3s"><span class="sn">24<sup>/7</sup></span><span class="slb">Expert Support</span></div>
-    </div>
-</div>
-
-<!-- WHAT WE DO -->
-<section class="what" id="solutions">
-    <div class="what-in">
-        <div class="what-l rv">
-            <span class="slabel">Our Expertise</span>
-            <h2 class="stitle">Everything Your<br>Business Needs<br>to <span class="grad">Scale</span></h2>
-            <p class="sdesc">End-to-end technology solutions — from ERP to AI — built and supported by experts who genuinely care about your growth.</p>
-            <div class="ptags">
-                <div class="ptag"><i class="fab fa-android"></i> Android</div>
-                <div class="ptag"><i class="fab fa-apple"></i> iOS</div>
-                <div class="ptag"><i class="fas fa-globe"></i> Web</div>
-                <div class="ptag"><i class="fas fa-cloud"></i> Cloud</div>
-                <div class="ptag"><i class="fas fa-database"></i> ERP</div>
-                <div class="ptag"><i class="fas fa-brain"></i> AI/ML</div>
-            </div>
-        </div>
-        <div class="svcstack">
-            <div class="svc open rv" onclick="tsvc(this)">
-                <div class="svch"><div class="svci i-bl"><i class="fas fa-cog"></i></div><span class="svct">ERPNext Solutions</span><i class="fas fa-arrow-right svca"></i></div>
-                <div class="svcb"><p>Complete ERPNext setup for Manufacturing, Accounting, GST, Inventory & API integration — real-time data sync with dedicated support.</p><div class="stags"><span class="stag">ERPNext</span><span class="stag">Frappe</span><span class="stag">Python</span><span class="stag">MariaDB</span></div></div>
-            </div>
-            <div class="svc rv" style="transition-delay:0.1s" onclick="tsvc(this)">
-                <div class="svch"><div class="svci i-pk"><i class="fas fa-robot"></i></div><span class="svct">AI Solutions</span><i class="fas fa-arrow-right svca"></i></div>
-                <div class="svcb"><p>WhatsApp/Web AI chatbots, OCR document readers, smart analytics & ERP forecasting — automate complex tasks with next-gen intelligence.</p><div class="stags"><span class="stag">OpenAI</span><span class="stag">Python</span><span class="stag">NLP</span><span class="stag">Computer Vision</span></div></div>
-            </div>
-            <div class="svc rv" style="transition-delay:0.15s" onclick="tsvc(this)">
-                <div class="svch"><div class="svci i-pu"><i class="fas fa-mobile-alt"></i></div><span class="svct">Mobile App Development</span><i class="fas fa-arrow-right svca"></i></div>
-                <div class="svcb"><p>Custom Android & iOS apps with ERP integration, GPS attendance tracking, secure payments & app store deployment support.</p><div class="stags"><span class="stag">Flutter</span><span class="stag">Android</span><span class="stag">Swift</span><span class="stag">Firebase</span></div></div>
-            </div>
-            <div class="svc rv" style="transition-delay:0.2s" onclick="tsvc(this)">
-                <div class="svch"><div class="svci i-am"><i class="fas fa-users"></i></div><span class="svct">HR &amp; Payroll Software</span><i class="fas fa-arrow-right svca"></i></div>
-                <div class="svcb"><p>Biometric + GPS attendance, automated PF/ESIC/TDS, leave workflows & employee self-service — 100% statutory compliance.</p><div class="stags"><span class="stag">Biometric API</span><span class="stag">PHP</span><span class="stag">MySQL</span><span class="stag">Cloud</span></div></div>
-            </div>
-            <div class="svc rv" style="transition-delay:0.25s" onclick="tsvc(this)">
-                <div class="svch"><div class="svci i-in"><i class="fas fa-desktop"></i></div><span class="svct">Website Development</span><i class="fas fa-arrow-right svca"></i></div>
-                <div class="svcb"><p>Fast, SEO-optimized, mobile-first websites — corporate, e-commerce, portfolio — with SSL, payments & Google PageSpeed optimization.</p><div class="stags"><span class="stag">HTML5</span><span class="stag">PHP</span><span class="stag">WordPress</span><span class="stag">MySQL</span></div></div>
-            </div>
-            <div class="svc rv" style="transition-delay:0.3s" onclick="tsvc(this)">
-                <div class="svch"><div class="svci i-te"><i class="fas fa-server"></i></div><span class="svct">Cloud Hosting Solutions</span><i class="fas fa-arrow-right svca"></i></div>
-                <div class="svcb"><p>Managed VPS, 99.9% uptime SLA, automated backups, SSL, DDoS protection & 24/7 monitoring on AWS, GCP & DigitalOcean.</p><div class="stags"><span class="stag">AWS</span><span class="stag">Google Cloud</span><span class="stag">DigitalOcean</span><span class="stag">VPS</span></div></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- WHY KIDV -->
-<section class="why">
-    <div class="why-hd rv">
-        <span class="slabel">Why Choose Us</span>
-        <h2 class="stitle">Built for Business.<br>Trusted by Teams.</h2>
-    </div>
-    <div class="wgrid">
-        <div class="wcard feat rv">
-            <div class="feat-vis"><i class="fas fa-trophy"></i></div>
-            <div>
-                <span class="wnum">00 — HIGHLIGHT</span>
-                <h3 class="wtitle" style="font-size:1.25rem">200+ Projects Successfully Delivered</h3>
-                <p class="wdesc">From startups to enterprises — across manufacturing, retail, healthcare & logistics. Every project comes with full ownership and post-launch support.</p>
-            </div>
-        </div>
-        <div class="wcard rv" style="transition-delay:0.1s">
-            <span class="wnum">01</span><div class="wico"><i class="fas fa-puzzle-piece"></i></div>
-            <h4 class="wtitle">Industry-Specific Customization</h4>
-            <p class="wdesc">Solutions built around your exact workflow — not generic templates. We study your business before writing a single line of code.</p>
-        </div>
-        <div class="wcard rv" style="transition-delay:0.15s">
-            <span class="wnum">02</span><div class="wico"><i class="fas fa-tag"></i></div>
-            <h4 class="wtitle">Affordable &amp; Transparent Pricing</h4>
-            <p class="wdesc">Enterprise-grade technology without the enterprise price tag. Clear quotes, no hidden fees — ever.</p>
-        </div>
-        <div class="wcard rv" style="transition-delay:0.2s">
-            <span class="wnum">03</span><div class="wico"><i class="fas fa-headset"></i></div>
-            <h4 class="wtitle">Dedicated 24/7 Support</h4>
-            <p class="wdesc">Real engineers — not bots or FAQs. Our team is available round the clock to resolve your issues fast.</p>
-        </div>
-        <div class="wcard rv" style="transition-delay:0.25s">
-            <span class="wnum">04</span><div class="wico"><i class="fas fa-shield-alt"></i></div>
-            <h4 class="wtitle">Secure &amp; Scalable Architecture</h4>
-            <p class="wdesc">SSL encryption, automated backups, DDoS protection — built to scale with your growth without compromising security.</p>
-        </div>
-        <div class="wcard rv" style="transition-delay:0.3s">
-            <span class="wnum">05</span><div class="wico"><i class="fas fa-shipping-fast"></i></div>
-            <h4 class="wtitle">End-to-End Delivery</h4>
-            <p class="wdesc">From discovery to deployment and beyond — we own the whole journey so you can focus on growing your business.</p>
-        </div>
-    </div>
-</section>
-
-<!-- PROCESS -->
-<section class="process">
-    <div class="proc-in">
-        <div class="proc-hd rv">
-            <span class="slabel">How It Works</span>
-            <h2 class="stitle">From Idea to Live in <span class="grad">4 Simple Steps</span></h2>
-        </div>
-        <div class="steps">
-            <div class="step rv"><div class="stepn">01</div><h4>Free Consultation</h4><p>We understand your business goals and pain points — no cost, no commitment required.</p></div>
-            <div class="step rv" style="transition-delay:0.15s"><div class="stepn">02</div><h4>Custom Strategy</h4><p>Our experts design a tailored roadmap with clear timelines and transparent pricing.</p></div>
-            <div class="step rv" style="transition-delay:0.3s"><div class="stepn">03</div><h4>Build &amp; Deploy</h4><p>We develop, test thoroughly, and deploy your solution — keeping you updated throughout.</p></div>
-            <div class="step rv" style="transition-delay:0.45s"><div class="stepn">04</div><h4>Ongoing Support</h4><p>Post-launch our team monitors, maintains and scales your solution as your business grows.</p></div>
-        </div>
-    </div>
-</section>
-
-<!-- TECH SCROLL -->
-<section class="tech">
-    <div style="text-align:center"><span class="slabel">Technologies We Master</span></div>
-    <div class="tscroll">
-        <div class="ttrack">
-            <span class="tpill"><i class="fab fa-python"></i> Python</span>
-            <span class="tpill"><i class="fab fa-js"></i> JavaScript</span>
-            <span class="tpill"><i class="fab fa-php"></i> PHP</span>
-            <span class="tpill"><i class="fas fa-mobile-alt"></i> Flutter</span>
-            <span class="tpill"><i class="fab fa-aws"></i> AWS</span>
-            <span class="tpill"><i class="fab fa-wordpress"></i> WordPress</span>
-            <span class="tpill"><i class="fas fa-database"></i> MariaDB</span>
-            <span class="tpill"><i class="fab fa-react"></i> React</span>
-            <span class="tpill"><i class="fas fa-brain"></i> OpenAI</span>
-            <span class="tpill"><i class="fab fa-android"></i> Android</span>
-            <span class="tpill"><i class="fas fa-cloud"></i> DigitalOcean</span>
-            <span class="tpill"><i class="fas fa-cog"></i> ERPNext</span>
-            <span class="tpill"><i class="fas fa-fingerprint"></i> Biometric API</span>
-            <span class="tpill"><i class="fab fa-google"></i> Firebase</span>
-            <span class="tpill"><i class="fab fa-python"></i> Python</span>
-            <span class="tpill"><i class="fab fa-js"></i> JavaScript</span>
-            <span class="tpill"><i class="fab fa-php"></i> PHP</span>
-            <span class="tpill"><i class="fas fa-mobile-alt"></i> Flutter</span>
-            <span class="tpill"><i class="fab fa-aws"></i> AWS</span>
-            <span class="tpill"><i class="fab fa-wordpress"></i> WordPress</span>
-            <span class="tpill"><i class="fas fa-database"></i> MariaDB</span>
-            <span class="tpill"><i class="fab fa-react"></i> React</span>
-            <span class="tpill"><i class="fas fa-brain"></i> OpenAI</span>
-            <span class="tpill"><i class="fab fa-android"></i> Android</span>
-            <span class="tpill"><i class="fas fa-cloud"></i> DigitalOcean</span>
-            <span class="tpill"><i class="fas fa-cog"></i> ERPNext</span>
-            <span class="tpill"><i class="fas fa-fingerprint"></i> Biometric API</span>
-            <span class="tpill"><i class="fab fa-google"></i> Firebase</span>
-        </div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-    <div class="cta-glow"></div>
-    <div class="cta-in rv">
-        <span class="slabel">Ready to Transform?</span>
-        <h2 class="ctitle">Let's Build Something<br><span class="grad">Extraordinary Together</span></h2>
-        <p class="cdesc">Book a free consultation with our expert team. No commitment, no pressure — just clarity on how we can help your business grow faster.</p>
-        <div class="cbtns">
-            <a href="contact.html" class="btn-p"><i class="fas fa-calendar-check"></i> Get Free Consultation</a>
-            <a href="product.html" class="btn-g"><i class="fas fa-th-large"></i> View All Solutions</a>
-        </div>
-        <div class="cinfo">
-            <div class="ci"><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="620b0c040d22090b06141607010a4c010d0f">[email&#160;protected]</a></div>
-            <div class="ci"><i class="fab fa-whatsapp"></i> WhatsApp Us</div>
-            <div class="ci"><i class="fas fa-map-marker-alt"></i> Ahmedabad, India</div>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <div class="fin">
+    <!-- HEADER -->
+    <header id="hdr">
         <a class="logo" href="index.html">
             <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
             <div class="logo-fallback">KT</div>
@@ -658,367 +397,307 @@
                 <span class="logo-sub">Smart Business Solutions</span>
             </div>
         </a>
-        <p class="fcopy">&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
-        <div class="flinks">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-        </div>
-    </div>
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* PARTICLES */
-(function(){
-    const c=document.getElementById('particles'),ctx=c.getContext('2d');
-    let W,H,pts=[];
-    function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}
-    resize(); window.addEventListener('resize',resize);
-    for(let i=0;i<90;i++) pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.4+0.4,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,a:Math.random()*.45+.08});
-    function draw(){
-        ctx.clearRect(0,0,W,H);
-        pts.forEach(p=>{
-            p.x+=p.vx; p.y+=p.vy;
-            if(p.x<0)p.x=W; if(p.x>W)p.x=0; if(p.y<0)p.y=H; if(p.y>H)p.y=0;
-            ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-            ctx.fillStyle=`rgba(96,165,250,${p.a})`; ctx.fill();
-        });
-        pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{
-            const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
-            if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(59,130,246,${0.1*(1-d/130)})`;ctx.lineWidth=0.5;ctx.stroke();}
-        }));
-        requestAnimationFrame(draw);
-    }
-    draw();
-})();
-
-/* SCROLL */
-window.addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('scrolled',scrollY>20));
-
-/* MOBILE NAV */
-function omnav(){document.getElementById('mnav').classList.add('open');document.body.style.overflow='hidden';}
-function cmnav(){document.getElementById('mnav').classList.remove('open');document.body.style.overflow='';}
-
-/* SERVICE ACCORDION */
-function tsvc(el){
-    document.querySelectorAll('.svc').forEach(s=>{if(s!==el)s.classList.remove('open');});
-    el.classList.toggle('open');
-}
-
-/* REVEAL */
-const ro = new IntersectionObserver(e=>e.forEach(e=>{
-    if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}
-}),{threshold:0.08});
-document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
-
-/* FALLBACK — show all after 1.5s if observer fails */
-setTimeout(()=>{ document.querySelectorAll('.rv').forEach(el=>el.classList.add('vis')); }, 1500);
-</script>
-        .hero-section {
-            text-align: left !important;
-            padding: 120px 8% 80px;
-        }
-        .hero-content {
-            max-width: 950px;
-            margin: 0 !important;
-        }
-        .hero-list {
-            margin: 30px 0;
-            padding: 0;
-            list-style: none;
-        }
-        .hero-list li {
-            font-size: 1.2rem;
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: #0d18e0;
-            transition: 0.3s;
-        }
-        /* આઈકોન માટે સ્પેશિયલ સ્ટાઈલ */
-        .hero-list li i {
-            color: #3b82f6 !important; 
-            font-size: 1.4rem;
-            width: 25px; /* આઈકોન પ્રોપર લાઈનમાં રહે તે માટે */
-            display: inline-block;
-        }
-        .hero-list li:hover {
-            color: #ffffff;
-            transform: translateX(10px);
-        }
-        
-        /* Connectivity Section CSS */
-        .connectivity-section {
-            padding: 100px 8%;
-            background: #f8fafc;
-            text-align: left !important;
-            border-bottom: 1px solid #eee;
-        }
-        .connectivity-section h2 {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 25px;
-        }
-        .connectivity-section h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 80px;
-            height: 4px;
-            background: #1a73e8;
-            border-radius: 2px;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-section, .connectivity-section { text-align: center !important; }
-            .hero-list li { justify-content: center; }
-            .connectivity-section h2::after { left: 50%; transform: translateX(-50%); }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <div class="header-container">
-        <div class="logo"><img src="logo.png" alt="KIDV Tech"></div>
-        <nav>
             <a href="index.html">Home</a>
             <a href="company.html">Company</a>
             <a href="product.html">Product</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="contact.html" class="btn-nav">Get in Touch</a>
         </nav>
-    </div>
-</header>
+        <button class="hamburger" onclick="omnav()"><i class="fas fa-bars"></i></button>
+    </header>
 
-<section class="hero-section" id="home">
-    <div class="hero-overlay"></div>
-    <div class="hero-wrapper">
-        <div class="hero-content">
-            <span class="badge">WE HELP YOUR BUSINESS GROW 🚀</span>
-            <h1 style="font-size: 3.8rem; line-height: 1.1; font-weight: 800;">Grow Your Business Faster With <br>
-                <span style="color: #1a73e8;">Smart IT & Automation Solutions</span>
-            </h1>
-            <p class="tagline">KIDV Tech – Your Trusted Digital Transformation Partner</p>
-            <p class="desc">
-                We provide ERPNext, HR & Payroll Software, AI Automation, Biometric Attendance, Mobile App Integration & Business Management Systems to save your time, reduce cost & increase profit.
-            </p>
-            
-            <ul class="hero-list">
-                <li><i class="fa-solid fa-shield-halved"></i> AI-Powered Business Automation Solutions</li>
-                <li><i class="fa-solid fa-shield-halved"></i> Custom ERPNext Setup for Your Industry</li>
-                <li><i class="fa-solid fa-shield-halved"></i> Automated HR & Payroll Management System</li>
-                <li><i class="fa-solid fa-shield-halved"></i> Scalable & Secure Cloud IT Infrastructure</li>
-            </ul>
-            
-            <a href="contact.html" class="btn-quote">Get Free Consultation</a> 
+    <!-- HERO -->
+    <div class="hero" id="home">
+        <div class="hero-left">
+            <span class="badge"><span class="bdot"></span> Trusted Digital Transformation Partner</span>
+            <h1>Grow Your<br>Business With<br><span class="grad">Smart IT &amp;<br>Automation</span></h1>
+            <p class="hdesc">KIDV Tech delivers ERPNext, AI Automation, HR &amp; Payroll, Biometric Attendance, Mobile Apps &amp; Cloud Infrastructure — cutting costs, saving time, boosting profit.</p>
+            <div class="chips">
+                <div class="chip"><i class="fas fa-robot"></i> AI Automation</div>
+                <div class="chip"><i class="fas fa-layer-group"></i> ERPNext</div>
+                <div class="chip"><i class="fas fa-fingerprint"></i> HR &amp; Payroll</div>
+                <div class="chip"><i class="fas fa-cloud"></i> Cloud Hosting</div>
+                <div class="chip"><i class="fas fa-mobile-alt"></i> Mobile Apps</div>
+            </div>
+            <div class="hbtns">
+                <a href="contact.html" class="btn-p"><i class="fas fa-calendar-check"></i> Free Consultation</a>
+                <a href="product.html" class="btn-g"><i class="fas fa-th-large"></i> Our Solutions</a>
+            </div>
         </div>
-    </div>
-</section>
 
-<section class="connectivity-section">
-    <p class="sub-heading" style="color: #1a73e8; font-weight: 800; letter-spacing: 2px;">SEAMLESS CONNECTIVITY</p>
-    <h2 class="main-heading" style="font-size: 2.8rem; font-weight: 800; color: #0f172a;">One Centralized System for Everything</h2>
-    <p style="color: #475569; max-width: 900px; font-size: 1.25rem; line-height: 1.8; margin-top: 15px;">
-        Our solutions bridge the gap between your Web, Mobile, ERP, and CRM platforms in real-time. We empower businesses by centralizing data, allowing for smarter decisions and efficient team collaboration from any device, anywhere.
-    </p>
-</section>
-
-<section class="solutions-section" id="solutions">
-    <div class="container">
-        <p class="sub-heading" style="text-align: center;">OUR EXPERTISE</p>
-        <h2 class="main-heading" style="text-align: center;">Solutions We Provide</h2>
-        
-        <div class="card-stack">
-            <div class="service-card theme-blue">
-                <div class="card-header-bar"><i class="fas fa-desktop"></i><h3>Website Development</h3></div>
-                <div class="card-body">
-                    <h4>Build fast, secure and result-driven websites for your business growth.</h4>
-                    <p>KIDV Tech delivers high-performance, visually stunning and scalable websites that help businesses attract customers, generate leads and increase revenue.</p>
-                    <div class="card-info-grid">
-                        <div class="info-col">
-                            <h4>🚀 What We Offer</h4>
-                            <ul>
-                                <li><b>Business Websites:</b> Corporate & portfolio designs.</li>
-                                <li><b>E-Commerce:</b> Online stores with payment gateways.</li>
-                                <li><b>Speed & SEO:</b> Optimized for Google PageSpeed.</li>
-                                <li><b>Security:</b> SSL & Firewall protection.</li>
-                            </ul>
-                        </div>
-                        <div class="info-col">
-                            <h4>🎯 Why Choose Us?</h4>
-                            <ul>
-                                <li>100% Custom Design</li>
-                                <li>Mobile-First Approach</li>
-                                <li>Affordable Pricing</li>
-                                <li>Dedicated Support</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="tech-tag"><i class="fas fa-tools"></i> Tech: HTML5, CSS3, JS, PHP, MySQL, WordPress, Cloud Hosting.</div>
+        <div class="hero-right">
+            <div class="fc fc-t">
+                <span class="fci" style="color:var(--green)"><span class="pdot" style="background:var(--green);color:var(--green)"></span>Live</span>
+                <span class="fcv" style="color:var(--green)">+38%</span>
+                <span class="fcl">Revenue Growth</span>
             </div>
-
-            <div class="service-card theme-purple">
-                <div class="card-header-bar"><i class="fas fa-mobile-alt"></i><h3>Mobile Apps Development</h3></div>
-                <div class="card-body">
-                    <h4>Powerful, secure, and custom-built mobile applications for Android & iOS.</h4>
-                    <p>KIDV Tech develops high-performance mobile apps that help businesses connect with customers and automate field operations.</p>
-                    <div class="card-info-grid">
-                        <div class="info-col">
-                            <h4>🚀 What We Offer</h4>
-                            <ul>
-                                <li><b>Native & Hybrid:</b> Apps for Android & iOS.</li>
-                                <li><b>ERP Integration:</b> Live data sync with ERPNext.</li>
-                                <li><b>HR Tracking:</b> GPS-based attendance solutions.</li>
-                                <li><b>E-Commerce:</b> Secure integrated payment gateways.</li>
-                            </ul>
-                        </div>
-                        <div class="info-col">
-                            <h4>🎯 Why Choose Us?</h4>
-                            <ul>
-                                <li>Custom UI/UX Design</li>
-                                <li>Secure & Scalable Code</li>
-                                <li>Store Deployment Support</li>
-                                <li>Reliable Post-Sales Support</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="tech-tag"><i class="fas fa-code"></i> Tech: Flutter, Android Studio, Swift, Firebase, ERPNext API.</div>
+            <div class="fc fc-l">
+                <span class="fci" style="color:var(--blue-b)"><i class="fas fa-shield-alt"></i> Uptime</span>
+                <span class="fcv" style="color:var(--blue-b)">99.9%</span>
+                <span class="fcl">SLA Guaranteed</span>
             </div>
-
-            <div class="service-card theme-dark">
-                <div class="card-header-bar"><i class="fas fa-cog"></i><h3>ERPNext Solutions</h3></div>
-                <div class="card-body">
-                    <h4>End-to-end ERPNext implementation & customization services.</h4>
-                    <p>KIDV Tech provides complete ERPNext solutions to automate processes and give you real-time business control.</p>
-                    <div class="card-info-grid">
-                        <div class="info-col">
-                            <h4>🚀 What We Offer</h4>
-                            <ul>
-                                <li><b>Deployment:</b> On-premise & Cloud setup with security.</li>
-                                <li><b>Manufacturing:</b> BOM, Job Cards & Operations management.</li>
-                                <li><b>Accounting:</b> GST ready automated accounts.</li>
-                                <li><b>API Sync:</b> Real-time data sync with Mobile Apps.</li>
-                            </ul>
-                        </div>
-                        <div class="info-col">
-                            <h4>🎯 Why Choose Us?</h4>
-                            <ul>
-                                <li>Industry-Specific Customization</li>
-                                <li>Affordable Implementation</li>
-                                <li>Data Security & Backups</li>
-                                <li>Dedicated ERP Support Team</li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="dash">
+                <div class="dash-hdr">
+                    <div class="dots"><span class="dr"></span><span class="dy"></span><span class="dg"></span></div>
+                    <span class="dash-t">KIDVTECH — BUSINESS DASHBOARD</span>
+                    <span style="font-size:0.68rem;color:var(--muted)">v3.2</span>
                 </div>
-                <div class="tech-tag"><i class="fas fa-layer-group"></i> Tech: ERPNext, Frappe, Python, MariaDB, REST API.</div>
-            </div>
-
-            <div class="service-card theme-pink">
-                <div class="card-header-bar"><i class="fas fa-robot"></i><h3>AI Solutions</h3></div>
-                <div class="card-body">
-                    <h4>Leveraging Artificial Intelligence for Smart Business Automation.</h4>
-                    <p>Automate complex tasks and deliver smarter customer experiences with next-gen AI technology.</p>
-                    <div class="card-info-grid">
-                        <div class="info-col">
-                            <h4>🚀 What We Offer</h4>
-                            <ul>
-                                <li><b>AI Chatbots:</b> 24x7 WhatsApp & Web support bot.</li>
-                                <li><b>Analytics:</b> AI-powered trend & data predictions.</li>
-                                <li><b>OCR Reader:</b> Automated document reading system.</li>
-                                <li><b>ERP AI:</b> Smart forecasting for ERPNext data.</li>
-                            </ul>
-                        </div>
-                        <div class="info-col">
-                            <h4>🎯 Why Choose Us?</h4>
-                            <ul>
-                                <li>Future-Ready Transformation</li>
-                                <li>Easy Software Integration</li>
-                                <li>Cost Reduction Strategies</li>
-                                <li>Data-Driven Insights</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="metrics">
+                    <div class="mbox"><span class="mval bl">200<sup style="font-size:0.85rem;color:var(--blue-b)">+</sup></span><span class="mlb">Clients Served</span></div>
+                    <div class="mbox"><span class="mval gr">₹2.4Cr</span><span class="mlb">Cost Saved</span></div>
+                    <div class="mbox"><span class="mval cy">6+</span><span class="mlb">Core Services</span></div>
                 </div>
-                <div class="tech-tag"><i class="fas fa-brain"></i> Tech: OpenAI, Python, ML, NLP, Computer Vision.</div>
-            </div>
-
-            <div class="service-card theme-orange">
-                <div class="card-header-bar"><i class="fas fa-users"></i><h3>HR & Payroll Software</h3></div>
-                <div class="card-body">
-                    <h4>Advanced Biometric, Attendance & Payroll Management System.</h4>
-                    <p>Simplify employee management and ensure 100% statutory compliance with our complete HR & Payroll Software.</p>
-                    <div class="card-info-grid">
-                        <div class="info-col">
-                            <h4>🚀 What We Offer</h4>
-                            <ul>
-                                <li><b>Attendance:</b> Biometric & GPS tracking integration.</li>
-                                <li><b>Payroll:</b> Automated PF, ESIC & TDS calculations.</li>
-                                <li><b>Workflows:</b> Online leave approval & management.</li>
-                                <li><b>Portal:</b> Mobile & Web employee self-service.</li>
-                            </ul>
-                        </div>
-                        <div class="info-col">
-                            <h4>🎯 Why Choose Us?</h4>
-                            <ul>
-                                <li>Fully Customizable Policies</li>
-                                <li>Government Compliance Ready</li>
-                                <li>Secure Architecture</li>
-                                <li>Reliable Technical Support</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="chart-lbl">📊 BUSINESS GROWTH TREND</div>
+                <div class="bars">
+                    <div class="bar" style="height:45%"></div>
+                    <div class="bar" style="height:52%"></div>
+                    <div class="bar" style="height:48%"></div>
+                    <div class="bar" style="height:68%"></div>
+                    <div class="bar" style="height:62%"></div>
+                    <div class="bar" style="height:84%"></div>
+                    <div class="bar" style="height:100%"></div>
                 </div>
-                <div class="tech-tag"><i class="fas fa-fingerprint"></i> Tech: PHP, MySQL, Biometric API, Cloud Hosting.</div>
-            </div>
-
-            <div class="service-card theme-teal">
-                <div class="card-header-bar"><i class="fas fa-server"></i><h3>Cloud Hosting Solutions</h3></div>
-                <div class="card-body">
-                    <h4>Secure, scalable, and high-performance cloud infrastructure for IT apps.</h4>
-                    <p>KIDV Tech delivers managed server reliability and flexible resources for growing businesses.</p>
-                    <div class="card-info-grid">
-                        <div class="info-col">
-                            <h4>🚀 What We Offer</h4>
-                            <ul>
-                                <li><b>99.9% Uptime:</b> Managed server reliability.</li>
-                                <li><b>Data Security:</b> Automated backups & SSL protection.</li>
-                                <li><b>Managed VPS:</b> High performance Cloud servers.</li>
-                                <li><b>Scalable:</b> Flexible resources for growing business.</li>
-                            </ul>
-                        </div>
-                        <div class="info-col">
-                            <h4>🎯 Why Choose Us?</h4>
-                            <ul>
-                                <li>Fast Global Edge Network</li>
-                                <li>24x7 Infrastructure Monitoring</li>
-                                <li>DDoS Protection Included</li>
-                                <li>One-Click App Deployment</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="srows">
+                    <div class="srow"><div class="sico ic-bl"><i class="fas fa-cog"></i></div><span class="slbl">ERPNext</span><span class="sbadge sba-gr">Active</span></div>
+                    <div class="srow"><div class="sico ic-pk"><i class="fas fa-robot"></i></div><span class="slbl">AI Automation</span><span class="sbadge sba-bl">Running</span></div>
+                    <div class="srow"><div class="sico ic-am"><i class="fas fa-fingerprint"></i></div><span class="slbl">HR &amp; Payroll</span><span class="sbadge sba-am">Syncing</span></div>
                 </div>
-                <div class="tech-tag"><i class="fas fa-cloud"></i> Tech: AWS, Google Cloud, DigitalOcean, Managed VPS.</div>
             </div>
         </div>
     </div>
-</section>
 
-<footer class="main-footer">
-    <div class="container">
-        <div class="footer-content" style="text-align: center;">
-            <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
-            <div class="footer-links">
+    <!-- STATS -->
+    <div class="stats">
+        <div class="stats-in">
+            <div class="si rv"><span class="sn">200<sup>+</sup></span><span class="slb">Happy Clients</span></div>
+            <div class="si rv" style="transition-delay:0.1s"><span class="sn">6<sup>+</sup></span><span class="slb">Core Services</span></div>
+            <div class="si rv" style="transition-delay:0.2s"><span class="sn">99.9<sup>%</sup></span><span class="slb">Uptime SLA</span></div>
+            <div class="si rv" style="transition-delay:0.3s"><span class="sn">24<sup>/7</sup></span><span class="slb">Expert Support</span></div>
+        </div>
+    </div>
+
+    <!-- WHAT WE DO -->
+    <section class="what" id="solutions">
+        <div class="what-in">
+            <div class="what-l rv">
+                <span class="slabel">Our Expertise</span>
+                <h2 class="stitle">Everything Your<br>Business Needs<br>to <span class="grad">Scale</span></h2>
+                <p class="sdesc">End-to-end technology solutions — from ERP to AI — built and supported by experts who genuinely care about your growth.</p>
+                <div class="ptags">
+                    <div class="ptag"><i class="fab fa-android"></i> Android</div>
+                    <div class="ptag"><i class="fab fa-apple"></i> iOS</div>
+                    <div class="ptag"><i class="fas fa-globe"></i> Web</div>
+                    <div class="ptag"><i class="fas fa-cloud"></i> Cloud</div>
+                    <div class="ptag"><i class="fas fa-database"></i> ERP</div>
+                    <div class="ptag"><i class="fas fa-brain"></i> AI/ML</div>
+                </div>
+            </div>
+            <div class="svcstack">
+                <div class="svc open rv" onclick="tsvc(this)">
+                    <div class="svch"><div class="svci i-bl"><i class="fas fa-cog"></i></div><span class="svct">ERPNext Solutions</span><i class="fas fa-arrow-right svca"></i></div>
+                    <div class="svcb"><p>Complete ERPNext setup for Manufacturing, Accounting, GST, Inventory & API integration — real-time data sync with dedicated support.</p><div class="stags"><span class="stag">ERPNext</span><span class="stag">Frappe</span><span class="stag">Python</span><span class="stag">MariaDB</span></div></div>
+                </div>
+                <div class="svc rv" style="transition-delay:0.1s" onclick="tsvc(this)">
+                    <div class="svch"><div class="svci i-pk"><i class="fas fa-robot"></i></div><span class="svct">AI Solutions</span><i class="fas fa-arrow-right svca"></i></div>
+                    <div class="svcb"><p>WhatsApp/Web AI chatbots, OCR document readers, smart analytics & ERP forecasting — automate complex tasks with next-gen intelligence.</p><div class="stags"><span class="stag">OpenAI</span><span class="stag">Python</span><span class="stag">NLP</span><span class="stag">Computer Vision</span></div></div>
+                </div>
+                <div class="svc rv" style="transition-delay:0.15s" onclick="tsvc(this)">
+                    <div class="svch"><div class="svci i-pu"><i class="fas fa-mobile-alt"></i></div><span class="svct">Mobile App Development</span><i class="fas fa-arrow-right svca"></i></div>
+                    <div class="svcb"><p>Custom Android & iOS apps with ERP integration, GPS attendance tracking, secure payments & app store deployment support.</p><div class="stags"><span class="stag">Flutter</span><span class="stag">Android</span><span class="stag">Swift</span><span class="stag">Firebase</span></div></div>
+                </div>
+                <div class="svc rv" style="transition-delay:0.2s" onclick="tsvc(this)">
+                    <div class="svch"><div class="svci i-am"><i class="fas fa-users"></i></div><span class="svct">HR &amp; Payroll Software</span><i class="fas fa-arrow-right svca"></i></div>
+                    <div class="svcb"><p>Biometric + GPS attendance, automated PF/ESIC/TDS, leave workflows & employee self-service — 100% statutory compliance.</p><div class="stags"><span class="stag">Biometric API</span><span class="stag">PHP</span><span class="stag">MySQL</span><span class="stag">Cloud</span></div></div>
+                </div>
+                <div class="svc rv" style="transition-delay:0.25s" onclick="tsvc(this)">
+                    <div class="svch"><div class="svci i-in"><i class="fas fa-desktop"></i></div><span class="svct">Website Development</span><i class="fas fa-arrow-right svca"></i></div>
+                    <div class="svcb"><p>Fast, SEO-optimized, mobile-first websites — corporate, e-commerce, portfolio — with SSL, payments & Google PageSpeed optimization.</p><div class="stags"><span class="stag">HTML5</span><span class="stag">PHP</span><span class="stag">WordPress</span><span class="stag">MySQL</span></div></div>
+                </div>
+                <div class="svc rv" style="transition-delay:0.3s" onclick="tsvc(this)">
+                    <div class="svch"><div class="svci i-te"><i class="fas fa-server"></i></div><span class="svct">Cloud Hosting Solutions</span><i class="fas fa-arrow-right svca"></i></div>
+                    <div class="svcb"><p>Managed VPS, 99.9% uptime SLA, automated backups, SSL, DDoS protection & 24/7 monitoring on AWS, GCP & DigitalOcean.</p><div class="stags"><span class="stag">AWS</span><span class="stag">Google Cloud</span><span class="stag">DigitalOcean</span><span class="stag">VPS</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY KIDV -->
+    <section class="why">
+        <div class="why-hd rv">
+            <span class="slabel">Why Choose Us</span>
+            <h2 class="stitle">Built for Business.<br>Trusted by Teams.</h2>
+        </div>
+        <div class="wgrid">
+            <div class="wcard feat rv">
+                <div class="feat-vis"><i class="fas fa-trophy"></i></div>
+                <div>
+                    <span class="wnum">00 — HIGHLIGHT</span>
+                    <h3 class="wtitle" style="font-size:1.25rem">200+ Projects Successfully Delivered</h3>
+                    <p class="wdesc">From startups to enterprises — across manufacturing, retail, healthcare & logistics. Every project comes with full ownership and post-launch support.</p>
+                </div>
+            </div>
+            <div class="wcard rv" style="transition-delay:0.1s">
+                <span class="wnum">01</span><div class="wico"><i class="fas fa-puzzle-piece"></i></div>
+                <h4 class="wtitle">Industry-Specific Customization</h4>
+                <p class="wdesc">Solutions built around your exact workflow — not generic templates. We study your business before writing a single line of code.</p>
+            </div>
+            <div class="wcard rv" style="transition-delay:0.15s">
+                <span class="wnum">02</span><div class="wico"><i class="fas fa-tag"></i></div>
+                <h4 class="wtitle">Affordable &amp; Transparent Pricing</h4>
+                <p class="wdesc">Enterprise-grade technology without the enterprise price tag. Clear quotes, no hidden fees — ever.</p>
+            </div>
+            <div class="wcard rv" style="transition-delay:0.2s">
+                <span class="wnum">03</span><div class="wico"><i class="fas fa-headset"></i></div>
+                <h4 class="wtitle">Dedicated 24/7 Support</h4>
+                <p class="wdesc">Real engineers — not bots or FAQs. Our team is available round the clock to resolve your issues fast.</p>
+            </div>
+            <div class="wcard rv" style="transition-delay:0.25s">
+                <span class="wnum">04</span><div class="wico"><i class="fas fa-shield-alt"></i></div>
+                <h4 class="wtitle">Secure &amp; Scalable Architecture</h4>
+                <p class="wdesc">SSL encryption, automated backups, DDoS protection — built to scale with your growth without compromising security.</p>
+            </div>
+            <div class="wcard rv" style="transition-delay:0.3s">
+                <span class="wnum">05</span><div class="wico"><i class="fas fa-shipping-fast"></i></div>
+                <h4 class="wtitle">End-to-End Delivery</h4>
+                <p class="wdesc">From discovery to deployment and beyond — we own the whole journey so you can focus on growing your business.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process">
+        <div class="proc-in">
+            <div class="proc-hd rv">
+                <span class="slabel">How It Works</span>
+                <h2 class="stitle">From Idea to Live in <span class="grad">4 Simple Steps</span></h2>
+            </div>
+            <div class="steps">
+                <div class="step rv"><div class="stepn">01</div><h4>Free Consultation</h4><p>We understand your business goals and pain points — no cost, no commitment required.</p></div>
+                <div class="step rv" style="transition-delay:0.15s"><div class="stepn">02</div><h4>Custom Strategy</h4><p>Our experts design a tailored roadmap with clear timelines and transparent pricing.</p></div>
+                <div class="step rv" style="transition-delay:0.3s"><div class="stepn">03</div><h4>Build &amp; Deploy</h4><p>We develop, test thoroughly, and deploy your solution — keeping you updated throughout.</p></div>
+                <div class="step rv" style="transition-delay:0.45s"><div class="stepn">04</div><h4>Ongoing Support</h4><p>Post-launch our team monitors, maintains and scales your solution as your business grows.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH SCROLL -->
+    <section class="tech">
+        <div style="text-align:center"><span class="slabel">Technologies We Master</span></div>
+        <div class="tscroll">
+            <div class="ttrack">
+                <span class="tpill"><i class="fab fa-python"></i> Python</span>
+                <span class="tpill"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="tpill"><i class="fab fa-php"></i> PHP</span>
+                <span class="tpill"><i class="fas fa-mobile-alt"></i> Flutter</span>
+                <span class="tpill"><i class="fab fa-aws"></i> AWS</span>
+                <span class="tpill"><i class="fab fa-wordpress"></i> WordPress</span>
+                <span class="tpill"><i class="fas fa-database"></i> MariaDB</span>
+                <span class="tpill"><i class="fab fa-react"></i> React</span>
+                <span class="tpill"><i class="fas fa-brain"></i> OpenAI</span>
+                <span class="tpill"><i class="fab fa-android"></i> Android</span>
+                <span class="tpill"><i class="fas fa-cloud"></i> DigitalOcean</span>
+                <span class="tpill"><i class="fas fa-cog"></i> ERPNext</span>
+                <span class="tpill"><i class="fas fa-fingerprint"></i> Biometric API</span>
+                <span class="tpill"><i class="fab fa-google"></i> Firebase</span>
+                <span class="tpill"><i class="fab fa-python"></i> Python</span>
+                <span class="tpill"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="tpill"><i class="fab fa-php"></i> PHP</span>
+                <span class="tpill"><i class="fas fa-mobile-alt"></i> Flutter</span>
+                <span class="tpill"><i class="fab fa-aws"></i> AWS</span>
+                <span class="tpill"><i class="fab fa-wordpress"></i> WordPress</span>
+                <span class="tpill"><i class="fas fa-database"></i> MariaDB</span>
+                <span class="tpill"><i class="fab fa-react"></i> React</span>
+                <span class="tpill"><i class="fas fa-brain"></i> OpenAI</span>
+                <span class="tpill"><i class="fab fa-android"></i> Android</span>
+                <span class="tpill"><i class="fas fa-cloud"></i> DigitalOcean</span>
+                <span class="tpill"><i class="fas fa-cog"></i> ERPNext</span>
+                <span class="tpill"><i class="fas fa-fingerprint"></i> Biometric API</span>
+                <span class="tpill"><i class="fab fa-google"></i> Firebase</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta-glow"></div>
+        <div class="cta-in rv">
+            <span class="slabel">Ready to Transform?</span>
+            <h2 class="ctitle">Let's Build Something<br><span class="grad">Extraordinary Together</span></h2>
+            <p class="cdesc">Book a free consultation with our expert team. No commitment, no pressure — just clarity on how we can help your business grow faster.</p>
+            <div class="cbtns">
+                <a href="contact.html" class="btn-p"><i class="fas fa-calendar-check"></i> Get Free Consultation</a>
+                <a href="product.html" class="btn-g"><i class="fas fa-th-large"></i> View All Solutions</a>
+            </div>
+            <div class="cinfo">
+                <div class="ci"><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="620b0c040d22090b06141607010a4c010d0f">[email&#160;protected]</a></div>
+                <div class="ci"><i class="fab fa-whatsapp"></i> WhatsApp Us</div>
+                <div class="ci"><i class="fas fa-map-marker-alt"></i> Ahmedabad, India</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="fin">
+            <a class="logo" href="index.html">
+                <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="logo-fallback">KT</div>
+                <div>
+                    <span class="logo-name">KIDV <em>Tech</em></span>
+                    <span class="logo-sub">Smart Business Solutions</span>
+                </div>
+            </a>
+            <p class="fcopy">&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+            <div class="flinks">
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
             </div>
         </div>
-            </div>
-            </footer>
-            </body>
-</html>
+    </footer>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    /* PARTICLES */
+    (function(){
+        const c=document.getElementById('particles'),ctx=c.getContext('2d');
+        let W,H,pts=[];
+        function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}
+        resize(); window.addEventListener('resize',resize);
+        for(let i=0;i<90;i++) pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.4+0.4,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,a:Math.random()*.45+.08});
+        function draw(){
+            ctx.clearRect(0,0,W,H);
+            pts.forEach(p=>{
+                p.x+=p.vx; p.y+=p.vy;
+                if(p.x<0)p.x=W; if(p.x>W)p.x=0; if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+                ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+                ctx.fillStyle=`rgba(96,165,250,${p.a})`; ctx.fill();
+            });
+            pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{
+                const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+                if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(59,130,246,${0.1*(1-d/130)})`;ctx.lineWidth=0.5;ctx.stroke();}
+            }));
+            requestAnimationFrame(draw);
+        }
+        draw();
+    })();
 
+    /* SCROLL */
+    window.addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('scrolled',scrollY>20));
+
+    /* MOBILE NAV */
+    function omnav(){document.getElementById('mnav').classList.add('open');document.body.style.overflow='hidden';}
+    function cmnav(){document.getElementById('mnav').classList.remove('open');document.body.style.overflow='';}
+
+    /* SERVICE ACCORDION */
+    function tsvc(el){
+        document.querySelectorAll('.svc').forEach(s=>{if(s!==el)s.classList.remove('open');});
+        el.classList.toggle('open');
+    }
+
+    /* REVEAL */
+    const ro = new IntersectionObserver(e=>e.forEach(e=>{
+        if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}
+    }),{threshold:0.08});
+    document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+    /* FALLBACK — show all after 1.5s if observer fails */
+    setTimeout(()=>{ document.querySelectorAll('.rv').forEach(el=>el.classList.add('vis')); }, 1500);
+    </script>
