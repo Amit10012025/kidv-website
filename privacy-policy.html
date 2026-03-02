@@ -5,190 +5,249 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | KIDV Tech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
-    <link rel="apple-touch-icon" sizes="36x36" href="android-icon-36x36.png">
     <style>
-        :root {
-            --primary-blue: #1a73e8;
-            --text-dark: #0f172a;
-            --text-light: #475569;
-            --bg-light: #f8fafc;
-        }
+    :root{
+        --bg:#04071a;--bg2:#060c22;
+        --surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.07);
+        --border:rgba(255,255,255,0.08);--border-blue:rgba(59,130,246,0.3);
+        --blue:#3b82f6;--blue-b:#60a5fa;--cyan:#06b6d4;
+        --white:#ffffff;--text:#e2e8f0;--muted:#64748b;--muted2:#94a3b8;--green:#10b981;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    a,a:link,a:visited,a:hover,a:active{text-decoration:none!important;color:inherit;outline:none;}
+    ::-webkit-scrollbar{width:4px;} ::-webkit-scrollbar-thumb{background:var(--blue);border-radius:99px;}
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-light);
-            margin: 0;
-            padding: 0;
-        }
+    #particles{position:fixed;inset:0;z-index:0;pointer-events:none;}
 
-        .policy-wrapper {
-            max-width: 1000px;
-            margin: 140px auto 80px;
-            padding: 50px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
+    /* HEADER */
+    header{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:1320px;z-index:1000;padding:0 26px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,7,26,0.75);backdrop-filter:blur(24px);border:1px solid rgba(59,130,246,0.18);border-radius:16px;transition:all 0.4s;}
+    header.scrolled{background:rgba(4,7,26,0.97);box-shadow:0 0 0 1px rgba(59,130,246,0.25),0 20px 60px rgba(59,130,246,0.1);}
+    header::after{content:'';position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(59,130,246,0.5),rgba(6,182,212,0.5),transparent);}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo-img{width:48px;height:48px;border-radius:12px;object-fit:contain;background:rgba(255,255,255,0.05);border:1.5px solid rgba(59,130,246,0.35);padding:4px;flex-shrink:0;}
+    .logo-fallback{width:48px;height:48px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:none;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#fff;}
+    .logo-name{font-size:1.15rem;font-weight:800;color:var(--white);letter-spacing:-0.3px;display:block;}
+    .logo-name em{color:var(--blue-b);font-style:normal;}
+    .logo-sub{font-size:0.58rem;font-weight:600;color:var(--muted);letter-spacing:2px;text-transform:uppercase;display:block;margin-top:2px;}
+    nav{display:flex;align-items:center;gap:4px;}
+    nav a,nav a:link,nav a:visited,nav a:active,nav a:hover{font-size:0.9rem;font-weight:500;color:var(--muted2)!important;text-decoration:none!important;padding:8px 16px;border-radius:8px;transition:all 0.2s;}
+    nav a:hover{color:var(--white)!important;background:var(--surface2);}
+    .btn-nav,.btn-nav:link,.btn-nav:visited,.btn-nav:active{background:var(--blue)!important;color:var(--white)!important;font-weight:700!important;padding:10px 24px!important;border-radius:10px!important;box-shadow:0 0 24px rgba(59,130,246,0.45);margin-left:8px;}
+    .btn-nav:hover{background:#2563eb!important;transform:translateY(-1px)!important;color:var(--white)!important;}
+    .hamburger{display:none;background:none;border:none;color:var(--white);font-size:1.3rem;cursor:pointer;}
+    .m-nav{display:none;position:fixed;inset:0;background:rgba(4,7,26,0.97);backdrop-filter:blur(20px);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+    .m-nav.open{display:flex;}
+    .m-nav a{font-size:1.8rem;font-weight:800;color:var(--white);}
+    .m-nav a:hover{color:var(--blue-b);}
+    .m-close{position:absolute;top:22px;right:22px;background:none;border:none;color:var(--muted2);font-size:1.5rem;cursor:pointer;}
 
-        .policy-header {
-            border-bottom: 2px solid #e2e8f0;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-        }
+    /* POLICY PAGE */
+    .policy-wrap{position:relative;z-index:2;max-width:880px;margin:0 auto;padding:140px 6% 100px;}
 
-        .policy-header h1 {
-            font-size: 2.5rem;
-            color: var(--text-dark);
-            margin: 0;
-        }
+    .policy-header{
+        background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);
+        border-radius:20px;padding:40px;margin-bottom:32px;
+        position:relative;overflow:hidden;
+        animation:up 0.7s 0.2s ease both;
+    }
+    .policy-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));}
+    .policy-header h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:900;color:var(--white);letter-spacing:-1px;margin-bottom:10px;}
+    .last-updated{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:600;color:var(--blue-b);background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);padding:6px 14px;border-radius:99px;}
 
-        .last-updated {
-            color: var(--primary-blue);
-            font-weight: 600;
-            margin-top: 10px;
-            display: block;
-        }
+    /* CONTENT */
+    .policy-content{display:flex;flex-direction:column;gap:16px;animation:up 0.7s 0.4s ease both;}
 
-        .policy-content h2 {
-            font-size: 1.5rem;
-            color: var(--text-dark);
-            margin-top: 35px;
-            border-left: 4px solid var(--primary-blue);
-            padding-left: 15px;
-        }
+    .policy-section{
+        background:var(--surface);border:1px solid var(--border);
+        border-radius:16px;padding:28px 32px;
+        transition:all 0.3s;
+    }
+    .policy-section:hover{border-color:var(--border-blue);}
 
-        .policy-content h3 {
-            font-size: 1.2rem;
-            color: var(--primary-blue);
-            margin-top: 20px;
-        }
+    .policy-section h2{
+        font-size:1.1rem;font-weight:800;color:var(--white);
+        margin-bottom:14px;display:flex;align-items:center;gap:10px;
+    }
+    .sec-num{
+        font-family:'JetBrains Mono',monospace;font-size:0.68rem;
+        font-weight:600;color:var(--cyan);
+        background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);
+        padding:3px 8px;border-radius:5px;flex-shrink:0;
+    }
+    .policy-section h3{font-size:0.95rem;font-weight:700;color:var(--blue-b);margin:16px 0 8px;}
+    .policy-section p{font-size:0.88rem;color:var(--muted2);line-height:1.8;margin-bottom:10px;}
+    .policy-section ul{padding-left:0;display:flex;flex-direction:column;gap:7px;margin-top:6px;}
+    .policy-section ul li{font-size:0.87rem;color:var(--muted2);line-height:1.7;display:flex;align-items:flex-start;gap:10px;}
+    .policy-section ul li::before{content:'→';color:var(--blue-b);font-weight:700;font-size:0.8rem;margin-top:2px;flex-shrink:0;}
 
-        .policy-content p, .policy-content li {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text-light);
-        }
+    /* CONTACT BOX */
+    .contact-box{
+        background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(6,182,212,0.05));
+        border:1px solid rgba(59,130,246,0.25);border-radius:16px;padding:28px 32px;
+    }
+    .contact-box h2{color:var(--white);}
+    .contact-box a{color:var(--blue-b)!important;}
+    .contact-box a:hover{color:var(--cyan)!important;}
+    .contact-detail{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:0.88rem;color:var(--muted2);}
+    .contact-detail i{color:var(--blue-b);}
 
-        .policy-content ul {
-            padding-left: 20px;
-        }
+    @keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 
-        .contact-box {
-            background: #f1f5f9;
-            padding: 25px;
-            border-radius: 12px;
-            margin-top: 40px;
-        }
+    /* FOOTER */
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:34px 6%;}
+    .fin{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+    .fcopy{font-size:0.8rem;color:var(--muted);}
+    .flinks a{font-size:0.8rem;color:var(--muted);margin-left:18px;transition:color 0.2s;}
+    .flinks a:hover{color:var(--white)!important;}
 
-        @media (max-width: 768px) {
-            .policy-wrapper {
-                margin: 100px 5% 50px;
-                padding: 25px;
-            }
-            .policy-header h1 { font-size: 1.8rem; }
-        }
+    @media(max-width:768px){
+        header{top:8px;width:calc(100% - 20px);padding:0 16px;}
+        nav{display:none;}.hamburger{display:block;}
+        .policy-wrap{padding:120px 5% 80px;}
+        .policy-section{padding:22px 20px;}
+    }
     </style>
 </head>
 <body>
+<canvas id="particles"></canvas>
 
-<header>
-    <div class="header-container">
-        <div class="logo"><img src="logo.png" alt="KIDV Tech"></div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="company.html">Company</a>
-            <a href="product.html">Product</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
-    </div>
+<div class="m-nav" id="mnav">
+    <button class="m-close" onclick="cmnav()">✕</button>
+    <a href="index.html" onclick="cmnav()">Home</a>
+    <a href="company.html" onclick="cmnav()">Company</a>
+    <a href="product.html" onclick="cmnav()">Product</a>
+    <a href="contact.html" onclick="cmnav()">Contact</a>
+</div>
+
+<header id="hdr">
+    <a class="logo" href="index.html">
+        <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="logo-fallback">KT</div>
+        <div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div>
+    </a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="company.html">Company</a>
+        <a href="product.html">Product</a>
+        <a href="contact.html" class="btn-nav">Get in Touch</a>
+    </nav>
+    <button class="hamburger" onclick="omnav()"><i class="fas fa-bars"></i></button>
 </header>
 
-<div class="policy-wrapper">
+<div class="policy-wrap">
+
+    <!-- HEADER -->
     <div class="policy-header">
         <h1>Privacy Policy</h1>
-        <span class="last-updated">Last Updated: January 18, 2026</span>
+        <span class="last-updated"><i class="fas fa-clock"></i> Last Updated: January 18, 2026</span>
+        <p style="font-size:0.9rem;color:var(--muted2);line-height:1.8;margin-top:16px;">KIDV Tech ("we", "our", or "us") operates the KIDV Tech mobile application and website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information. By using our services, you agree to the terms of this Privacy Policy.</p>
     </div>
 
+    <!-- CONTENT -->
     <div class="policy-content">
-        <p>KIDV Tech (“we”, “our”, or “us”) operates the KIDV Tech mobile application (“App”). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App. By using the App, you agree to the terms of this Privacy Policy.</p>
 
-        <h2>1. Information We Collect</h2>
-        <p>We may collect the following types of information through our website services displayed in the app:</p>
-        
-        <h3>a) Personal Information</h3>
-        <ul>
-            <li>Name, Email address, and Phone number</li>
-            <li>Company name (if applicable) and Login credentials</li>
-        </ul>
+        <div class="policy-section">
+            <h2><span class="sec-num">01</span> Information We Collect</h2>
+            <p>We may collect the following types of information through our website and app services:</p>
+            <h3>Personal Information</h3>
+            <ul>
+                <li>Name, Email address, and Phone number</li>
+                <li>Company name (if applicable) and Login credentials</li>
+            </ul>
+            <h3>Technical &amp; Usage Information</h3>
+            <ul>
+                <li>Device information (device type, OS version)</li>
+                <li>App usage data, IP address, Log files, and crash reports</li>
+            </ul>
+            <h3>Business &amp; Service Data</h3>
+            <ul>
+                <li>ERP, HR, Payroll, or business-related data entered by you</li>
+                <li>Uploaded documents and records associated with our services</li>
+            </ul>
+        </div>
 
-        <h3>b) Technical & Usage Information</h3>
-        <ul>
-            <li>Device information (device type, OS version)</li>
-            <li>App usage data, IP address, Log files, and crash reports</li>
-        </ul>
+        <div class="policy-section">
+            <h2><span class="sec-num">02</span> How We Use Your Information</h2>
+            <ul>
+                <li>Provide and manage our IT and automation services</li>
+                <li>Improve app performance and user experience</li>
+                <li>Communicate for support, updates, and notifications</li>
+                <li>Ensure security, prevent fraud, and comply with legal obligations</li>
+            </ul>
+        </div>
 
-        <h3>c) Business & Service Data</h3>
-        <ul>
-            <li>ERP, HR, Payroll, or business-related data entered by you</li>
-            <li>Uploaded documents and records associated with our services</li>
-        </ul>
+        <div class="policy-section">
+            <h2><span class="sec-num">03</span> Data Sharing &amp; Disclosure</h2>
+            <p>We do not sell or rent your personal information. Your data may be shared only with trusted service providers (hosting, analytics), when required by law, or to protect the safety of our users.</p>
+        </div>
 
-        <h2>2. How We Use Your Information</h2>
-        <ul>
-            <li>Provide and manage our IT and automation services</li>
-            <li>Improve app performance and user experience</li>
-            <li>Communicate with users for support, updates, and notifications</li>
-            <li>Ensure security, prevent fraud, and comply with legal obligations</li>
-        </ul>
+        <div class="policy-section">
+            <h2><span class="sec-num">04</span> Data Security</h2>
+            <p>We implement appropriate technical measures including secure servers and encrypted connections (SSL/TLS). However, no digital system is 100% secure, and we cannot guarantee absolute security.</p>
+        </div>
 
-        <h2>3. Data Sharing & Disclosure</h2>
-        <p>We do not sell or rent your personal information. Your data may be shared only with trusted service providers (hosting, analytics), when required by law, or to protect the safety of our users.</p>
+        <div class="policy-section">
+            <h2><span class="sec-num">05</span> Data Retention</h2>
+            <p>We retain your information only as long as necessary to provide services, comply with legal requirements, or resolve disputes. You may request deletion of your data at any time.</p>
+        </div>
 
-        <h2>4. Data Security</h2>
-        <p>We implement appropriate technical measures including secure servers and encrypted connections. However, no digital system is 100% secure, and we cannot guarantee absolute security.</p>
+        <div class="policy-section">
+            <h2><span class="sec-num">06</span> User Rights</h2>
+            <ul>
+                <li>Access, correct, or request deletion of your personal data</li>
+                <li>Withdraw consent at any time without affecting past processing</li>
+                <li>Request a full export of your data by contacting us</li>
+            </ul>
+        </div>
 
-        <h2>5. Data Retention</h2>
-        <p>We retain your information only as long as necessary to provide services, comply with legal requirements, or resolve disputes.</p>
+        <div class="policy-section">
+            <h2><span class="sec-num">07</span> Third-Party Services</h2>
+            <p>The App may use third-party services like cloud hosting, payment gateways, or analytics tools. These services have their own privacy policies, and we are not responsible for their practices.</p>
+        </div>
 
-        <h2>6. User Rights</h2>
-        <p>You have the right to access, correct, or request deletion of your personal data. You may also withdraw consent or request a data export by contacting us.</p>
+        <div class="policy-section">
+            <h2><span class="sec-num">08</span> Children's Privacy</h2>
+            <p>Our App and services are not intended for children under the age of 13. We do not knowingly collect personal data from children. If you believe we have, please contact us immediately.</p>
+        </div>
 
-        <h2>7. Third-Party Services</h2>
-        <p>The App may use third-party services like cloud hosting or analytics. These services have their own privacy policies, and we are not responsible for their practices.</p>
-
-        <h2>8. Children’s Privacy</h2>
-        <p>Our App is not intended for children under the age of 13. We do not knowingly collect personal data from children.</p>
-
-        <h2>9. Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically for any updates.</p>
+        <div class="policy-section">
+            <h2><span class="sec-num">09</span> Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.</p>
+        </div>
 
         <div class="contact-box">
-            <h2>10. Contact Us</h2>
-            <p>If you have any questions or concerns about this Privacy Policy, contact us at:</p>
-            <p>
-                <strong>KIDV Tech</strong><br>
-                <i class="fas fa-envelope"></i> Email: amit@kidvtech.com<br>
-                <i class="fas fa-globe"></i> Website: <a href="https://www.kidvtech.com" style="color: var(--primary-blue);">www.kidvtech.com</a>
-            </p>
+            <h2><span class="sec-num">10</span> Contact Us</h2>
+            <p style="font-size:0.88rem;color:var(--muted2);margin-top:12px;">If you have any questions or concerns about this Privacy Policy, please reach out to us:</p>
+            <div class="contact-detail"><i class="fas fa-building"></i> <strong style="color:var(--white)">KIDV Tech</strong></div>
+            <div class="contact-detail"><i class="fas fa-envelope"></i> <a href="mailto:amit@kidvtech.com">amit@kidvtech.com</a></div>
+            <div class="contact-detail"><i class="fas fa-globe"></i> <a href="https://www.kidvtech.com" target="_blank">www.kidvtech.com</a></div>
+            <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> Ahmedabad, Gujarat, India</div>
         </div>
-        
+
     </div>
 </div>
 
-<footer class="main-footer">
-    <div class="container">
-        <div class="footer-content" style="text-align: center;">
-            <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-        </div>
+<footer>
+    <div class="fin">
+        <a class="logo" href="index.html">
+            <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="logo-fallback">KT</div>
+            <div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div>
+        </a>
+        <p class="fcopy">&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+        <div class="flinks"><a href="privacy-policy.html">Privacy Policy</a><a href="#">Terms of Service</a></div>
     </div>
 </footer>
 
+<script>
+(function(){const c=document.getElementById('particles'),ctx=c.getContext('2d');let W,H,pts=[];function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}resize();window.addEventListener('resize',resize);for(let i=0;i<60;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.2+0.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,a:Math.random()*.35+.06});function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(96,165,250,${p.a})`;ctx.fill();});requestAnimationFrame(draw);}draw();})();
+window.addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('scrolled',scrollY>20));
+function omnav(){document.getElementById('mnav').classList.add('open');document.body.style.overflow='hidden';}
+function cmnav(){document.getElementById('mnav').classList.remove('open');document.body.style.overflow='';}
+</script>
 </body>
 </html>
