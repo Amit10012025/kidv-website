@@ -4,164 +4,589 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Profile | KIDV Tech</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
-    <link rel="apple-touch-icon" sizes="36x36" href="android-icon-36x36.png">
     <style>
-        :root {
-            --primary: #1a73e8;
-            --secondary: #34a853;
-            --dark: #0f172a;
-            --accent: #fbbc05;
-            --text-gray: #475569;
-            --light-bg: #f8fafc;
-        }
+    :root {
+        --bg: #04071a;
+        --bg2: #060c22;
+        --surface: rgba(255,255,255,0.04);
+        --surface2: rgba(255,255,255,0.07);
+        --border: rgba(255,255,255,0.08);
+        --border-blue: rgba(59,130,246,0.3);
+        --blue: #3b82f6;
+        --blue-b: #60a5fa;
+        --cyan: #06b6d4;
+        --white: #ffffff;
+        --text: #e2e8f0;
+        --muted: #64748b;
+        --muted2: #94a3b8;
+        --green: #10b981;
+        --amber: #f59e0b;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Outfit',sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden; }
+    a, a:link, a:visited, a:hover, a:active { text-decoration:none !important; color:inherit; outline:none; }
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-thumb { background:var(--blue); border-radius:99px; }
 
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--dark); line-height: 1.6; }
+    /* PARTICLES */
+    #particles { position:fixed; inset:0; z-index:0; pointer-events:none; }
 
-        /* Premium Hero Section */
-        .hero-section {
-            padding: 120px 8% 80px;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
-            text-align: left;
-        }
-        .hero-section h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; color: var(--dark); }
-        .hero-section p { font-size: 1.25rem; color: var(--text-gray); max-width: 900px; margin-bottom: 30px; }
-        .highlight-text { color: var(--primary); font-style: italic; font-weight: 600; border-left: 4px solid var(--primary); padding-left: 15px; }
+    /* RINGS */
+    .ring { position:fixed; border-radius:50%; border:1px solid rgba(59,130,246,0.06); pointer-events:none; z-index:0; animation:rpulse 8s ease-in-out infinite; }
+    .r1 { width:600px; height:600px; top:30%; left:70%; transform:translate(-50%,-50%); }
+    .r2 { width:950px; height:950px; top:30%; left:70%; transform:translate(-50%,-50%); animation-delay:1.5s; }
+    @keyframes rpulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
 
-        /* Section Styling */
-        .section-padding { padding: 80px 8%; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; }
-        .section-title p { color: var(--text-gray); font-size: 1.1rem; }
+    /* HEADER */
+    header {
+        position:fixed; top:14px; left:50%; transform:translateX(-50%);
+        width:calc(100% - 40px); max-width:1320px; z-index:1000;
+        padding:0 26px; height:72px;
+        display:flex; align-items:center; justify-content:space-between;
+        background:rgba(4,7,26,0.75); backdrop-filter:blur(24px);
+        border:1px solid rgba(59,130,246,0.18); border-radius:16px;
+        transition:all 0.4s;
+    }
+    header.scrolled { background:rgba(4,7,26,0.97); box-shadow:0 0 0 1px rgba(59,130,246,0.25),0 20px 60px rgba(59,130,246,0.1); }
+    header::after { content:''; position:absolute; bottom:0; left:10%; right:10%; height:1px; background:linear-gradient(90deg,transparent,rgba(59,130,246,0.5),rgba(6,182,212,0.5),transparent); }
 
-        /* Mission & Vision Cards */
-        .mv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        .mv-card { background: white; padding: 40px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--primary); }
-        .mv-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+    .logo { display:flex; align-items:center; gap:12px; }
+    .logo-img { width:48px; height:48px; border-radius:12px; object-fit:contain; background:rgba(255,255,255,0.05); border:1.5px solid rgba(59,130,246,0.35); padding:4px; flex-shrink:0; display:block; }
+    .logo-fallback { width:48px; height:48px; border-radius:12px; flex-shrink:0; background:linear-gradient(135deg,#3b82f6,#06b6d4); border:1px solid rgba(59,130,246,0.5); display:none; align-items:center; justify-content:center; font-size:1.1rem; font-weight:900; color:#fff; }
+    .logo-name { font-size:1.15rem; font-weight:800; color:var(--white); letter-spacing:-0.3px; display:block; }
+    .logo-name em { color:var(--blue-b); font-style:normal; }
+    .logo-sub { font-size:0.58rem; font-weight:600; color:var(--muted); letter-spacing:2px; text-transform:uppercase; display:block; margin-top:2px; }
 
-        /* Solutions Grid */
-        .solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .solution-item { background: var(--light-bg); padding: 25px; border-radius: 15px; transition: 0.3s; }
-        .solution-item:hover { background: white; box-shadow: 0 15px 30px rgba(0,0,0,0.1); transform: translateY(-5px); }
-        .solution-item i { color: var(--primary); margin-right: 10px; }
+    nav { display:flex; align-items:center; gap:4px; }
+    nav a, nav a:link, nav a:visited, nav a:active, nav a:hover {
+        font-size:0.9rem; font-weight:500; color:var(--muted2) !important;
+        text-decoration:none !important; padding:8px 16px; border-radius:8px; transition:all 0.2s;
+    }
+    nav a:hover { color:var(--white) !important; background:var(--surface2); }
+    nav a.active { color:var(--white) !important; background:var(--surface2); }
+    .btn-nav, .btn-nav:link, .btn-nav:visited, .btn-nav:active {
+        background:var(--blue) !important; color:var(--white) !important;
+        font-weight:700 !important; padding:10px 24px !important;
+        border-radius:10px !important; box-shadow:0 0 24px rgba(59,130,246,0.45);
+        margin-left:8px; text-decoration:none !important;
+    }
+    .btn-nav:hover { background:#2563eb !important; transform:translateY(-1px) !important; box-shadow:0 0 40px rgba(59,130,246,0.65) !important; color:var(--white) !important; }
+    .hamburger { display:none; background:none; border:none; color:var(--white); font-size:1.3rem; cursor:pointer; }
 
-        /* Industries Section */
-        .industry-list { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 30px; }
-        .industry-tag { background: white; padding: 12px 25px; border-radius: 50px; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #eee; }
+    /* MOBILE NAV */
+    .m-nav { display:none; position:fixed; inset:0; background:rgba(4,7,26,0.97); backdrop-filter:blur(20px); z-index:9998; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    .m-nav.open { display:flex; }
+    .m-nav a { font-size:1.8rem; font-weight:800; color:var(--white); }
+    .m-nav a:hover { color:var(--blue-b); }
+    .m-close { position:absolute; top:22px; right:22px; background:none; border:none; color:var(--muted2); font-size:1.5rem; cursor:pointer; }
 
-        /* Trust Section */
-        .trust-box { background: var(--dark); color: white; border-radius: 30px; padding: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
-        .trust-item h3 { font-size: 2.5rem; margin-bottom: 10px; color: var(--accent); }
+    /* PAGE HERO */
+    .page-hero {
+        position:relative; z-index:2;
+        padding:160px 6% 100px;
+        max-width:1280px; margin:0 auto;
+        display:grid; grid-template-columns:1fr 1fr;
+        gap:60px; align-items:center;
+    }
+    .page-hero-left { }
+    .slabel { font-size:0.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--cyan); display:block; margin-bottom:14px; }
+    .page-title { font-size:clamp(2.5rem,4.5vw,4rem); font-weight:900; color:var(--white); letter-spacing:-1.5px; line-height:1.06; margin-bottom:22px; animation:up 0.7s 0.2s ease both; }
+    .grad { background:linear-gradient(135deg,var(--blue-b),var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .page-desc { font-size:1.05rem; color:var(--muted2); line-height:1.8; max-width:520px; margin-bottom:32px; animation:up 0.7s 0.4s ease both; }
 
-        /* Process Steps */
-        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .step { position: relative; text-align: center; padding: 20px; }
-        .step-num { width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: 800; }
+    .quote-block {
+        display:flex; align-items:flex-start; gap:14px;
+        background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.2);
+        border-left:3px solid var(--blue-b); border-radius:12px;
+        padding:20px 22px; margin-top:10px;
+        animation:up 0.7s 0.55s ease both;
+    }
+    .quote-block i { color:var(--blue-b); font-size:1.3rem; margin-top:2px; flex-shrink:0; }
+    .quote-block p { font-size:1rem; font-style:italic; color:var(--text); font-weight:500; line-height:1.6; }
 
-        .tagline-footer { text-align: center; padding: 40px; background: #f1f5f9; font-weight: 700; font-size: 1.2rem; color: var(--primary); border-radius: 20px; margin: 40px 8%; }
+    /* Hero right — company card */
+    .company-card {
+        background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1);
+        border-radius:20px; padding:28px; backdrop-filter:blur(20px);
+        box-shadow:0 30px 80px rgba(0,0,0,0.4);
+        position:relative; overflow:hidden;
+        animation:up 0.9s 0.5s ease both;
+    }
+    .company-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(59,130,246,0.6),rgba(6,182,212,0.5),transparent); }
 
+    .cc-header { display:flex; align-items:center; gap:12px; margin-bottom:22px; padding-bottom:16px; border-bottom:1px solid var(--border); }
+    .cc-logo { width:44px; height:44px; border-radius:10px; object-fit:contain; background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.25); padding:4px; }
+    .cc-name { font-weight:800; font-size:1.05rem; color:var(--white); display:block; }
+    .cc-sub { font-size:0.68rem; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; }
+
+    .cc-stats { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:20px; }
+    .cc-stat { background:var(--surface2); border:1px solid var(--border); border-radius:12px; padding:16px; text-align:center; transition:all 0.3s; }
+    .cc-stat:hover { border-color:var(--border-blue); transform:translateY(-2px); }
+    .cc-val { font-size:1.7rem; font-weight:800; display:block; line-height:1; margin-bottom:4px; }
+    .cc-lbl { font-size:0.68rem; color:var(--muted); font-weight:500; }
+    .v-blue { color:var(--blue-b); } .v-green { color:var(--green); } .v-cyan { color:var(--cyan); } .v-amber { color:var(--amber); }
+
+    .cc-tags { display:flex; flex-wrap:wrap; gap:7px; }
+    .cc-tag { font-family:'JetBrains Mono',monospace; font-size:0.68rem; font-weight:500; padding:5px 10px; border-radius:6px; background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.2); color:var(--blue-b); }
+
+    @keyframes up { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+
+    /* SECTION COMMONS */
+    section { position:relative; z-index:2; }
+    .sec-wrap { max-width:1280px; margin:0 auto; }
+    .sec-hd { text-align:center; max-width:680px; margin:0 auto 55px; }
+    .stitle { font-size:clamp(1.9rem,3.2vw,2.7rem); font-weight:900; color:var(--white); letter-spacing:-1px; line-height:1.1; margin-bottom:14px; }
+    .sdesc { font-size:0.98rem; color:var(--muted2); line-height:1.8; }
+
+    /* MISSION VISION */
+    .mv-section { padding:100px 6%; background:var(--bg2); border-top:1px solid var(--border); }
+    .mv-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .mv-card {
+        background:var(--surface); border:1px solid var(--border);
+        border-radius:18px; padding:36px; transition:all 0.35s;
+        position:relative; overflow:hidden;
+    }
+    .mv-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--blue),var(--cyan)); border-radius:18px 18px 0 0; }
+    .mv-card:hover { border-color:var(--border-blue); transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.25); }
+    .mv-icon { width:54px; height:54px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:20px; background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.2); color:var(--blue-b); transition:all 0.3s; }
+    .mv-card:hover .mv-icon { transform:rotate(-8deg) scale(1.1); }
+    .mv-card h3 { font-size:1.3rem; font-weight:800; color:var(--white); margin-bottom:12px; }
+    .mv-card p { font-size:0.9rem; color:var(--muted2); line-height:1.75; }
+
+    /* WHAT WE DO */
+    .what-section { padding:100px 6%; background:var(--bg); border-top:1px solid var(--border); }
+    .sol-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .sol-item {
+        display:flex; align-items:flex-start; gap:14px;
+        background:var(--surface); border:1px solid var(--border);
+        border-radius:14px; padding:22px; transition:all 0.3s;
+    }
+    .sol-item:hover { border-color:var(--border-blue); background:rgba(59,130,246,0.06); transform:translateY(-4px); box-shadow:0 12px 30px rgba(0,0,0,0.2); }
+    .sol-ico { width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; background:rgba(59,130,246,0.12); color:var(--blue-b); transition:all 0.3s; }
+    .sol-item:hover .sol-ico { transform:rotate(-8deg) scale(1.1); }
+    .sol-item h4 { font-size:0.95rem; font-weight:700; color:var(--white); margin-bottom:5px; }
+    .sol-item p { font-size:0.82rem; color:var(--muted2); line-height:1.6; }
+
+    /* INDUSTRIES */
+    .ind-section { padding:100px 6%; background:var(--bg2); border-top:1px solid var(--border); }
+    .ind-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:0; }
+    .ind-card {
+        display:flex; align-items:center; gap:14px;
+        background:var(--surface); border:1px solid var(--border);
+        border-radius:14px; padding:22px; transition:all 0.3s; cursor:default;
+    }
+    .ind-card:hover { border-color:var(--border-blue); transform:translateX(6px); background:rgba(59,130,246,0.06); }
+    .ind-ico { width:44px; height:44px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; transition:all 0.3s; }
+    .ind-card:hover .ind-ico { transform:scale(1.1); }
+    .ic-blue { background:rgba(59,130,246,0.15); color:#60a5fa; }
+    .ic-purple { background:rgba(139,92,246,0.15); color:#a78bfa; }
+    .ic-green { background:rgba(16,185,129,0.15); color:#34d399; }
+    .ic-amber { background:rgba(245,158,11,0.15); color:#fbbf24; }
+    .ic-pink { background:rgba(236,72,153,0.15); color:#f472b6; }
+    .ic-cyan { background:rgba(6,182,212,0.15); color:#22d3ee; }
+    .ind-card h4 { font-size:0.95rem; font-weight:700; color:var(--white); margin-bottom:3px; }
+    .ind-card p { font-size:0.78rem; color:var(--muted2); }
+
+    /* TRUST STATS */
+    .trust-section { padding:100px 6%; background:var(--bg); border-top:1px solid var(--border); }
+    .trust-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; background:rgba(59,130,246,0.05); border:1px solid var(--border-blue); border-radius:20px; overflow:hidden; }
+    .trust-item { padding:44px 28px; text-align:center; border-right:1px solid var(--border); position:relative; transition:all 0.3s; }
+    .trust-item:last-child { border-right:none; }
+    .trust-item:hover { background:rgba(59,130,246,0.06); }
+    .trust-item::after { content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:0; height:2px; background:linear-gradient(90deg,var(--blue),var(--cyan)); transition:width 0.4s; }
+    .trust-item:hover::after { width:60%; }
+    .t-val { font-size:2.8rem; font-weight:900; display:block; line-height:1; margin-bottom:8px; }
+    .t-lbl { font-size:0.83rem; color:var(--muted2); font-weight:500; }
+
+    /* PROCESS */
+    .process-section { padding:100px 6%; background:var(--bg2); border-top:1px solid var(--border); }
+    .proc-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; }
+    .proc-steps::before { content:''; position:absolute; top:35px; left:12.5%; right:12.5%; height:1px; background:linear-gradient(90deg,transparent,var(--blue),var(--cyan),transparent); }
+    .pstep { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 20px; position:relative; z-index:1; }
+    .pnum { width:70px; height:70px; border-radius:50%; background:var(--bg2); border:2px solid var(--border-blue); display:flex; align-items:center; justify-content:center; font-size:1.4rem; font-weight:900; color:var(--blue-b); margin-bottom:22px; transition:all 0.3s; box-shadow:0 0 20px rgba(59,130,246,0.2); }
+    .pstep:hover .pnum { background:var(--blue); color:var(--white); transform:scale(1.1); box-shadow:0 0 40px rgba(59,130,246,0.55); }
+    .pstep h4 { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:9px; }
+    .pstep p { font-size:0.82rem; color:var(--muted2); line-height:1.6; }
+
+    /* TAGLINE BANNER */
+    .tagline-banner {
+        position:relative; z-index:2;
+        margin:0 6% 80px;
+        background:linear-gradient(135deg,rgba(59,130,246,0.12),rgba(6,182,212,0.06));
+        border:1px solid rgba(59,130,246,0.25); border-radius:20px;
+        padding:50px; text-align:center;
+    }
+    .tagline-banner h2 { font-size:clamp(1.5rem,3vw,2.2rem); font-weight:900; color:var(--white); letter-spacing:-0.5px; margin-bottom:10px; }
+    .tagline-banner p { font-size:1rem; color:var(--muted2); }
+
+    /* FOOTER */
+    footer { background:var(--bg2); border-top:1px solid var(--border); padding:34px 6%; }
+    .fin { max-width:1280px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; }
+    .fcopy { font-size:0.8rem; color:var(--muted); }
+    .flinks a { font-size:0.8rem; color:var(--muted); margin-left:18px; transition:color 0.2s; }
+    .flinks a:hover { color:var(--white) !important; }
+
+    /* REVEAL */
+    .rv { opacity:0; transform:translateY(26px); transition:opacity 0.65s ease,transform 0.65s ease; }
+    .rv.vis { opacity:1 !important; transform:none !important; }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px) {
+        .page-hero { grid-template-columns:1fr; padding-top:130px; gap:40px; }
+        .mv-grid { grid-template-columns:1fr; }
+        .sol-grid { grid-template-columns:repeat(2,1fr); }
+        .ind-grid { grid-template-columns:repeat(2,1fr); }
+        .trust-grid { grid-template-columns:repeat(2,1fr); }
+        .trust-item:nth-child(2) { border-right:none; }
+        .trust-item:nth-child(3) { border-right:1px solid var(--border); border-top:1px solid var(--border); }
+        .trust-item:nth-child(4) { border-top:1px solid var(--border); }
+        .proc-steps { grid-template-columns:repeat(2,1fr); gap:40px; }
+        .proc-steps::before { display:none; }
+    }
+    @media(max-width:768px) {
+        header { top:8px; width:calc(100% - 20px); padding:0 16px; }
+        nav { display:none; }
+        .hamburger { display:block; }
+        .sol-grid,.ind-grid { grid-template-columns:1fr; }
+        .trust-grid { grid-template-columns:repeat(2,1fr); }
+        .proc-steps { grid-template-columns:1fr 1fr; }
+        .company-card { display:none; }
+    }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="header-container">
-        <div class="logo"><img src="logo.png" alt="KIDV Tech"></div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="company.html">Company</a>
-            <a href="product.html">Product</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
-    </div>
-</header>
+<canvas id="particles"></canvas>
+<div class="ring r1"></div>
+<div class="ring r2"></div>
 
-<section class="hero-section">
-    <h1>Building a Digital India,<br>One Business at a Time</h1>
-    <p>KIDV Tech is an Indian IT solutions company dedicated to making local businesses digitally strong. We build affordable, scalable, and future-ready technology solutions for small, medium, and growing enterprises.</p>
-    <p class="highlight-text">“When local businesses grow, the nation grows.”</p>
-</section>
-
-<section class="section-padding" style="background: #fff;">
-    <div class="mv-grid">
-        <div class="mv-card">
-            <i class="fas fa-bullseye"></i>
-            <h3>Our Mission</h3>
-            <p>To bring advanced technology to every business in India through solutions like ERP, HR & Payroll, Mobile Apps, AI Automation, and Cloud Hosting.</p>
-        </div>
-        <div class="mv-card">
-            <i class="fas fa-eye"></i>
-            <h3>Our Vision</h3>
-            <p>To become India's most trusted Local-to-Global IT Company, supporting Digital India and Atmanirbhar Bharat at the ground level.</p>
-        </div>
-    </div>
-</section>
-
-<section class="section-padding" style="background: var(--light-bg);">
-    <div class="section-title">
-        <h2>What We Do</h2>
-        <p>We design, implement, and support technology to solve day-to-day business problems.</p>
-    </div>
-    <div class="solutions-grid">
-        <div class="solution-item"><i class="fas fa-laptop-code"></i> Business & Corporate Websites</div>
-        <div class="solution-item"><i class="fas fa-mobile-alt"></i> Custom Mobile Applications</div>
-        <div class="solution-item"><i class="fas fa-sync"></i> ERPNext Implementation</div>
-        <div class="solution-item"><i class="fas fa-users-cog"></i> HR & Payroll Software</div>
-        <div class="solution-item"><i class="fas fa-robot"></i> AI Business Automation</div>
-        <div class="solution-item"><i class="fas fa-cloud"></i> Secure Cloud & Server Management</div>
-    </div>
-</section>
-
-<section class="section-padding">
-    <div class="section-title">
-        <h2>Industries We Serve</h2>
-    </div>
-    <div class="industry-list">
-        <div class="industry-tag">Manufacturing</div>
-        <div class="industry-tag">Trading & Distribution</div>
-        <div class="industry-tag">Retail & Wholesale</div>
-        <div class="industry-tag">Hospitals & Clinics</div>
-        <div class="industry-tag">Schools & Institutes</div>
-        <div class="industry-tag">Startups & MSMEs</div>
-    </div>
-</section>
-
-<section class="section-padding">
-    <div class="trust-box">
-        <div class="trust-item"><h3>99.9%</h3><p>System Uptime</p></div>
-        <div class="trust-item"><h3>Secure</h3><p>Cloud Infrastructure</p></div>
-        <div class="trust-item"><h3>24/7</h3><p>Local Support</p></div>
-        <div class="trust-item"><h3>Privacy</h3><p>Data Backup Policy</p></div>
-    </div>
-</section>
-
-<section class="section-padding" style="background: #fff;">
-    <div class="section-title"><h2>Our Working Approach</h2></div>
-    <div class="process-grid">
-        <div class="step"><div class="step-num">1</div><h4>Requirement</h4><p>Understanding business needs</p></div>
-        <div class="step"><div class="step-num">2</div><h4>Planning</h4><p>Designing the right solution</p></div>
-        <div class="step"><div class="step-num">3</div><h4>Development</h4><p>Clean & scalable coding</p></div>
-        <div class="step"><div class="step-num">4</div><h4>Go-Live</h4><p>Testing, Training & Support</p></div>
-    </div>
-</section>
-
-<div class="tagline-footer">
-    Local Understanding. Global Technology.
+<!-- MOBILE NAV -->
+<div class="m-nav" id="mnav">
+    <button class="m-close" onclick="cmnav()">✕</button>
+    <a href="index.html" onclick="cmnav()">Home</a>
+    <a href="company.html" onclick="cmnav()">Company</a>
+    <a href="product.html" onclick="cmnav()">Product</a>
+    <a href="contact.html" onclick="cmnav()">Contact</a>
 </div>
 
-<footer class="main-footer">
-    <div class="container">
-        <div class="footer-content" style="text-align: center;">
-            <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+<!-- HEADER -->
+<header id="hdr">
+    <a class="logo" href="index.html">
+        <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="logo-fallback">KT</div>
+        <div>
+            <span class="logo-name">KIDV <em>Tech</em></span>
+            <span class="logo-sub">Smart Business Solutions</span>
+        </div>
+    </a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="company.html" class="active">Company</a>
+        <a href="product.html">Product</a>
+        <a href="contact.html" class="btn-nav">Get in Touch</a>
+    </nav>
+    <button class="hamburger" onclick="omnav()"><i class="fas fa-bars"></i></button>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+    <div class="page-hero-left">
+        <span class="slabel">About KIDV Tech</span>
+        <h1 class="page-title">
+            Building a <span class="grad">Digital India,</span><br>
+            One Business at a Time
+        </h1>
+        <p class="page-desc">
+            KIDV Tech is an Indian IT solutions company dedicated to making local businesses digitally strong. We build affordable, scalable, and future-ready technology for small, medium, and growing enterprises.
+        </p>
+        <div class="quote-block">
+            <i class="fas fa-quote-left"></i>
+            <p>"When local businesses grow, the nation grows."</p>
+        </div>
+    </div>
+
+    <div class="company-card">
+        <div class="cc-header">
+            <img src="logo.png" alt="KIDV Tech" class="cc-logo" onerror="this.style.display='none'">
+            <div>
+                <span class="cc-name">KIDV Tech</span>
+                <span class="cc-sub">Indian IT Solutions Company</span>
+            </div>
+        </div>
+        <div class="cc-stats">
+            <div class="cc-stat">
+                <span class="cc-val v-blue">200<sup style="font-size:0.9rem">+</sup></span>
+                <span class="cc-lbl">Happy Clients</span>
+            </div>
+            <div class="cc-stat">
+                <span class="cc-val v-green">6<sup style="font-size:0.9rem">+</sup></span>
+                <span class="cc-lbl">Core Services</span>
+            </div>
+            <div class="cc-stat">
+                <span class="cc-val v-cyan">99.9%</span>
+                <span class="cc-lbl">System Uptime</span>
+            </div>
+            <div class="cc-stat">
+                <span class="cc-val v-amber">24/7</span>
+                <span class="cc-lbl">Support Team</span>
+            </div>
+        </div>
+        <div style="margin-bottom:14px;font-size:0.72rem;font-weight:600;color:var(--muted);letter-spacing:1px;">INDUSTRIES SERVED</div>
+        <div class="cc-tags">
+            <span class="cc-tag">Manufacturing</span>
+            <span class="cc-tag">Retail</span>
+            <span class="cc-tag">Healthcare</span>
+            <span class="cc-tag">Education</span>
+            <span class="cc-tag">MSMEs</span>
+            <span class="cc-tag">Startups</span>
+        </div>
+    </div>
+</div>
+
+<!-- MISSION & VISION -->
+<section class="mv-section">
+    <div class="sec-wrap">
+        <div class="sec-hd rv">
+            <span class="slabel">Our Foundation</span>
+            <h2 class="stitle">Mission &amp; Vision</h2>
+            <p class="sdesc">Guided by a clear purpose — empowering Indian businesses through technology.</p>
+        </div>
+        <div class="mv-grid">
+            <div class="mv-card rv">
+                <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                <h3>Our Mission</h3>
+                <p>To bring advanced technology to every business in India through affordable solutions — ERP, HR &amp; Payroll, Mobile Apps, AI Automation, and Cloud Hosting. We believe every business deserves enterprise-grade tools, regardless of size.</p>
+            </div>
+            <div class="mv-card rv" style="transition-delay:0.15s">
+                <div class="mv-icon" style="background:rgba(6,182,212,0.12);border-color:rgba(6,182,212,0.2);color:var(--cyan)"><i class="fas fa-eye"></i></div>
+                <h3>Our Vision</h3>
+                <p>To become India's most trusted Local-to-Global IT company, supporting Digital India and Atmanirbhar Bharat at the ground level — bridging the gap between small businesses and world-class technology.</p>
             </div>
         </div>
     </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="what-section">
+    <div class="sec-wrap">
+        <div class="sec-hd rv">
+            <span class="slabel">Our Expertise</span>
+            <h2 class="stitle">What We Do</h2>
+            <p class="sdesc">We design, implement, and support technology to solve real day-to-day business problems.</p>
+        </div>
+        <div class="sol-grid">
+            <div class="sol-item rv">
+                <div class="sol-ico"><i class="fas fa-laptop-code"></i></div>
+                <div>
+                    <h4>Business Websites</h4>
+                    <p>Fast, SEO-optimized corporate &amp; e-commerce websites built for results.</p>
+                </div>
+            </div>
+            <div class="sol-item rv" style="transition-delay:0.08s">
+                <div class="sol-ico" style="background:rgba(139,92,246,0.12);color:#a78bfa"><i class="fas fa-mobile-alt"></i></div>
+                <div>
+                    <h4>Mobile Applications</h4>
+                    <p>Custom Android &amp; iOS apps with ERP integration and GPS tracking.</p>
+                </div>
+            </div>
+            <div class="sol-item rv" style="transition-delay:0.16s">
+                <div class="sol-ico" style="background:rgba(99,102,241,0.12);color:#818cf8"><i class="fas fa-sync"></i></div>
+                <div>
+                    <h4>ERPNext Implementation</h4>
+                    <p>Complete ERP setup for Manufacturing, Accounting, GST &amp; Inventory.</p>
+                </div>
+            </div>
+            <div class="sol-item rv" style="transition-delay:0.24s">
+                <div class="sol-ico" style="background:rgba(245,158,11,0.12);color:#fbbf24"><i class="fas fa-users-cog"></i></div>
+                <div>
+                    <h4>HR &amp; Payroll Software</h4>
+                    <p>Biometric attendance, automated PF/ESIC/TDS &amp; leave management.</p>
+                </div>
+            </div>
+            <div class="sol-item rv" style="transition-delay:0.32s">
+                <div class="sol-ico" style="background:rgba(236,72,153,0.12);color:#f472b6"><i class="fas fa-robot"></i></div>
+                <div>
+                    <h4>AI Business Automation</h4>
+                    <p>Chatbots, OCR readers, smart analytics &amp; AI-powered forecasting.</p>
+                </div>
+            </div>
+            <div class="sol-item rv" style="transition-delay:0.4s">
+                <div class="sol-ico" style="background:rgba(20,184,166,0.12);color:#2dd4bf"><i class="fas fa-cloud"></i></div>
+                <div>
+                    <h4>Cloud &amp; Server Management</h4>
+                    <p>Managed VPS, 99.9% uptime, automated backups &amp; DDoS protection.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="ind-section">
+    <div class="sec-wrap">
+        <div class="sec-hd rv">
+            <span class="slabel">Our Reach</span>
+            <h2 class="stitle">Industries We Serve</h2>
+            <p class="sdesc">From manufacturing floors to hospital reception desks — we've got you covered.</p>
+        </div>
+        <div class="ind-grid">
+            <div class="ind-card rv">
+                <div class="ind-ico ic-blue"><i class="fas fa-industry"></i></div>
+                <div><h4>Manufacturing</h4><p>BOM, Job Cards, Production planning</p></div>
+            </div>
+            <div class="ind-card rv" style="transition-delay:0.08s">
+                <div class="ind-ico ic-purple"><i class="fas fa-boxes"></i></div>
+                <div><h4>Trading &amp; Distribution</h4><p>Inventory, Orders, Supplier management</p></div>
+            </div>
+            <div class="ind-card rv" style="transition-delay:0.16s">
+                <div class="ind-ico ic-amber"><i class="fas fa-store"></i></div>
+                <div><h4>Retail &amp; Wholesale</h4><p>POS, Stock, GST billing solutions</p></div>
+            </div>
+            <div class="ind-card rv" style="transition-delay:0.24s">
+                <div class="ind-ico ic-green"><i class="fas fa-hospital"></i></div>
+                <div><h4>Hospitals &amp; Clinics</h4><p>Patient records, Staff &amp; Payroll mgmt</p></div>
+            </div>
+            <div class="ind-card rv" style="transition-delay:0.32s">
+                <div class="ind-ico ic-cyan"><i class="fas fa-graduation-cap"></i></div>
+                <div><h4>Schools &amp; Institutes</h4><p>Fees, Attendance &amp; Staff management</p></div>
+            </div>
+            <div class="ind-card rv" style="transition-delay:0.4s">
+                <div class="ind-ico ic-pink"><i class="fas fa-rocket"></i></div>
+                <div><h4>Startups &amp; MSMEs</h4><p>Fast, affordable digital transformation</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST STATS -->
+<section class="trust-section">
+    <div class="sec-wrap">
+        <div class="sec-hd rv">
+            <span class="slabel">Why Trust Us</span>
+            <h2 class="stitle">Built on Reliability</h2>
+        </div>
+        <div class="trust-grid">
+            <div class="trust-item rv">
+                <span class="t-val" style="background:linear-gradient(135deg,var(--blue-b),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">99.9%</span>
+                <span class="t-lbl">System Uptime SLA</span>
+            </div>
+            <div class="trust-item rv" style="transition-delay:0.1s">
+                <span class="t-val" style="color:var(--green)">Secure</span>
+                <span class="t-lbl">Cloud Infrastructure</span>
+            </div>
+            <div class="trust-item rv" style="transition-delay:0.2s">
+                <span class="t-val" style="color:var(--amber)">24/7</span>
+                <span class="t-lbl">Local Expert Support</span>
+            </div>
+            <div class="trust-item rv" style="transition-delay:0.3s">
+                <span class="t-val" style="color:var(--blue-b)">100%</span>
+                <span class="t-lbl">Data Backup Policy</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+    <div class="sec-wrap">
+        <div class="sec-hd rv">
+            <span class="slabel">How We Work</span>
+            <h2 class="stitle">Our Working Approach</h2>
+            <p class="sdesc">A clear, transparent process from first call to final deployment.</p>
+        </div>
+        <div class="proc-steps">
+            <div class="pstep rv">
+                <div class="pnum">01</div>
+                <h4>Requirement</h4>
+                <p>Understanding your unique business needs and goals in detail.</p>
+            </div>
+            <div class="pstep rv" style="transition-delay:0.15s">
+                <div class="pnum">02</div>
+                <h4>Planning</h4>
+                <p>Designing the perfect solution roadmap with timeline &amp; pricing.</p>
+            </div>
+            <div class="pstep rv" style="transition-delay:0.3s">
+                <div class="pnum">03</div>
+                <h4>Development</h4>
+                <p>Clean, scalable, secure code with regular progress updates.</p>
+            </div>
+            <div class="pstep rv" style="transition-delay:0.45s">
+                <div class="pnum">04</div>
+                <h4>Go-Live</h4>
+                <p>Testing, team training, deployment &amp; dedicated post-launch support.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TAGLINE BANNER -->
+<div class="tagline-banner rv">
+    <h2><span class="grad">Local Understanding.</span> Global Technology.</h2>
+    <p>KIDV Tech — empowering Indian businesses to compete globally.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="fin">
+        <a class="logo" href="index.html">
+            <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="logo-fallback">KT</div>
+            <div>
+                <span class="logo-name">KIDV <em>Tech</em></span>
+                <span class="logo-sub">Smart Business Solutions</span>
+            </div>
+        </a>
+        <p class="fcopy">&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+        <div class="flinks">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
 </footer>
+
+<script>
+/* PARTICLES */
+(function(){
+    const c=document.getElementById('particles'),ctx=c.getContext('2d');
+    let W,H,pts=[];
+    function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}
+    resize(); window.addEventListener('resize',resize);
+    for(let i=0;i<80;i++) pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.3+0.4,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,a:Math.random()*.4+.07});
+    function draw(){
+        ctx.clearRect(0,0,W,H);
+        pts.forEach(p=>{
+            p.x+=p.vx; p.y+=p.vy;
+            if(p.x<0)p.x=W; if(p.x>W)p.x=0; if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+            ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+            ctx.fillStyle=`rgba(96,165,250,${p.a})`; ctx.fill();
+        });
+        pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{
+            const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+            if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(59,130,246,${0.09*(1-d/120)})`;ctx.lineWidth=0.5;ctx.stroke();}
+        }));
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+/* SCROLL */
+window.addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('scrolled',scrollY>20));
+
+/* MOBILE NAV */
+function omnav(){document.getElementById('mnav').classList.add('open');document.body.style.overflow='hidden';}
+function cmnav(){document.getElementById('mnav').classList.remove('open');document.body.style.overflow='';}
+
+/* REVEAL */
+const ro=new IntersectionObserver(e=>e.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}
+}),{threshold:0.08});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('vis')),1500);
+</script>
+
 </body>
 </html>
