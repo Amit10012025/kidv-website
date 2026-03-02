@@ -1,150 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HR & Payroll Solutions | KIDV Tech</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
-    <link rel="apple-touch-icon" sizes="36x36" href="android-icon-36x36.png">
     <style>
-        .list-container { max-width: 1200px; margin: 40px auto; padding: 20px; font-family: 'Plus Jakarta Sans', sans-serif; }
-        .page-header { text-align: center; margin-bottom: 50px; }
-        .page-header h1 { color: #1a73e8; font-size: 2.5rem; font-weight: 800; }
-        .module-section { margin-bottom: 40px; }
-        .module-title { background: #1a73e8; color: white; padding: 12px 20px; border-radius: 8px; margin-bottom: 20px; font-size: 1.2rem; }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .feature-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
-        .feature-card h4 { color: #333; margin-bottom: 10px; border-left: 4px solid #1a73e8; padding-left: 10px; }
-        .feature-card ul { padding-left: 20px; color: #555; font-size: 0.9rem; list-style: none; }
-        .feature-card li { margin-bottom: 5px; position: relative; }
-        .feature-card li::before { content: "✔"; color: #1a73e8; position: absolute; left: -18px; }
+    :root{--bg:#04071a;--bg2:#060c22;--surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.07);--border:rgba(255,255,255,0.08);--border-blue:rgba(59,130,246,0.3);--blue:#3b82f6;--blue-b:#60a5fa;--cyan:#06b6d4;--white:#ffffff;--text:#e2e8f0;--muted:#64748b;--muted2:#94a3b8;--green:#10b981;--amber:#f59e0b;--purple:#8b5cf6;}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+    body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    a,a:link,a:visited,a:hover,a:active{text-decoration:none!important;color:inherit;outline:none;}
+    ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:var(--blue);border-radius:99px;}
+    #particles{position:fixed;inset:0;z-index:0;pointer-events:none;}
+    .ring{position:fixed;border-radius:50%;border:1px solid rgba(59,130,246,0.06);pointer-events:none;z-index:0;animation:rpulse 8s ease-in-out infinite;}
+    .r1{width:700px;height:700px;top:40%;left:65%;transform:translate(-50%,-50%);}
+    .r2{width:1100px;height:1100px;top:40%;left:65%;transform:translate(-50%,-50%);animation-delay:2s;}
+    @keyframes rpulse{0%,100%{opacity:0.4}50%{opacity:1}}
+    header{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:1320px;z-index:1000;padding:0 26px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,7,26,0.75);backdrop-filter:blur(24px);border:1px solid rgba(59,130,246,0.18);border-radius:16px;transition:all 0.4s;}
+    header.scrolled{background:rgba(4,7,26,0.97);box-shadow:0 0 0 1px rgba(59,130,246,0.25),0 20px 60px rgba(59,130,246,0.1);}
+    header::after{content:'';position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(59,130,246,0.5),rgba(6,182,212,0.5),transparent);}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo-img{width:48px;height:48px;border-radius:12px;object-fit:contain;background:rgba(255,255,255,0.05);border:1.5px solid rgba(59,130,246,0.35);padding:4px;flex-shrink:0;}
+    .logo-fallback{width:48px;height:48px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:none;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#fff;}
+    .logo-name{font-size:1.15rem;font-weight:800;color:var(--white);letter-spacing:-0.3px;display:block;}
+    .logo-name em{color:var(--blue-b);font-style:normal;}
+    .logo-sub{font-size:0.58rem;font-weight:600;color:var(--muted);letter-spacing:2px;text-transform:uppercase;display:block;margin-top:2px;}
+    nav{display:flex;align-items:center;gap:4px;}
+    nav a,nav a:link,nav a:visited,nav a:active,nav a:hover{font-size:0.9rem;font-weight:500;color:var(--muted2)!important;text-decoration:none!important;padding:8px 16px;border-radius:8px;transition:all 0.2s;}
+    nav a:hover{color:var(--white)!important;background:var(--surface2);}
+    .btn-nav,.btn-nav:link,.btn-nav:visited,.btn-nav:active{background:var(--blue)!important;color:var(--white)!important;font-weight:700!important;padding:10px 24px!important;border-radius:10px!important;box-shadow:0 0 24px rgba(59,130,246,0.45);margin-left:8px;}
+    .btn-nav:hover{background:#2563eb!important;transform:translateY(-1px)!important;color:var(--white)!important;}
+    .hamburger{display:none;background:none;border:none;color:var(--white);font-size:1.3rem;cursor:pointer;}
+    .m-nav{display:none;position:fixed;inset:0;background:rgba(4,7,26,0.97);backdrop-filter:blur(20px);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+    .m-nav.open{display:flex;}.m-nav a{font-size:1.8rem;font-weight:800;color:var(--white);}.m-nav a:hover{color:var(--blue-b);}
+    .m-close{position:absolute;top:22px;right:22px;background:none;border:none;color:var(--muted2);font-size:1.5rem;cursor:pointer;}
+    .page-wrap{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:140px 6% 100px;}
+    .back-btn{display:inline-flex;align-items:center;gap:8px;font-size:0.82rem;font-weight:600;color:var(--muted2);background:var(--surface);border:1px solid var(--border);padding:8px 16px;border-radius:8px;margin-bottom:36px;transition:all 0.25s;}
+    .back-btn:hover{border-color:var(--border-blue);color:var(--white);}
+    .page-hd{text-align:center;margin-bottom:50px;}
+    .slabel{font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);display:block;margin-bottom:14px;}
+    .page-title{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--white);letter-spacing:-1.2px;line-height:1.08;margin-bottom:14px;animation:up 0.7s 0.2s ease both;}
+    .grad{background:linear-gradient(135deg,var(--blue-b),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .page-desc{font-size:1rem;color:var(--muted2);max-width:640px;margin:0 auto;line-height:1.8;animation:up 0.7s 0.35s ease both;}
+    @keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    /* MODULE SECTIONS */
+    .module-section{margin-bottom:48px;}
+    .module-hd{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .module-badge{display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border-radius:10px;font-size:0.88rem;font-weight:700;color:var(--white);}
+    .mb-blue{background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:var(--blue-b);}
+    .mb-amber{background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.25);color:#fbbf24;}
+    .mb-green{background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.25);color:#34d399;}
+    .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .fcard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;transition:all 0.3s;position:relative;overflow:hidden;}
+    .fcard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;opacity:0;transition:opacity 0.3s;}
+    .fcard:hover{border-color:var(--border-blue);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,0.25);}
+    .fcard:hover::before{opacity:1;}
+    .fb-blue::before{background:var(--blue);}
+    .fb-amber::before{background:var(--amber);}
+    .fb-green::before{background:var(--green);}
+    .fcard h4{font-size:0.95rem;font-weight:800;color:var(--white);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+    .fcard h4 i{font-size:0.85rem;}
+    .fcard ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+    .fcard ul li{font-size:0.82rem;color:var(--muted2);display:flex;align-items:flex-start;gap:8px;}
+    .fcard ul li::before{content:'✔';color:var(--green);font-weight:700;font-size:0.78rem;margin-top:2px;flex-shrink:0;}
+    /* COMPLIANCE BANNER */
+    .compliance-banner{background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(59,130,246,0.05));border:1px solid rgba(139,92,246,0.2);border-radius:16px;padding:28px 32px;margin-bottom:48px;display:flex;align-items:center;gap:20px;}
+    .cb-icon{width:56px;height:56px;border-radius:14px;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.25);color:#a78bfa;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+    .cb-text h3{font-size:1.05rem;font-weight:800;color:var(--white);margin-bottom:6px;}
+    .cb-text p{font-size:0.88rem;color:var(--muted2);line-height:1.7;}
+    .compliance-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+    .ctag{font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:600;padding:5px 12px;border-radius:6px;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);color:#a78bfa;}
+    /* CTA */
+    .bottom-cta{background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(6,182,212,0.05));border:1px solid rgba(59,130,246,0.22);border-radius:18px;padding:50px;text-align:center;}
+    .bottom-cta h2{font-size:1.8rem;font-weight:900;color:var(--white);letter-spacing:-0.6px;margin-bottom:12px;}
+    .bottom-cta p{font-size:0.95rem;color:var(--muted2);margin-bottom:28px;}
+    .btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--white)!important;font-weight:700;font-size:0.9rem;padding:13px 26px;border-radius:11px;box-shadow:0 0 30px rgba(59,130,246,0.4);transition:all 0.3s;}
+    .btn-p:hover{transform:translateY(-3px);box-shadow:0 0 55px rgba(59,130,246,0.6);}
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:34px 6%;}
+    .fin{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+    .fcopy{font-size:0.8rem;color:var(--muted);}
+    .flinks a{font-size:0.8rem;color:var(--muted);margin-left:18px;transition:color 0.2s;}
+    .flinks a:hover{color:var(--white)!important;}
+    .rv{opacity:0;transform:translateY(26px);transition:opacity 0.65s ease,transform 0.65s ease;}
+    .rv.vis{opacity:1!important;transform:none!important;}
+    @media(max-width:1024px){.feat-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:768px){header{top:8px;width:calc(100% - 20px);padding:0 16px;}nav{display:none;}.hamburger{display:block;}.feat-grid{grid-template-columns:1fr;}.compliance-banner{flex-direction:column;align-items:flex-start;}}
     </style>
 </head>
 <body>
-
-<header>
-    <div class="header-container">
-        <div class="logo"><img src="logo.png" alt="KIDV Tech"></div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="company.html">Company</a>
-            <a href="product.html">Product</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
-    </div>
+<canvas id="particles"></canvas>
+<div class="ring r1"></div><div class="ring r2"></div>
+<div class="m-nav" id="mnav"><button class="m-close" onclick="cmnav()">✕</button>
+    <a href="index.html" onclick="cmnav()">Home</a><a href="company.html" onclick="cmnav()">Company</a>
+    <a href="product.html" onclick="cmnav()">Product</a><a href="contact.html" onclick="cmnav()">Contact</a>
+</div>
+<header id="hdr">
+    <a class="logo" href="index.html"><img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="logo-fallback">KT</div><div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div></a>
+    <nav><a href="index.html">Home</a><a href="company.html">Company</a><a href="product.html">Product</a><a href="contact.html" class="btn-nav">Get in Touch</a></nav>
+    <button class="hamburger" onclick="omnav()"><i class="fas fa-bars"></i></button>
 </header>
 
-<div class="list-container">
-    <div class="page-header">
-        <h1>HR & Payroll Management Software</h1>
-        <p>Built for Indian Businesses: Complete Employee & Salary Automation</p>
+<div class="page-wrap">
+    <a class="back-btn" href="product.html"><i class="fas fa-arrow-left"></i> Back to Products</a>
+    <div class="page-hd">
+        <span class="slabel">HR Solutions</span>
+        <h1 class="page-title"><span class="grad">HR &amp; Payroll</span> Management</h1>
+        <p class="page-desc">Built for Indian businesses — complete employee lifecycle, salary automation, and statutory compliance in one system.</p>
     </div>
 
+    <!-- MODULE 1: CORE HR -->
     <div class="module-section">
-        <div class="module-title"><i class="fas fa-users-cog"></i> Core HR Modules</div>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h4>Employee Master</h4>
-                <ul>
-                    <li>Personal, Professional & Bank Details</li>
-                    <li>Department & Designation Tracking</li>
-                    <li>KYC Document Management (Aadhar/PAN)</li>
-                </ul>
+        <div class="module-hd rv">
+            <div class="module-badge mb-blue"><i class="fas fa-users-cog"></i> Core HR Modules</div>
+        </div>
+        <div class="feat-grid">
+            <div class="fcard fb-blue rv">
+                <h4><i class="fas fa-id-card" style="color:var(--blue-b)"></i> Employee Master</h4>
+                <ul><li>Personal, professional &amp; bank details</li><li>Department &amp; designation tracking</li><li>KYC document management (Aadhar/PAN)</li><li>Employee photo &amp; profile management</li></ul>
             </div>
-            <div class="feature-card">
-                <h4>Attendance Management</h4>
-                <ul>
-                    <li>Biometric & Machine Integration</li>
-                    <li>Late/Early Exit Tracking</li>
-                    <li>Admin-Controlled Manual Entries</li>
-                </ul>
+            <div class="fcard fb-blue rv" style="transition-delay:0.08s">
+                <h4><i class="fas fa-fingerprint" style="color:var(--blue-b)"></i> Attendance Management</h4>
+                <ul><li>Biometric &amp; machine integration</li><li>Late/early exit tracking</li><li>Admin-controlled manual entries</li><li>GPS location-based check-in</li></ul>
             </div>
-            <div class="feature-card">
-                <h4>Leave Management</h4>
-                <ul>
-                    <li>Auto-Calculation of CL, SL, PL, LWP</li>
-                    <li>Online Approval Workflow</li>
-                    <li>Custom Holiday Configurations</li>
-                </ul>
+            <div class="fcard fb-blue rv" style="transition-delay:0.16s">
+                <h4><i class="fas fa-calendar-alt" style="color:var(--blue-b)"></i> Leave Management</h4>
+                <ul><li>Auto-calculation of CL, SL, PL, LWP</li><li>Online approval workflow</li><li>Custom holiday configurations</li><li>Leave balance carry-forward</li></ul>
             </div>
         </div>
     </div>
 
+    <!-- MODULE 2: PAYROLL -->
     <div class="module-section">
-        <div class="module-title"><i class="fas fa-file-invoice-dollar"></i> Payroll & Salary Processing</div>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h4>Salary Structure</h4>
-                <ul>
-                    <li>Basic, HRA, DA & Custom Allowances</li>
-                    <li>Incentives & Performance Bonus</li>
-                    <li>Auto-deduction of LOP (Loss of Pay)</li>
-                </ul>
+        <div class="module-hd rv">
+            <div class="module-badge mb-amber"><i class="fas fa-file-invoice-dollar"></i> Payroll &amp; Salary Processing</div>
+        </div>
+        <div class="feat-grid">
+            <div class="fcard fb-amber rv">
+                <h4><i class="fas fa-money-bill-wave" style="color:var(--amber)"></i> Salary Structure</h4>
+                <ul><li>Basic, HRA, DA &amp; custom allowances</li><li>Incentives &amp; performance bonus</li><li>Auto-deduction of LOP (Loss of Pay)</li><li>Multiple salary templates</li></ul>
             </div>
-            <div class="feature-card">
-                <h4>Automated Payslips</h4>
-                <ul>
-                    <li>Auto-Generation of PDF Payslips</li>
-                    <li>Email Integration to Employees</li>
-                    <li>Company Branding Support</li>
-                </ul>
+            <div class="fcard fb-amber rv" style="transition-delay:0.08s">
+                <h4><i class="fas fa-file-pdf" style="color:var(--amber)"></i> Automated Payslips</h4>
+                <ul><li>Auto-generation of PDF payslips</li><li>Email integration to employees</li><li>Company branding &amp; logo support</li><li>Password-protected payslip delivery</li></ul>
             </div>
-            <div class="feature-card">
-                <h4>Reports & Analytics</h4>
-                <ul>
-                    <li>Monthly Salary Register</li>
-                    <li>Department-wise Cost Analysis</li>
-                    <li>Employee Salary History</li>
-                </ul>
+            <div class="fcard fb-amber rv" style="transition-delay:0.16s">
+                <h4><i class="fas fa-chart-bar" style="color:var(--amber)"></i> Reports &amp; Analytics</h4>
+                <ul><li>Monthly salary register</li><li>Department-wise cost analysis</li><li>Employee salary history</li><li>Custom export in Excel &amp; PDF</li></ul>
             </div>
         </div>
     </div>
 
-    <div class="module-section">
-        <div class="module-title"><i class="fas fa-gavel"></i> Statutory Compliance (India)</div>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h4>PF & ESIC Management</h4>
-                <ul>
-                    <li>Auto Employee/Employer Calculation</li>
-                    <li>EPFO Compliant Structure</li>
-                    <li>Ready-to-Upload Challan Files</li>
-                </ul>
-            </div>
-            <div class="feature-card">
-                <h4>Professional Tax (PT)</h4>
-                <ul>
-                    <li>State-wise Slab Configuration</li>
-                    <li>Automatic Salary Deduction</li>
-                    <li>Monthly/Yearly Compliance Reports</li>
-                </ul>
-            </div>
-            <div class="feature-card">
-                <h4>TDS & Form 16</h4>
-                <ul>
-                    <li>Salary-based TDS Calculation</li>
-                    <li>Exemption Handling</li>
-                    <li>Yearly Form 16 Support</li>
-                </ul>
+    <!-- COMPLIANCE BANNER -->
+    <div class="compliance-banner rv">
+        <div class="cb-icon"><i class="fas fa-gavel"></i></div>
+        <div class="cb-text">
+            <h3>100% Indian Statutory Compliance</h3>
+            <p>Our HR software is fully built for Indian businesses — from PF and ESIC to Professional Tax and Form 16. All compliance is automated so you never miss a deadline.</p>
+            <div class="compliance-tags">
+                <span class="ctag">PF / EPFO</span>
+                <span class="ctag">ESIC</span>
+                <span class="ctag">Professional Tax</span>
+                <span class="ctag">TDS / Form 16</span>
+                <span class="ctag">Gratuity</span>
+                <span class="ctag">Bonus Act</span>
             </div>
         </div>
+    </div>
+
+    <!-- MODULE 3: STATUTORY -->
+    <div class="module-section">
+        <div class="module-hd rv">
+            <div class="module-badge mb-green"><i class="fas fa-gavel"></i> Statutory Compliance (India)</div>
+        </div>
+        <div class="feat-grid">
+            <div class="fcard fb-green rv">
+                <h4><i class="fas fa-shield-alt" style="color:var(--green)"></i> PF &amp; ESIC Management</h4>
+                <ul><li>Auto employee/employer calculation</li><li>EPFO compliant structure</li><li>Ready-to-upload challan files</li><li>Monthly ECR report generation</li></ul>
+            </div>
+            <div class="fcard fb-green rv" style="transition-delay:0.08s">
+                <h4><i class="fas fa-receipt" style="color:var(--green)"></i> Professional Tax (PT)</h4>
+                <ul><li>State-wise slab configuration</li><li>Automatic salary deduction</li><li>Monthly/yearly compliance reports</li><li>Gujarat, Maharashtra &amp; all state support</li></ul>
+            </div>
+            <div class="fcard fb-green rv" style="transition-delay:0.16s">
+                <h4><i class="fas fa-file-alt" style="color:var(--green)"></i> TDS &amp; Form 16</h4>
+                <ul><li>Salary-based TDS calculation</li><li>Exemption handling (80C, HRA, etc.)</li><li>Yearly Form 16 generation</li><li>Quarterly TDS return data export</li></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-cta rv">
+        <h2>Ready to Automate Your HR?</h2>
+        <p>Get a free demo — see how our HR &amp; Payroll software saves hours of manual work every month.</p>
+        <a href="contact.html" class="btn-p"><i class="fas fa-calendar-check"></i> Book Free Demo</a>
     </div>
 </div>
 
-<footer class="main-footer">
-    <div class="container">
-        <div class="footer-content" style="text-align: center;">
-            <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-</body>
-</html>
+<footer><div class="fin">
+    <a class="logo" href="index.html"><img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="logo-fallback">KT</div><div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div></a>
+    <p class="fcopy">&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+    <div class="flinks"><a href="privacy-policy.html">Privacy Policy</a><a href="#">Terms of Service</a></div>
+</div></footer>
+<script>
+(function(){const c=document.getElementById('particles'),ctx=c.getContext('2d');let W,H,pts=[];function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}resize();window.addEventListener('resize',resize);for(let i=0;i<80;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.3+0.4,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,a:Math.random()*.4+.07});function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(96,165,250,${p.a})`;ctx.fill();});pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(59,130,246,${0.09*(1-d/120)})`;ctx.lineWidth=0.5;ctx.stroke();}}));requestAnimationFrame(draw);}draw();})();
+window.addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('scrolled',scrollY>20));
+function omnav(){document.getElementById('mnav').classList.add('open');document.body.style.overflow='hidden';}
+function cmnav(){document.getElementById('mnav').classList.remove('open');document.body.style.overflow='';}
+const ro=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}}),{threshold:0.06});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('vis')),1500);
+</script>
+</body></html>
