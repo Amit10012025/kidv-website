@@ -4,131 +4,320 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | KIDV Tech</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
-    <link rel="apple-touch-icon" sizes="36x36" href="android-icon-36x36.png">
     <style>
-        .contact-section { padding: 80px 20px; font-family: 'Plus Jakarta Sans', sans-serif; background: #fdfdfd; }
-        .contact-wrapper { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-top: 50px; }
-        .contact-info { flex: 1; min-width: 300px; max-width: 450px; }
-        
-        /* Clickable Card Styling */
-        .contact-link { text-decoration: none; color: inherit; display: block; margin-bottom: 20px; transition: 0.3s; }
-        .contact-link:hover .info-card { transform: translateY(-5px); border-color: #1a73e8; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        
-        .info-card { display: flex; align-items: center; gap: 20px; background: #fff; padding: 25px; border-radius: 15px; border: 1px solid transparent; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
-        .info-card i { font-size: 1.8rem; color: #1a73e8; background: #e8f0fe; padding: 15px; border-radius: 12px; }
-        
-        .contact-form-box { flex: 1.5; min-width: 350px; background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .form-group { margin-bottom: 20px; }
-        .form-group input, .form-group select, .form-group textarea { 
-            width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: inherit; font-size: 1rem; outline: none; transition: 0.3s;
-        }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #1a73e8; box-shadow: 0 0 8px rgba(26, 115, 232, 0.2); }
-        
-        .btn-quote { 
-            width: 100%; background: #1a73e8; color: #fff; padding: 15px; border: none; border-radius: 10px; 
-            font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: 0.3s;
-        }
-        .btn-quote:hover { background: #1557b0; transform: translateY(-2px); }
+    :root{
+        --bg:#04071a;--bg2:#060c22;
+        --surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.07);
+        --border:rgba(255,255,255,0.08);--border-blue:rgba(59,130,246,0.3);
+        --blue:#3b82f6;--blue-b:#60a5fa;--cyan:#06b6d4;
+        --white:#ffffff;--text:#e2e8f0;--muted:#64748b;--muted2:#94a3b8;--green:#10b981;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    a,a:link,a:visited,a:hover,a:active{text-decoration:none!important;color:inherit;outline:none;}
+    ::-webkit-scrollbar{width:4px;} ::-webkit-scrollbar-thumb{background:var(--blue);border-radius:99px;}
+
+    #particles{position:fixed;inset:0;z-index:0;pointer-events:none;}
+    .ring{position:fixed;border-radius:50%;border:1px solid rgba(59,130,246,0.06);pointer-events:none;z-index:0;animation:rpulse 8s ease-in-out infinite;}
+    .r1{width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);}
+    .r2{width:950px;height:950px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:1.5s;}
+    @keyframes rpulse{0%,100%{opacity:0.4}50%{opacity:1}}
+
+    /* HEADER */
+    header{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:1320px;z-index:1000;padding:0 26px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,7,26,0.75);backdrop-filter:blur(24px);border:1px solid rgba(59,130,246,0.18);border-radius:16px;transition:all 0.4s;}
+    header.scrolled{background:rgba(4,7,26,0.97);box-shadow:0 0 0 1px rgba(59,130,246,0.25),0 20px 60px rgba(59,130,246,0.1);}
+    header::after{content:'';position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(59,130,246,0.5),rgba(6,182,212,0.5),transparent);}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo-img{width:48px;height:48px;border-radius:12px;object-fit:contain;background:rgba(255,255,255,0.05);border:1.5px solid rgba(59,130,246,0.35);padding:4px;flex-shrink:0;}
+    .logo-fallback{width:48px;height:48px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:none;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#fff;}
+    .logo-name{font-size:1.15rem;font-weight:800;color:var(--white);letter-spacing:-0.3px;display:block;}
+    .logo-name em{color:var(--blue-b);font-style:normal;}
+    .logo-sub{font-size:0.58rem;font-weight:600;color:var(--muted);letter-spacing:2px;text-transform:uppercase;display:block;margin-top:2px;}
+    nav{display:flex;align-items:center;gap:4px;}
+    nav a,nav a:link,nav a:visited,nav a:active,nav a:hover{font-size:0.9rem;font-weight:500;color:var(--muted2)!important;text-decoration:none!important;padding:8px 16px;border-radius:8px;transition:all 0.2s;}
+    nav a:hover{color:var(--white)!important;background:var(--surface2);}
+    .btn-nav,.btn-nav:link,.btn-nav:visited,.btn-nav:active{background:var(--blue)!important;color:var(--white)!important;font-weight:700!important;padding:10px 24px!important;border-radius:10px!important;box-shadow:0 0 24px rgba(59,130,246,0.45);margin-left:8px;}
+    .btn-nav:hover{background:#2563eb!important;transform:translateY(-1px)!important;color:var(--white)!important;}
+    .hamburger{display:none;background:none;border:none;color:var(--white);font-size:1.3rem;cursor:pointer;}
+    .m-nav{display:none;position:fixed;inset:0;background:rgba(4,7,26,0.97);backdrop-filter:blur(20px);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+    .m-nav.open{display:flex;}
+    .m-nav a{font-size:1.8rem;font-weight:800;color:var(--white);}
+    .m-nav a:hover{color:var(--blue-b);}
+    .m-close{position:absolute;top:22px;right:22px;background:none;border:none;color:var(--muted2);font-size:1.5rem;cursor:pointer;}
+
+    /* PAGE HERO */
+    .page-hero{position:relative;z-index:2;padding:150px 6% 70px;text-align:center;}
+    .slabel{font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);display:block;margin-bottom:14px;}
+    .grad{background:linear-gradient(135deg,var(--blue-b),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    @keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+    /* CONTACT SECTION */
+    .contact-section{position:relative;z-index:2;padding:20px 6% 100px;}
+    .contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:40px;align-items:start;}
+
+    /* INFO SIDE */
+    .contact-info{display:flex;flex-direction:column;gap:0;}
+    .info-heading{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:900;color:var(--white);letter-spacing:-0.8px;line-height:1.1;margin-bottom:14px;animation:up 0.7s 0.2s ease both;}
+    .info-desc{font-size:0.97rem;color:var(--muted2);line-height:1.8;margin-bottom:36px;animation:up 0.7s 0.35s ease both;}
+
+    .info-cards{display:flex;flex-direction:column;gap:12px;animation:up 0.7s 0.5s ease both;}
+    .info-card{
+        display:flex;align-items:center;gap:16px;
+        background:var(--surface);border:1px solid var(--border);
+        border-radius:14px;padding:20px;
+        transition:all 0.3s;
+    }
+    .info-card:hover{border-color:var(--border-blue);background:rgba(59,130,246,0.06);transform:translateX(5px);}
+    .ic-icon{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;transition:all 0.3s;}
+    .info-card:hover .ic-icon{transform:rotate(-8deg) scale(1.1);}
+    .ic-bl{background:rgba(59,130,246,0.15);color:#60a5fa;}
+    .ic-gr{background:rgba(16,185,129,0.15);color:#34d399;}
+    .ic-am{background:rgba(245,158,11,0.15);color:#fbbf24;}
+    .ic-cy{background:rgba(6,182,212,0.15);color:#22d3ee;}
+    .ic-info h4{font-size:0.88rem;font-weight:700;color:var(--white);margin-bottom:3px;}
+    .ic-info p{font-size:0.82rem;color:var(--muted2);}
+    .ic-info a{color:var(--blue-b)!important;}
+    .ic-info a:hover{color:var(--cyan)!important;}
+
+    /* FORM SIDE */
+    .contact-form-wrap{animation:up 0.7s 0.3s ease both;}
+    .form-card{
+        background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);
+        border-radius:20px;padding:36px;backdrop-filter:blur(20px);
+        box-shadow:0 20px 60px rgba(0,0,0,0.35);
+        position:relative;overflow:hidden;
+    }
+    .form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(59,130,246,0.6),rgba(6,182,212,0.5),transparent);}
+    .form-title{font-size:1.4rem;font-weight:800;color:var(--white);margin-bottom:6px;}
+    .form-sub{font-size:0.85rem;color:var(--muted2);margin-bottom:28px;}
+
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .form-group{margin-bottom:16px;}
+    .form-group label{display:block;font-size:0.78rem;font-weight:600;color:var(--muted2);letter-spacing:0.5px;margin-bottom:7px;text-transform:uppercase;}
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+        width:100%;padding:13px 16px;
+        background:rgba(255,255,255,0.05);
+        border:1px solid var(--border);border-radius:10px;
+        font-family:'Outfit',sans-serif;font-size:0.9rem;
+        color:var(--text);outline:none;transition:all 0.25s;
+        -webkit-appearance:none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder{color:var(--muted);}
+    .form-group select option{background:var(--bg2);color:var(--text);}
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus{
+        border-color:rgba(59,130,246,0.5);
+        background:rgba(59,130,246,0.06);
+        box-shadow:0 0 0 3px rgba(59,130,246,0.1);
+    }
+    .form-group textarea{resize:vertical;min-height:120px;}
+
+    .btn-submit{
+        width:100%;background:var(--blue);color:var(--white);
+        padding:15px;border:none;border-radius:12px;
+        font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;
+        cursor:pointer;transition:all 0.3s;
+        display:flex;align-items:center;justify-content:center;gap:9px;
+        box-shadow:0 0 30px rgba(59,130,246,0.4);
+        margin-top:6px;
+    }
+    .btn-submit:hover{background:#2563eb;transform:translateY(-2px);box-shadow:0 0 50px rgba(59,130,246,0.6);}
+    .btn-submit.loading{opacity:0.7;pointer-events:none;}
+
+    .success-msg{display:none;text-align:center;padding:20px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);border-radius:12px;color:#34d399;font-weight:600;margin-top:16px;}
+
+    /* FOOTER */
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:34px 6%;}
+    .fin{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+    .fcopy{font-size:0.8rem;color:var(--muted);}
+    .flinks a{font-size:0.8rem;color:var(--muted);margin-left:18px;transition:color 0.2s;}
+    .flinks a:hover{color:var(--white)!important;}
+
+    .rv{opacity:0;transform:translateY(26px);transition:opacity 0.65s ease,transform 0.65s ease;}
+    .rv.vis{opacity:1!important;transform:none!important;}
+
+    @media(max-width:1024px){.contact-inner{grid-template-columns:1fr;}}
+    @media(max-width:768px){
+        header{top:8px;width:calc(100% - 20px);padding:0 16px;}
+        nav{display:none;}.hamburger{display:block;}
+        .form-row{grid-template-columns:1fr;}
+        .form-card{padding:24px;}
+    }
     </style>
 </head>
 <body>
+<canvas id="particles"></canvas>
+<div class="ring r1"></div><div class="ring r2"></div>
 
-<header>
-    <div class="header-container">
-        <div class="logo"><img src="logo.png" alt="KIDV Tech"></div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="company.html">Company</a>
-            <a href="product.html">Product</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
-    </div>
+<div class="m-nav" id="mnav">
+    <button class="m-close" onclick="cmnav()">✕</button>
+    <a href="index.html" onclick="cmnav()">Home</a>
+    <a href="company.html" onclick="cmnav()">Company</a>
+    <a href="product.html" onclick="cmnav()">Product</a>
+    <a href="contact.html" onclick="cmnav()">Contact</a>
+</div>
+
+<header id="hdr">
+    <a class="logo" href="index.html">
+        <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="logo-fallback">KT</div>
+        <div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div>
+    </a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="company.html">Company</a>
+        <a href="product.html">Product</a>
+        <a href="contact.html" class="btn-nav">Get in Touch</a>
+    </nav>
+    <button class="hamburger" onclick="omnav()"><i class="fas fa-bars"></i></button>
 </header>
 
+<!-- PAGE HERO -->
+<div class="page-hero">
+    <span class="slabel">Get in Touch</span>
+    <h1 style="font-size:clamp(2.5rem,4.5vw,3.8rem);font-weight:900;color:var(--white);letter-spacing:-1.5px;line-height:1.06;margin-bottom:14px;animation:up 0.7s 0.2s ease both;">
+        Ready to <span class="grad">Grow Your Business?</span>
+    </h1>
+    <p style="font-size:1.05rem;color:var(--muted2);max-width:560px;margin:0 auto;line-height:1.8;animation:up 0.7s 0.4s ease both;">
+        Talk to our expert team — free consultation, no commitment. We'll find the right solution for your business.
+    </p>
+</div>
+
+<!-- CONTACT SECTION -->
 <section class="contact-section" id="contact">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
-        <p class="sub-heading" style="color: #1a73e8; font-weight: 800; letter-spacing: 2px;">GET IN TOUCH</p>
-        <h2 class="main-heading" style="font-size: 2.5rem; margin-top: 10px; font-weight: 800;">Ready to Grow Your Business?</h2>
-        
-        <div class="contact-wrapper">
-            <div class="contact-info">
-                
-                <a href="https://www.google.com/maps?q=Ahmedabad,Gujarat,India" target="_blank" class="contact-link">
-                    <div class="info-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div style="text-align: left;">
-                            <h4>Our Location</h4>
-                            <p>Ahmedabad, Gujarat, India</p>
-                        </div>
+    <div class="contact-inner">
+
+        <!-- INFO -->
+        <div class="contact-info">
+            <h2 class="info-heading">Let's Start a<br><span class="grad">Conversation</span></h2>
+            <p class="info-desc">We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
+
+            <div class="info-cards">
+                <a href="https://www.google.com/maps?q=Ahmedabad,Gujarat,India" target="_blank" class="info-card rv">
+                    <div class="ic-icon ic-bl"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="ic-info">
+                        <h4>Our Location</h4>
+                        <p>Ahmedabad, Gujarat, India</p>
                     </div>
                 </a>
-
-                <a href="mailto:amit@kidvtech.com" class="contact-link">
-                    <div class="info-card">
-                        <i class="fas fa-envelope"></i>
-                        <div style="text-align: left;">
-                            <h4>Email Us</h4>
-                            <p>amit@kidvtech.com</p>
-                        </div>
+                <a href="mailto:amit@kidvtech.com" class="info-card rv" style="transition-delay:0.08s">
+                    <div class="ic-icon ic-gr"><i class="fas fa-envelope"></i></div>
+                    <div class="ic-info">
+                        <h4>Email Us</h4>
+                        <p><span style="color:var(--blue-b)">amit@kidvtech.com</span></p>
                     </div>
                 </a>
-
-                <a href="tel:+917984486885" class="contact-link">
-                    <div class="info-card">
-                        <i class="fas fa-phone-alt"></i>
-                        <div style="text-align: left;">
-                            <h4>Call Us</h4>
-                            <p>+91 79844 86885</p>
-                        </div>
+                <a href="tel:+917984486885" class="info-card rv" style="transition-delay:0.16s">
+                    <div class="ic-icon ic-am"><i class="fas fa-phone-alt"></i></div>
+                    <div class="ic-info">
+                        <h4>Call Us</h4>
+                        <p><span style="color:var(--blue-b)">+91 79844 86885</span></p>
                     </div>
                 </a>
-
+                <a href="https://wa.me/917984486885" target="_blank" class="info-card rv" style="transition-delay:0.24s">
+                    <div class="ic-icon ic-cy"><i class="fab fa-whatsapp"></i></div>
+                    <div class="ic-info">
+                        <h4>WhatsApp</h4>
+                        <p>Chat with us instantly</p>
+                    </div>
+                </a>
             </div>
+        </div>
 
-            <div class="contact-form-box">
-                <form id="kidvContactForm">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
+        <!-- FORM -->
+        <div class="contact-form-wrap rv">
+            <div class="form-card">
+                <h3 class="form-title">Send Us a Message</h3>
+                <p class="form-sub">Fill the form below and we'll get back to you within 24 hours.</p>
+
+                <form id="kidvContactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" name="company" placeholder="Your Company">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
+                        <label>Solution You Need</label>
                         <select name="solution" required>
-                            <option value="" disabled selected>Select Solution You Need</option>
+                            <option value="" disabled selected>Select a Solution</option>
                             <option value="website">Website Development</option>
                             <option value="erp">ERPNext Solutions</option>
-                            <option value="hr-payroll">HR, Payroll & Biometric</option>
+                            <option value="hr-payroll">HR, Payroll &amp; Biometric</option>
                             <option value="ai-automation">AI Business Automation</option>
                             <option value="mobile-app">Mobile App Integration</option>
                             <option value="cloud-hosting">Cloud Hosting Services</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Tell us about your project requirements..." rows="5" required></textarea>
+                        <label>Your Message</label>
+                        <textarea name="message" placeholder="Tell us about your project requirements, goals, and timeline..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-quote">Send Message</button>
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
                 </form>
+                <div class="success-msg" id="successMsg">
+                    <i class="fas fa-check-circle" style="margin-right:8px"></i>
+                    Thank you! We'll get back to you within 24 hours.
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<footer class="main-footer">
-    <div class="container">
-        <div class="footer-content" style="text-align: center;">
-            <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-        </div>
+<footer>
+    <div class="fin">
+        <a class="logo" href="index.html">
+            <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="logo-fallback">KT</div>
+            <div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div>
+        </a>
+        <p class="fcopy">&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+        <div class="flinks"><a href="privacy-policy.html">Privacy Policy</a><a href="#">Terms of Service</a></div>
     </div>
 </footer>
 
+<script>
+(function(){const c=document.getElementById('particles'),ctx=c.getContext('2d');let W,H,pts=[];function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}resize();window.addEventListener('resize',resize);for(let i=0;i<80;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.3+0.4,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,a:Math.random()*.4+.07});function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(96,165,250,${p.a})`;ctx.fill();});pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(59,130,246,${0.09*(1-d/120)})`;ctx.lineWidth=0.5;ctx.stroke();}}));requestAnimationFrame(draw);}draw();})();
+window.addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('scrolled',scrollY>20));
+function omnav(){document.getElementById('mnav').classList.add('open');document.body.style.overflow='hidden';}
+function cmnav(){document.getElementById('mnav').classList.remove('open');document.body.style.overflow='';}
+function handleSubmit(e){
+    e.preventDefault();
+    const btn=document.getElementById('submitBtn');
+    btn.classList.add('loading');
+    btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
+    setTimeout(()=>{
+        document.getElementById('kidvContactForm').style.display='none';
+        document.getElementById('successMsg').style.display='block';
+    },1800);
+}
+const ro=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}}),{threshold:0.08});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('vis')),1500);
+</script>
 </body>
 </html>
