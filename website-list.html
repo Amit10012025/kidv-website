@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KIDV Tech offers 20+ specialized website solutions: static, dynamic, e-commerce, hospital, real estate, job portal and more. SEO-optimized, mobile-first designs.">
+    <meta name="keywords" content="website development Ahmedabad, e-commerce website India, corporate website Gujarat, web design services">
+    <meta name="author" content="KIDV Tech">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="20+ Website Development Solutions | KIDV Tech Ahmedabad">
+    <meta property="og:description" content="KIDV Tech offers 20+ specialized website solutions: static, dynamic, e-commerce, hospital, real estate, job portal and more. SEO-optimized, mobile-first designs.">
+    <meta property="og:image" content="https://www.kidvtech.com/logo.png">
+    <meta property="og:url" content="https://www.kidvtech.com/website-list.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20+ Website Development Solutions | KIDV Tech Ahmedabad">
+    <meta name="twitter:description" content="KIDV Tech offers 20+ specialized website solutions: static, dynamic, e-commerce, hospital, real estate, job portal and more. SEO-optimized, mobile-first designs.">
+    <link rel="canonical" href="https://www.kidvtech.com/website-list.html">
     <title>All Website Solutions | KIDV Tech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -76,9 +89,150 @@
     @media(max-width:900px){.cards-grid{grid-template-columns:repeat(2,1fr);}}
     @media(max-width:768px){header{top:8px;width:calc(100% - 20px);padding:0 16px;}nav{display:none;}.hamburger{display:block;}.cards-grid{grid-template-columns:1fr 1fr;}}
     @media(max-width:500px){.cards-grid{grid-template-columns:1fr;}}
+
+    /* ===== PRELOADER ===== */
+    #preloader { position:fixed; inset:0; background:var(--bg); z-index:99999; display:flex; align-items:center; justify-content:center; transition:opacity 0.6s ease, visibility 0.6s ease; }
+    #preloader.hide { opacity:0; visibility:hidden; pointer-events:none; }
+    .pl-ring { width:54px; height:54px; border:3px solid rgba(59,130,246,0.15); border-top:3px solid var(--blue); border-radius:50%; animation:plspin 0.9s linear infinite; }
+    @keyframes plspin { to{transform:rotate(360deg)} }
+    .pl-logo { position:absolute; width:28px; height:28px; }
+
+    /* ===== WHATSAPP CHAT WIDGET ===== */
+    .wa-widget { position:fixed; bottom:28px; right:28px; z-index:9990; display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
+    .wa-chat-box { background:rgba(4,7,26,0.97); backdrop-filter:blur(24px); border:1px solid rgba(37,211,102,0.25); border-radius:18px; width:300px; box-shadow:0 20px 60px rgba(0,0,0,0.5); overflow:hidden; transform:translateY(10px) scale(0.96); opacity:0; pointer-events:none; transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1); }
+    .wa-chat-box.open { transform:translateY(0) scale(1); opacity:1; pointer-events:all; }
+    .wa-chat-hdr { background:linear-gradient(135deg,#128c7e,#25d366); padding:16px 18px; display:flex; align-items:center; gap:12px; }
+    .wa-chat-avatar { width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:#fff; flex-shrink:0; }
+    .wa-chat-info strong { font-size:0.9rem; font-weight:800; color:#fff; display:block; }
+    .wa-chat-info span { font-size:0.72rem; color:rgba(255,255,255,0.8); display:flex; align-items:center; gap:5px; }
+    .wa-online-dot { width:7px; height:7px; background:#a8ff78; border-radius:50%; display:inline-block; animation:wap2 1.5s infinite; }
+    @keyframes wap2 { 0%,100%{opacity:1}50%{opacity:0.3} }
+    .wa-chat-body { padding:18px; }
+    .wa-chat-bubble { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:12px 12px 12px 3px; padding:12px 14px; font-size:0.83rem; color:#e2e8f0; line-height:1.6; margin-bottom:14px; }
+    .wa-quick-btns { display:flex; flex-direction:column; gap:7px; }
+    .wa-quick-btn { display:flex; align-items:center; gap:9px; padding:10px 14px; background:rgba(37,211,102,0.08); border:1px solid rgba(37,211,102,0.2); border-radius:10px; font-size:0.8rem; font-weight:600; color:#a7f3d0 !important; transition:all 0.25s; cursor:pointer; text-decoration:none!important; }
+    .wa-quick-btn:hover { background:rgba(37,211,102,0.18); transform:translateX(3px); }
+    .wa-quick-btn i { color:#25d366; font-size:0.85rem; width:16px; text-align:center; }
+    .wa-chat-footer { padding:14px 18px; border-top:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; gap:10px; }
+    .wa-chat-footer span { font-size:0.7rem; color:#64748b; }
+    .wa-chat-footer strong { color:#25d366; }
+    .wa-btn-main { width:58px; height:58px; border-radius:50%; background:linear-gradient(135deg,#25d366,#128c7e); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 28px rgba(37,211,102,0.5); transition:all 0.3s; cursor:pointer; border:none; flex-shrink:0; animation:wapulse 2.5s infinite; }
+    .wa-btn-main:hover { transform:scale(1.1); box-shadow:0 8px 40px rgba(37,211,102,0.7); }
+    .wa-btn-main i { color:#fff; font-size:1.6rem; }
+    .wa-close-btn { position:absolute; top:14px; right:14px; background:rgba(255,255,255,0.15); border:none; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.75rem; cursor:pointer; } 50%{box-shadow:0 6px 42px rgba(37,211,102,0.8),0 0 0 10px rgba(37,211,102,0.1)} }
+
+    /* ===== BACK TO TOP ===== */
+    .btt {
+        position:fixed; bottom:98px; right:28px; z-index:9989;
+        width:44px; height:44px; border-radius:12px;
+        background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3);
+        display:flex; align-items:center; justify-content:center;
+        color:var(--blue-b); font-size:1rem; cursor:pointer;
+        opacity:0; transform:translateY(10px);
+        transition:all 0.35s; pointer-events:none;
+    }
+    .btt.show { opacity:1; transform:translateY(0); pointer-events:all; }
+    .btt:hover { background:var(--blue); color:#fff; transform:translateY(-3px); }
+
+    /* ===== COOKIE CONSENT ===== */
+    .cookie-bar {
+        position:fixed; bottom:0; left:0; right:0; z-index:9995;
+        background:rgba(6,12,34,0.97); backdrop-filter:blur(20px);
+        border-top:1px solid rgba(59,130,246,0.2);
+        padding:18px 6%; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;
+        transform:translateY(100%); transition:transform 0.5s ease;
+        font-family:'Outfit',sans-serif;
+    }
+    .cookie-bar.show { transform:translateY(0); }
+    .cookie-text { font-size:0.85rem; color:var(--muted2); flex:1; min-width:260px; }
+    .cookie-text a { color:var(--blue-b)!important; }
+    .cookie-btns { display:flex; gap:10px; flex-shrink:0; }
+    .cookie-accept { background:var(--blue); color:#fff!important; font-size:0.82rem; font-weight:700; padding:9px 22px; border-radius:8px; border:none; cursor:pointer; font-family:'Outfit',sans-serif; transition:all 0.25s; }
+    .cookie-accept:hover { background:#2563eb; }
+    .cookie-decline { background:transparent; color:var(--muted2)!important; font-size:0.82rem; font-weight:600; padding:9px 16px; border-radius:8px; border:1px solid var(--border); cursor:pointer; font-family:'Outfit',sans-serif; transition:all 0.25s; }
+    .cookie-decline:hover { border-color:var(--border-blue); color:var(--white)!important; }
+
+    /* ===== FOOTER SOCIAL ===== */
+    .fsoc { display:flex; align-items:center; gap:10px; }
+    .fsoc a { width:36px; height:36px; border-radius:9px; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--muted2); font-size:0.9rem; transition:all 0.25s; }
+    .fsoc a:hover { background:var(--blue); border-color:var(--blue); color:#fff!important; transform:translateY(-3px); }
+    .fin { flex-wrap:wrap; gap:18px; }
+
+
+
+    /* STICKY CTA BAR */
+    .sticky-cta { position:fixed; bottom:0; left:0; right:0; z-index:9970; background:rgba(4,7,26,0.97); backdrop-filter:blur(20px); border-top:1px solid rgba(59,130,246,0.25); padding:14px 6%; display:flex; align-items:center; justify-content:space-between; gap:16px; transform:translateY(100%); transition:transform 0.4s ease; }
+    .sticky-cta.show { transform:translateY(0); }
+    .sticky-cta-info { display:flex; align-items:center; gap:12px; }
+    .sticky-cta-icon { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
+    .sticky-cta-text strong { font-size:0.9rem; font-weight:800; color:#fff; display:block; }
+    .sticky-cta-text span { font-size:0.75rem; color:#94a3b8; }
+    .sticky-cta-btns { display:flex; gap:10px; flex-shrink:0; }
+    .scta-wa { display:flex; align-items:center; gap:7px; background:rgba(37,211,102,0.15); border:1px solid rgba(37,211,102,0.3); color:#a7f3d0!important; font-size:0.82rem; font-weight:700; padding:10px 18px; border-radius:10px; transition:all 0.25s; }
+    .scta-wa:hover { background:rgba(37,211,102,0.25); }
+    .scta-call { display:flex; align-items:center; gap:7px; background:var(--blue); color:#fff!important; font-size:0.82rem; font-weight:700; padding:10px 18px; border-radius:10px; transition:all 0.25s; }
+    .scta-call:hover { background:#2563eb; transform:translateY(-2px); }
+    @media(max-width:600px){ .sticky-cta-info{display:none;} .sticky-cta{justify-content:center;} }
+
+    /* ===== PAGE PROGRESS BAR ===== */
+    .progress-bar { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--blue),var(--cyan)); z-index:99999; width:0%; transition:width 0.1s linear; }
+
+    /* ===== ANNOUNCEMENT BAR ===== */
+    .ann-bar { position:fixed; top:0; left:0; right:0; z-index:10000; background:linear-gradient(90deg,#1e3a5f,#1a4080,#1e3a5f); border-bottom:1px solid rgba(59,130,246,0.3); height:36px; display:flex; align-items:center; justify-content:center; gap:12px; font-size:0.78rem; font-weight:600; color:#bfdbfe; animation:annslide 0.6s ease; overflow:hidden; }
+    @keyframes annslide { from{transform:translateY(-100%)} to{transform:translateY(0)} }
+    .ann-bar .ann-text { display:flex; align-items:center; gap:8px; }
+    .ann-bar .ann-badge { background:rgba(59,130,246,0.25); border:1px solid rgba(59,130,246,0.4); color:#60a5fa; font-size:0.68rem; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.5px; text-transform:uppercase; }
+    .ann-bar a { color:#7dd3fc!important; font-weight:700; border-bottom:1px solid rgba(125,211,252,0.4); transition:color 0.2s; }
+    .ann-bar a:hover { color:#fff!important; }
+    .ann-close { position:absolute; right:16px; background:none; border:none; color:rgba(191,219,254,0.5); font-size:1rem; cursor:pointer; line-height:1; padding:4px; transition:color 0.2s; }
+    .ann-close:hover { color:#fff; }
+    body.ann-visible header { top:50px!important; }
+    body.ann-visible .ann-bar { display:flex; }
+
+    /* ===== CALL FLOATING BUTTON ===== */
+    .call-btn { position:fixed; bottom:100px; right:94px; z-index:9988; width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,#3b82f6,#06b6d4); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(59,130,246,0.5); transition:all 0.3s; cursor:pointer; border:none; animation:callpulse 3s infinite; }
+    .call-btn:hover { transform:scale(1.12); box-shadow:0 6px 32px rgba(59,130,246,0.7); }
+    .call-btn i { color:#fff; font-size:1.2rem; }
+    .call-tooltip { position:absolute; right:58px; background:rgba(4,7,26,0.92); color:#fff; font-size:0.75rem; font-weight:600; padding:6px 12px; border-radius:8px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity 0.3s; font-family:'Outfit',sans-serif; border:1px solid rgba(255,255,255,0.1); }
+    .call-btn:hover .call-tooltip { opacity:1; }
+    @keyframes callpulse { 0%,100%{box-shadow:0 4px 20px rgba(59,130,246,0.5)} 50%{box-shadow:0 4px 30px rgba(59,130,246,0.8),0 0 0 8px rgba(59,130,246,0.08)} }
+
     </style>
+    <!-- Google Analytics — Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Website Development",
+  "provider": {"@type": "Organization","name": "KIDV Tech"},
+  "description": "Professional website development including corporate sites, e-commerce, landing pages and SEO optimization.",
+  "areaServed": "India",
+  "url": "https://www.kidvtech.com/website-list.html"
+}
+    </script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="KIDV Tech">
 </head>
 <body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <div style="position:relative;display:flex;align-items:center;justify-content:center;">
+        <div class="pl-ring"></div>
+        <img src="logo.png" class="pl-logo" onerror="this.style.display='none'" alt="">
+    </div>
+</div>
 <canvas id="particles"></canvas>
 <div class="ring r1"></div><div class="ring r2"></div>
 <div class="m-nav" id="mnav">
@@ -135,11 +289,23 @@
     </div>
 </div>
 
-<footer><div class="fin">
-    <a class="logo" href="index.html"><img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="logo-fallback">KT</div><div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div></a>
-    <p class="fcopy">&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
-    <div class="flinks"><a href="privacy-policy.html">Privacy Policy</a><a href="#">Terms of Service</a></div>
-</div></footer>
+<footer>
+    <div class="fin" style="max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 0;">
+        <a class="logo" href="index.html">
+            <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="logo-fallback">KT</div>
+            <div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div>
+        </a>
+        <div class="fsoc">
+            <a href="https://www.instagram.com/kidvtech" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/kidvtech" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/kidvtech" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/917984486885" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="fcopy">&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+        <div class="flinks"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html" style="margin-left:18px">Terms of Service</a></div>
+    </div>
+</footer>
 <script>
 (function(){const c=document.getElementById('particles'),ctx=c.getContext('2d');let W,H,pts=[];function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}resize();window.addEventListener('resize',resize);for(let i=0;i<80;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.3+0.4,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,a:Math.random()*.4+.07});function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(96,165,250,${p.a})`;ctx.fill();});pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(59,130,246,${0.09*(1-d/120)})`;ctx.lineWidth=0.5;ctx.stroke();}}));requestAnimationFrame(draw);}draw();})();
 window.addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('scrolled',scrollY>20));
@@ -148,5 +314,100 @@ function cmnav(){document.getElementById('mnav').classList.remove('open');docume
 const ro=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}}),{threshold:0.06});
 document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
 setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('vis')),1500);
+
+/* PRELOADER */
+window.addEventListener('load',()=>{ setTimeout(()=>document.getElementById('preloader').classList.add('hide'),400); });
+
+/* BACK TO TOP */
+window.addEventListener('scroll',()=>{ document.getElementById('btt').classList.toggle('show',scrollY>400); });
+
+/* COOKIE CONSENT */
+(function(){
+    if(!localStorage.getItem('kc')){
+        setTimeout(()=>document.getElementById('cookieBar').classList.add('show'),1800);
+    }
+})();
+function cookieAccept(){ localStorage.setItem('kc','1'); document.getElementById('cookieBar').classList.remove('show'); }
+function cookieDecline(){ localStorage.setItem('kc','0'); document.getElementById('cookieBar').classList.remove('show'); }
+
+
+/* PWA SERVICE WORKER */
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+}
 </script>
+
+<!-- WHATSAPP CHAT WIDGET -->
+<div class="wa-widget">
+    <div class="wa-chat-box" id="waChatBox">
+        <div class="wa-chat-hdr" style="position:relative;">
+            <div class="wa-chat-avatar"><i class="fab fa-whatsapp"></i></div>
+            <div class="wa-chat-info">
+                <strong>KIDV Tech Support</strong>
+                <span><span class="wa-online-dot"></span> Online Now</span>
+            </div>
+            <button class="wa-close-btn" onclick="toggleWaChat()">✕</button>
+        </div>
+        <div class="wa-chat-body">
+            <div class="wa-chat-bubble">👋 Hi there! How can we help you today? Choose an option below:</div>
+            <div class="wa-quick-btns">
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20a%20quote%20for%20ERPNext%20implementation." target="_blank"><i class="fas fa-layer-group"></i> ERPNext Inquiry</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20information%20about%20HR%20and%20Payroll%20software." target="_blank"><i class="fas fa-users"></i> HR & Payroll Info</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20a%20website%20or%20mobile%20app%20developed." target="_blank"><i class="fas fa-desktop"></i> Website / App Development</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20information%20about%20AI%20automation." target="_blank"><i class="fas fa-robot"></i> AI Automation</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20have%20a%20general%20inquiry." target="_blank"><i class="fas fa-comment-alt"></i> General Inquiry</a>
+            </div>
+        </div>
+        <div class="wa-chat-footer">
+            <span>Powered by <strong>WhatsApp</strong> · Replies within minutes</span>
+        </div>
+    </div>
+    <button class="wa-btn-main" onclick="toggleWaChat()" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp" id="waIcon"></i>
+    </button>
+</div>
+<!-- BACK TO TOP -->
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="ann-bar" id="annBar">
+    <div class="ann-text">
+        <span class="ann-badge">Free</span>
+        <span>&#127775; ERPNext Live Demo Available &mdash; Book your free 30-minute session &nbsp;<a href="contact.html">Schedule Now &rarr;</a></span>
+    </div>
+    <button class="ann-close" onclick="closeAnn()" title="Close">&#10005;</button>
+</div>
+
+<!-- CALL FLOATING BUTTON -->
+<a href="tel:+917984486885" class="call-btn" title="Call Us">
+    <i class="fas fa-phone-alt"></i>
+    <span class="call-tooltip">&#128222; +91 79844 86885</span>
+</a>
+
+<!-- STICKY CTA BAR -->
+<div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta-info">
+        <div class="sticky-cta-icon" style="background:linear-gradient(135deg,#10b98122,#06b6d422);border:1px solid #10b98144;"><i class="fas fa-desktop" style="color:#10b981"></i></div>
+        <div class="sticky-cta-text"><strong>Interested in Website Development?</strong><span>Get a free consultation — no commitment</span></div>
+    </div>
+    <div class="sticky-cta-btns">
+        <a class="scta-wa" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20am%20interested%20in%20Website%20Development." target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a class="scta-call" href="tel:+917984486885"><i class="fas fa-phone-alt"></i> Call Now</a>
+    </div>
+</div>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+<!-- COOKIE CONSENT -->
+<div class="cookie-bar" id="cookieBar">
+    <p class="cookie-text">🍪 We use cookies to improve your experience. By continuing, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <div class="cookie-btns">
+        <button class="cookie-decline" onclick="cookieDecline()">Decline</button>
+        <button class="cookie-accept" onclick="cookieAccept()">Accept All</button>
+    </div>
+</div>
+
 </body></html>
