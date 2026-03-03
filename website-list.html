@@ -4,85 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Website Solutions | KIDV Tech</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
-    <link rel="apple-touch-icon" sizes="36x36" href="android-icon-36x36.png">
     <style>
-        .list-container { max-width: 1200px; margin: 40px auto; padding: 20px; font-family: 'Plus Jakarta Sans', sans-serif; }
-        .page-header { text-align: center; margin-bottom: 50px; }
-        .page-header h1 { color: #1a73e8; font-size: 2.5rem; font-weight: 800; }
-        .website-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .web-card { 
-            background: #fff; border: 1px solid #f0f0f0; border-radius: 12px; padding: 25px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.3s; position: relative;
-        }
-        .web-card:hover { transform: translateY(-8px); border-color: #1a73e8; box-shadow: 0 10px 25px rgba(26, 115, 232, 0.1); }
-        .web-card i { font-size: 2rem; color: #1a73e8; margin-bottom: 15px; display: block; }
-        .web-card h3 { font-size: 1.2rem; color: #222; margin-bottom: 10px; font-weight: 700; border-bottom: 2px solid #f9f9f9; padding-bottom: 8px; }
-        .web-card p { color: #555; font-size: 0.9rem; line-height: 1.5; }
-        .card-no { position: absolute; top: 15px; right: 15px; color: #f0f0f0; font-weight: 800; font-size: 1.2rem; }
+    :root{--bg:#04071a;--bg2:#060c22;--surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.07);--border:rgba(255,255,255,0.08);--border-blue:rgba(59,130,246,0.3);--blue:#3b82f6;--blue-b:#60a5fa;--cyan:#06b6d4;--white:#ffffff;--text:#e2e8f0;--muted:#64748b;--muted2:#94a3b8;--green:#10b981;}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+    body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    a,a:link,a:visited,a:hover,a:active{text-decoration:none!important;color:inherit;outline:none;}
+    ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:var(--blue);border-radius:99px;}
+    #particles{position:fixed;inset:0;z-index:0;pointer-events:none;}
+    .ring{position:fixed;border-radius:50%;border:1px solid rgba(59,130,246,0.06);pointer-events:none;z-index:0;animation:rpulse 8s ease-in-out infinite;}
+    .r1{width:700px;height:700px;top:30%;left:70%;transform:translate(-50%,-50%);}
+    .r2{width:1100px;height:1100px;top:30%;left:70%;transform:translate(-50%,-50%);animation-delay:2s;}
+    @keyframes rpulse{0%,100%{opacity:0.4}50%{opacity:1}}
+    /* HEADER */
+    header{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:1320px;z-index:1000;padding:0 26px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,7,26,0.75);backdrop-filter:blur(24px);border:1px solid rgba(59,130,246,0.18);border-radius:16px;transition:all 0.4s;}
+    header.scrolled{background:rgba(4,7,26,0.97);box-shadow:0 0 0 1px rgba(59,130,246,0.25),0 20px 60px rgba(59,130,246,0.1);}
+    header::after{content:'';position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(59,130,246,0.5),rgba(6,182,212,0.5),transparent);}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo-img{width:48px;height:48px;border-radius:12px;object-fit:contain;background:rgba(255,255,255,0.05);border:1.5px solid rgba(59,130,246,0.35);padding:4px;flex-shrink:0;}
+    .logo-fallback{width:48px;height:48px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:none;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#fff;}
+    .logo-name{font-size:1.15rem;font-weight:800;color:var(--white);letter-spacing:-0.3px;display:block;}
+    .logo-name em{color:var(--blue-b);font-style:normal;}
+    .logo-sub{font-size:0.58rem;font-weight:600;color:var(--muted);letter-spacing:2px;text-transform:uppercase;display:block;margin-top:2px;}
+    nav{display:flex;align-items:center;gap:4px;}
+    nav a,nav a:link,nav a:visited,nav a:active,nav a:hover{font-size:0.9rem;font-weight:500;color:var(--muted2)!important;text-decoration:none!important;padding:8px 16px;border-radius:8px;transition:all 0.2s;}
+    nav a:hover{color:var(--white)!important;background:var(--surface2);}
+    .btn-nav,.btn-nav:link,.btn-nav:visited,.btn-nav:active{background:var(--blue)!important;color:var(--white)!important;font-weight:700!important;padding:10px 24px!important;border-radius:10px!important;box-shadow:0 0 24px rgba(59,130,246,0.45);margin-left:8px;}
+    .btn-nav:hover{background:#2563eb!important;transform:translateY(-1px)!important;color:var(--white)!important;}
+    .hamburger{display:none;background:none;border:none;color:var(--white);font-size:1.3rem;cursor:pointer;}
+    .m-nav{display:none;position:fixed;inset:0;background:rgba(4,7,26,0.97);backdrop-filter:blur(20px);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+    .m-nav.open{display:flex;}.m-nav a{font-size:1.8rem;font-weight:800;color:var(--white);}.m-nav a:hover{color:var(--blue-b);}
+    .m-close{position:absolute;top:22px;right:22px;background:none;border:none;color:var(--muted2);font-size:1.5rem;cursor:pointer;}
+    /* PAGE */
+    .page-wrap{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:140px 6% 100px;}
+    .back-btn{display:inline-flex;align-items:center;gap:8px;font-size:0.82rem;font-weight:600;color:var(--muted2);background:var(--surface);border:1px solid var(--border);padding:8px 16px;border-radius:8px;margin-bottom:36px;transition:all 0.25s;cursor:pointer;}
+    .back-btn:hover{border-color:var(--border-blue);color:var(--white);}
+    .page-hd{text-align:center;margin-bottom:60px;}
+    .slabel{font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);display:block;margin-bottom:14px;}
+    .page-title{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--white);letter-spacing:-1.2px;line-height:1.08;margin-bottom:14px;animation:up 0.7s 0.2s ease both;}
+    .grad{background:linear-gradient(135deg,var(--blue-b),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .page-desc{font-size:1rem;color:var(--muted2);max-width:620px;margin:0 auto;line-height:1.8;animation:up 0.7s 0.35s ease both;}
+    @keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    /* GRID */
+    .cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+    .wcard{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:24px;position:relative;overflow:hidden;transition:all 0.35s;cursor:default;}
+    .wcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));opacity:0;transition:opacity 0.3s;}
+    .wcard:hover{border-color:var(--border-blue);transform:translateY(-6px);box-shadow:0 18px 50px rgba(0,0,0,0.3);}
+    .wcard:hover::before{opacity:1;}
+    .card-num{position:absolute;top:14px;right:16px;font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:rgba(255,255,255,0.1);letter-spacing:1px;}
+    .card-ico{width:44px;height:44px;border-radius:11px;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.2);color:var(--blue-b);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:16px;transition:all 0.3s;}
+    .wcard:hover .card-ico{transform:rotate(-8deg) scale(1.1);}
+    .wcard h3{font-size:0.97rem;font-weight:700;color:var(--white);margin-bottom:8px;}
+    .wcard p{font-size:0.81rem;color:var(--muted2);line-height:1.65;}
+    /* CTA */
+    .bottom-cta{margin-top:60px;background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(6,182,212,0.05));border:1px solid rgba(59,130,246,0.22);border-radius:18px;padding:50px;text-align:center;}
+    .bottom-cta h2{font-size:1.8rem;font-weight:900;color:var(--white);letter-spacing:-0.6px;margin-bottom:12px;}
+    .bottom-cta p{font-size:0.95rem;color:var(--muted2);margin-bottom:28px;}
+    .btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--white)!important;font-weight:700;font-size:0.9rem;padding:13px 26px;border-radius:11px;box-shadow:0 0 30px rgba(59,130,246,0.4);transition:all 0.3s;}
+    .btn-p:hover{transform:translateY(-3px);box-shadow:0 0 55px rgba(59,130,246,0.6);}
+    /* FOOTER */
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:34px 6%;}
+    .fin{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+    .fcopy{font-size:0.8rem;color:var(--muted);}
+    .flinks a{font-size:0.8rem;color:var(--muted);margin-left:18px;transition:color 0.2s;}
+    .flinks a:hover{color:var(--white)!important;}
+    .rv{opacity:0;transform:translateY(26px);transition:opacity 0.65s ease,transform 0.65s ease;}
+    .rv.vis{opacity:1!important;transform:none!important;}
+    @media(max-width:1200px){.cards-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:900px){.cards-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:768px){header{top:8px;width:calc(100% - 20px);padding:0 16px;}nav{display:none;}.hamburger{display:block;}.cards-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:500px){.cards-grid{grid-template-columns:1fr;}}
     </style>
 </head>
 <body>
-
-<header>
-    <div class="header-container">
-        <div class="logo"><img src="logo.png" alt="KIDV Tech"></div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="company.html">Company</a>
-            <a href="product.html">Product</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
-    </div>
+<canvas id="particles"></canvas>
+<div class="ring r1"></div><div class="ring r2"></div>
+<div class="m-nav" id="mnav">
+    <button class="m-close" onclick="cmnav()">✕</button>
+    <a href="index.html" onclick="cmnav()">Home</a><a href="company.html" onclick="cmnav()">Company</a>
+    <a href="product.html" onclick="cmnav()">Product</a><a href="contact.html" onclick="cmnav()">Contact</a>
+</div>
+<header id="hdr">
+    <a class="logo" href="index.html">
+        <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="logo-fallback">KT</div>
+        <div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div>
+    </a>
+    <nav>
+        <a href="index.html">Home</a><a href="company.html">Company</a>
+        <a href="product.html">Product</a><a href="contact.html" class="btn-nav">Get in Touch</a>
+    </nav>
+    <button class="hamburger" onclick="omnav()"><i class="fas fa-bars"></i></button>
 </header>
 
-<div class="list-container">
-    <div class="page-header">
-        <h1>20+ Specialized Website Solutions</h1>
-        <p>Explore our full range of industry-specific digital platforms.</p>
+<div class="page-wrap">
+    <a class="back-btn" href="product.html"><i class="fas fa-arrow-left"></i> Back to Products</a>
+    <div class="page-hd">
+        <span class="slabel">Website Development</span>
+        <h1 class="page-title">20+ Specialized<br><span class="grad">Website Solutions</span></h1>
+        <p class="page-desc">Explore our full range of industry-specific digital platforms — from static sites to enterprise portals.</p>
     </div>
-
-    <div class="website-grid">
-        <div class="web-card"><span class="card-no">01</span><i class="fas fa-file-alt"></i><h3>Static Website</h3><p>Fast-loading HTML/CSS sites for fixed content. Ideal for company profiles or digital visiting cards.</p></div>
-        <div class="web-card"><span class="card-no">02</span><i class="fas fa-edit"></i><h3>Dynamic Website</h3><p>Manageable via Admin Panel. Update content, news, and images easily without coding skills.</p></div>
-        <div class="web-card"><span class="card-no">03</span><i class="fas fa-city"></i><h3>Business / Corporate</h3><p>Professional sites focused on brand authority, service lists, and client lead generation.</p></div>
-        <div class="web-card"><span class="card-no">04</span><i class="fas fa-shopping-cart"></i><h3>E-Commerce Store</h3><p>Advanced platforms with product carts, checkout, and integrated payment gateways for online sales.</p></div>
-        <div class="web-card"><span class="card-no">05</span><i class="fas fa-user-circle"></i><h3>Portfolio Website</h3><p>Sleek designs for professionals and artists to showcase galleries and creative work history.</p></div>
-
-        <div class="web-card"><span class="card-no">06</span><i class="fas fa-blog"></i><h3>Blogging / News</h3><p>Optimized for content sharing. Features categorized articles and SEO-friendly architectures.</p></div>
-        <div class="web-card"><span class="card-no">07</span><i class="fas fa-graduation-cap"></i><h3>Educational / LMS</h3><p>Learning platforms featuring course modules, student logins, and online result systems.</p></div>
-        <div class="web-card"><span class="card-no">08</span><i class="fas fa-user-md"></i><h3>Hospital / Clinic</h3><p>Healthcare focused sites with doctor profiles, appointment booking, and report management.</p></div>
-        <div class="web-card"><span class="card-no">09</span><i class="fas fa-key"></i><h3>Real Estate</h3><p>Property listings with search filters, high-quality image galleries, and inquiry capture forms.</p></div>
-        <div class="web-card"><span class="card-no">10</span><i class="fas fa-tools"></i><h3>Manufacturing / Industry</h3><p>Industrial product catalogs with support for **ERPNext** inventory and inquiry integration.</p></div>
-
-        <div class="web-card"><span class="card-no">11</span><i class="fas fa-calendar-check"></i><h3>Service Booking</h3><p>Appointment-based systems for salons or repairs with scheduling and online payment support.</p></div>
-        <div class="web-card"><span class="card-no">12</span><i class="fas fa-plane-departure"></i><h3>Travel & Tourism</h3><p>Holiday package showcases with booking engines, gallery integration, and payment features.</p></div>
-        <div class="web-card"><span class="card-no">13</span><i class="fas fa-utensils"></i><h3>Restaurant / Hotel</h3><p>Features digital menus, table reservation systems, and online food ordering functionality.</p></div>
-        <div class="web-card"><span class="card-no">14</span><i class="fas fa-search-dollar"></i><h3>Job Portal</h3><p>Candidate and Employer login portals for job posting, resume upload, and application tracking.</p></div>
-        <div class="web-card"><span class="card-no">15</span><i class="fas fa-tags"></i><h3>Classified Website</h3><p>OLX-style platforms allowing users to post location-based advertisements for buying and selling.</p></div>
-
-        <div class="web-card"><span class="card-no">16</span><i class="fas fa-hand-holding-heart"></i><h3>NGO / Trust</h3><p>Focuses on social impact, event transparency, and secure online donation systems.</p></div>
-        <div class="web-card"><span class="card-no">17</span><i class="fas fa-university"></i><h3>Government / Public</h3><p>Highly secure portals for official notices, public schemes, and compliant digital forms.</p></div>
-        <div class="web-card"><span class="card-no">18</span><i class="fas fa-users-cog"></i><h3>Membership Website</h3><p>Restricted access platforms offering premium content for communities or coaching groups.</p></div>
-        <div class="web-card"><span class="card-no">19</span><i class="fas fa-cube"></i><h3>SaaS / Software</h3><p>Dedicated sites for software products like **ERP** or **CRM**, including demo booking and plans.</p></div>
-        <div class="web-card"><span class="card-no">20</span><i class="fas fa-bullseye"></i><h3>Landing Page</h3><p>Conversion-focused single-page sites optimized for digital marketing and lead generation ads.</p></div>
+    <div class="cards-grid">
+        <div class="wcard rv"><span class="card-num">01</span><div class="card-ico"><i class="fas fa-file-alt"></i></div><h3>Static Website</h3><p>Fast-loading HTML/CSS sites for fixed content. Ideal for company profiles or digital visiting cards.</p></div>
+        <div class="wcard rv" style="transition-delay:0.04s"><span class="card-num">02</span><div class="card-ico"><i class="fas fa-edit"></i></div><h3>Dynamic Website</h3><p>Manageable via Admin Panel. Update content, news, and images easily without coding skills.</p></div>
+        <div class="wcard rv" style="transition-delay:0.08s"><span class="card-num">03</span><div class="card-ico"><i class="fas fa-city"></i></div><h3>Business / Corporate</h3><p>Professional sites focused on brand authority, service lists, and client lead generation.</p></div>
+        <div class="wcard rv" style="transition-delay:0.12s"><span class="card-num">04</span><div class="card-ico"><i class="fas fa-shopping-cart"></i></div><h3>E-Commerce Store</h3><p>Advanced platforms with product carts, checkout, and integrated payment gateways for online sales.</p></div>
+        <div class="wcard rv" style="transition-delay:0.16s"><span class="card-num">05</span><div class="card-ico"><i class="fas fa-user-circle"></i></div><h3>Portfolio Website</h3><p>Sleek designs for professionals and artists to showcase galleries and creative work history.</p></div>
+        <div class="wcard rv" style="transition-delay:0.2s"><span class="card-num">06</span><div class="card-ico"><i class="fas fa-blog"></i></div><h3>Blogging / News</h3><p>Optimized for content sharing. Features categorized articles and SEO-friendly architectures.</p></div>
+        <div class="wcard rv" style="transition-delay:0.24s"><span class="card-num">07</span><div class="card-ico"><i class="fas fa-graduation-cap"></i></div><h3>Educational / LMS</h3><p>Learning platforms featuring course modules, student logins, and online result systems.</p></div>
+        <div class="wcard rv" style="transition-delay:0.28s"><span class="card-num">08</span><div class="card-ico"><i class="fas fa-user-md"></i></div><h3>Hospital / Clinic</h3><p>Healthcare focused sites with doctor profiles, appointment booking, and report management.</p></div>
+        <div class="wcard rv" style="transition-delay:0.32s"><span class="card-num">09</span><div class="card-ico"><i class="fas fa-key"></i></div><h3>Real Estate</h3><p>Property listings with search filters, high-quality image galleries, and inquiry capture forms.</p></div>
+        <div class="wcard rv" style="transition-delay:0.36s"><span class="card-num">10</span><div class="card-ico"><i class="fas fa-tools"></i></div><h3>Manufacturing / Industry</h3><p>Industrial product catalogs with ERPNext inventory and inquiry integration.</p></div>
+        <div class="wcard rv" style="transition-delay:0.4s"><span class="card-num">11</span><div class="card-ico"><i class="fas fa-calendar-check"></i></div><h3>Service Booking</h3><p>Appointment-based systems for salons or repairs with scheduling and online payment support.</p></div>
+        <div class="wcard rv" style="transition-delay:0.44s"><span class="card-num">12</span><div class="card-ico"><i class="fas fa-plane-departure"></i></div><h3>Travel &amp; Tourism</h3><p>Holiday package showcases with booking engines, gallery integration, and payment features.</p></div>
+        <div class="wcard rv" style="transition-delay:0.48s"><span class="card-num">13</span><div class="card-ico"><i class="fas fa-utensils"></i></div><h3>Restaurant / Hotel</h3><p>Digital menus, table reservation systems, and online food ordering functionality.</p></div>
+        <div class="wcard rv" style="transition-delay:0.52s"><span class="card-num">14</span><div class="card-ico"><i class="fas fa-search-dollar"></i></div><h3>Job Portal</h3><p>Candidate and Employer login portals for job posting, resume upload, and application tracking.</p></div>
+        <div class="wcard rv" style="transition-delay:0.56s"><span class="card-num">15</span><div class="card-ico"><i class="fas fa-tags"></i></div><h3>Classified Website</h3><p>OLX-style platforms allowing users to post location-based advertisements for buying and selling.</p></div>
+        <div class="wcard rv" style="transition-delay:0.6s"><span class="card-num">16</span><div class="card-ico"><i class="fas fa-hand-holding-heart"></i></div><h3>NGO / Trust</h3><p>Focuses on social impact, event transparency, and secure online donation systems.</p></div>
+        <div class="wcard rv" style="transition-delay:0.64s"><span class="card-num">17</span><div class="card-ico"><i class="fas fa-university"></i></div><h3>Government / Public</h3><p>Highly secure portals for official notices, public schemes, and compliant digital forms.</p></div>
+        <div class="wcard rv" style="transition-delay:0.68s"><span class="card-num">18</span><div class="card-ico"><i class="fas fa-users-cog"></i></div><h3>Membership Website</h3><p>Restricted access platforms offering premium content for communities or coaching groups.</p></div>
+        <div class="wcard rv" style="transition-delay:0.72s"><span class="card-num">19</span><div class="card-ico"><i class="fas fa-cube"></i></div><h3>SaaS / Software</h3><p>Dedicated sites for software products like ERP or CRM, including demo booking and plans.</p></div>
+        <div class="wcard rv" style="transition-delay:0.76s"><span class="card-num">20</span><div class="card-ico"><i class="fas fa-bullseye"></i></div><h3>Landing Page</h3><p>Conversion-focused single-page sites optimized for digital marketing and lead generation ads.</p></div>
+    </div>
+    <div class="bottom-cta rv">
+        <h2>Need a Custom Website?</h2>
+        <p>Tell us your business needs — we'll build the perfect website solution for you.</p>
+        <a href="contact.html" class="btn-p"><i class="fas fa-calendar-check"></i> Get Free Consultation</a>
     </div>
 </div>
 
-<footer class="main-footer">
-    <div class="container">
-        <div class="footer-content" style="text-align: center;">
-            <p>&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-</body>
-</html>
+<footer><div class="fin">
+    <a class="logo" href="index.html"><img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="logo-fallback">KT</div><div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div></a>
+    <p class="fcopy">&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+    <div class="flinks"><a href="privacy-policy.html">Privacy Policy</a><a href="#">Terms of Service</a></div>
+</div></footer>
+<script>
+(function(){const c=document.getElementById('particles'),ctx=c.getContext('2d');let W,H,pts=[];function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}resize();window.addEventListener('resize',resize);for(let i=0;i<80;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.3+0.4,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,a:Math.random()*.4+.07});function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(96,165,250,${p.a})`;ctx.fill();});pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(59,130,246,${0.09*(1-d/120)})`;ctx.lineWidth=0.5;ctx.stroke();}}));requestAnimationFrame(draw);}draw();})();
+window.addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('scrolled',scrollY>20));
+function omnav(){document.getElementById('mnav').classList.add('open');document.body.style.overflow='hidden';}
+function cmnav(){document.getElementById('mnav').classList.remove('open');document.body.style.overflow='';}
+const ro=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}}),{threshold:0.06});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('vis')),1500);
+</script>
+</body></html>
