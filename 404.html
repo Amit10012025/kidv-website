@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | KIDV Tech</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
+    <style>
+    :root{--bg:#04071a;--bg2:#060c22;--surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.07);--border:rgba(255,255,255,0.08);--border-blue:rgba(59,130,246,0.3);--blue:#3b82f6;--blue-b:#60a5fa;--cyan:#06b6d4;--white:#ffffff;--text:#e2e8f0;--muted:#64748b;--muted2:#94a3b8;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+    a,a:hover{text-decoration:none!important;color:inherit;}
+    #particles{position:fixed;inset:0;z-index:0;pointer-events:none;}
+    .ring{position:fixed;border-radius:50%;border:1px solid rgba(59,130,246,0.07);pointer-events:none;z-index:0;animation:rp 8s ease-in-out infinite;}
+    .r1{width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);}
+    .r2{width:1000px;height:1000px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:2s;}
+    @keyframes rp{0%,100%{opacity:0.4}50%{opacity:1}}
+    .wrap{position:relative;z-index:2;text-align:center;padding:40px 6%;max-width:680px;}
+    /* 404 Giant Number */
+    .num404{font-size:clamp(8rem,20vw,14rem);font-weight:900;line-height:1;letter-spacing:-6px;background:linear-gradient(135deg,rgba(59,130,246,0.3),rgba(6,182,212,0.15));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;display:inline-block;animation:float 4s ease-in-out infinite;}
+    .num404::after{content:'404';position:absolute;inset:0;background:linear-gradient(135deg,var(--blue-b),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:blur(40px);opacity:0.4;z-index:-1;}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    /* Glitch line under 404 */
+    .glitch-line{width:120px;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:99px;margin:0 auto 28px;animation:gw 2s ease-in-out infinite;}
+    @keyframes gw{0%,100%{width:80px;opacity:0.6}50%{width:160px;opacity:1}}
+    .err-label{font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;display:block;}
+    h1{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:var(--white);letter-spacing:-0.6px;margin-bottom:14px;}
+    .desc{font-size:0.92rem;color:var(--muted2);line-height:1.8;margin-bottom:38px;max-width:480px;margin-left:auto;margin-right:auto;}
+    /* Buttons */
+    .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;}
+    .btn-home{display:inline-flex;align-items:center;gap:9px;background:var(--blue);color:#fff!important;font-weight:700;font-size:0.9rem;padding:13px 26px;border-radius:12px;box-shadow:0 0 30px rgba(59,130,246,0.4);transition:all 0.3s;}
+    .btn-home:hover{transform:translateY(-3px);box-shadow:0 0 50px rgba(59,130,246,0.6);}
+    .btn-back{display:inline-flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--border);color:var(--muted2)!important;font-weight:600;font-size:0.9rem;padding:13px 26px;border-radius:12px;transition:all 0.3s;}
+    .btn-back:hover{border-color:var(--border-blue);color:var(--white)!important;transform:translateY(-3px);}
+    /* Quick links */
+    .qlinks{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+    .qlink{font-size:0.8rem;font-weight:600;padding:8px 16px;border-radius:8px;background:var(--surface);border:1px solid var(--border);color:var(--muted2)!important;transition:all 0.25s;}
+    .qlink:hover{border-color:var(--border-blue);color:var(--white)!important;background:rgba(59,130,246,0.08);}
+    .qlinks-label{font-size:0.75rem;color:var(--muted);width:100%;text-align:center;margin-bottom:6px;}
+    /* Floating logo top */
+    .top-logo{position:fixed;top:22px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;z-index:10;}
+    .logo-img{width:44px;height:44px;border-radius:12px;object-fit:contain;background:rgba(255,255,255,0.05);border:1.5px solid rgba(59,130,246,0.35);padding:4px;}
+    .logo-fallback{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:none;align-items:center;justify-content:center;font-size:1rem;font-weight:900;color:#fff;}
+    .logo-name{font-size:1.05rem;font-weight:800;color:var(--white);}
+    .logo-name em{color:var(--blue-b);font-style:normal;}
+    /* WA Button */
+    .wa-btn{position:fixed;bottom:28px;right:28px;z-index:9990;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c7e);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 28px rgba(37,211,102,0.5);transition:all 0.3s;animation:wap 2.5s infinite;}
+    .wa-btn i{color:#fff;font-size:1.5rem;}
+    .wa-btn:hover{transform:scale(1.12);}
+    @keyframes wap{0%,100%{box-shadow:0 6px 28px rgba(37,211,102,0.5)}50%{box-shadow:0 6px 42px rgba(37,211,102,0.8),0 0 0 10px rgba(37,211,102,0.1)}}
+    </style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+<div class="ring r1"></div><div class="ring r2"></div>
+
+<!-- Logo top -->
+<a class="top-logo" href="index.html">
+    <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="logo-fallback">KT</div>
+    <span class="logo-name">KIDV <em>Tech</em></span>
+</a>
+
+<div class="wrap">
+    <div class="num404">404</div>
+    <div class="glitch-line"></div>
+    <span class="err-label">Error — Page Not Found</span>
+    <h1>Oops! This Page Doesn't Exist</h1>
+    <p class="desc">The page you're looking for may have been moved, renamed, or doesn't exist. Don't worry — let us help you find what you need.</p>
+    <div class="btns">
+        <a href="index.html" class="btn-home"><i class="fas fa-home"></i> Go to Homepage</a>
+        <a href="javascript:history.back()" class="btn-back"><i class="fas fa-arrow-left"></i> Go Back</a>
+    </div>
+    <div class="qlinks">
+        <p class="qlinks-label">Quick Links</p>
+        <a href="product.html" class="qlink"><i class="fas fa-th-large" style="margin-right:6px;font-size:0.72rem"></i>Products</a>
+        <a href="company.html" class="qlink"><i class="fas fa-building" style="margin-right:6px;font-size:0.72rem"></i>About Us</a>
+        <a href="contact.html" class="qlink"><i class="fas fa-envelope" style="margin-right:6px;font-size:0.72rem"></i>Contact</a>
+        <a href="erp-list.html" class="qlink"><i class="fas fa-cogs" style="margin-right:6px;font-size:0.72rem"></i>ERPNext</a>
+        <a href="hr-payroll-list.html" class="qlink"><i class="fas fa-users" style="margin-right:6px;font-size:0.72rem"></i>HR & Payroll</a>
+    </div>
+</div>
+
+<!-- WhatsApp -->
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top"><i class="fas fa-chevron-up"></i></button>
+<!-- COOKIE -->
+<div class="cookie-bar" id="cookieBar"><p class="cookie-text">🍪 We use cookies to improve your experience. See our <a href="privacy-policy.html">Privacy Policy</a>.</p><div class="cookie-btns"><button class="cookie-decline" onclick="cookieDecline()">Decline</button><button class="cookie-accept" onclick="cookieAccept()">Accept All</button></div></div>
+
+<a class="wa-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech!" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+(function(){const c=document.getElementById('particles'),ctx=c.getContext('2d');let W,H,pts=[];function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}resize();window.addEventListener('resize',resize);for(let i=0;i<70;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.2+0.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,a:Math.random()*.35+.06});function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(96,165,250,${p.a})`;ctx.fill();});pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<110){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(59,130,246,${0.08*(1-d/110)})`;ctx.lineWidth=0.5;ctx.stroke();}}));requestAnimationFrame(draw);}draw();})();
+// Auto redirect to home after 15 seconds
+let t = 15;
+const iv = setInterval(()=>{t--;if(t<=0){clearInterval(iv);window.location='index.html';}},1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "KIDV Tech",
+  "short_name": "KIDV Tech",
+  "description": "ERPNext, AI Automation, HR Payroll & IT Solutions — Ahmedabad",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#04071a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "android-icon-36x36.png", "sizes": "36x36", "type": "image/png" },
+    { "src": "logo.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "logo.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "en-IN"
+}
