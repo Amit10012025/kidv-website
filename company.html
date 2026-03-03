@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KIDV Tech is an Ahmedabad-based IT solutions company helping Indian businesses with ERP, HR Software, AI Automation & Cloud Hosting. Local Understanding. Global Technology.">
+    <meta name="keywords" content="KIDV Tech company, IT company Ahmedabad, ERP company Gujarat, Indian IT solutions, Digital transformation India">
+    <meta name="author" content="KIDV Tech">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About KIDV Tech | Indian IT Company Ahmedabad Gujarat">
+    <meta property="og:description" content="KIDV Tech is an Ahmedabad-based IT solutions company helping Indian businesses with ERP, HR Software, AI Automation & Cloud Hosting. Local Understanding. Global Technology.">
+    <meta property="og:image" content="https://www.kidvtech.com/logo.png">
+    <meta property="og:url" content="https://www.kidvtech.com/company.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About KIDV Tech | Indian IT Company Ahmedabad Gujarat">
+    <meta name="twitter:description" content="KIDV Tech is an Ahmedabad-based IT solutions company helping Indian businesses with ERP, HR Software, AI Automation & Cloud Hosting. Local Understanding. Global Technology.">
+    <link rel="canonical" href="https://www.kidvtech.com/company.html">
     <title>Company Profile | KIDV Tech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -256,9 +269,185 @@
         .proc-steps { grid-template-columns:1fr 1fr; }
         .company-card { display:none; }
     }
+
+    /* ===== PRELOADER ===== */
+    #preloader { position:fixed; inset:0; background:var(--bg); z-index:99999; display:flex; align-items:center; justify-content:center; transition:opacity 0.6s ease, visibility 0.6s ease; }
+    #preloader.hide { opacity:0; visibility:hidden; pointer-events:none; }
+    .pl-ring { width:54px; height:54px; border:3px solid rgba(59,130,246,0.15); border-top:3px solid var(--blue); border-radius:50%; animation:plspin 0.9s linear infinite; }
+    @keyframes plspin { to{transform:rotate(360deg)} }
+    .pl-logo { position:absolute; width:28px; height:28px; }
+
+    /* ===== WHATSAPP CHAT WIDGET ===== */
+    .wa-widget { position:fixed; bottom:28px; right:28px; z-index:9990; display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
+    .wa-chat-box { background:rgba(4,7,26,0.97); backdrop-filter:blur(24px); border:1px solid rgba(37,211,102,0.25); border-radius:18px; width:300px; box-shadow:0 20px 60px rgba(0,0,0,0.5); overflow:hidden; transform:translateY(10px) scale(0.96); opacity:0; pointer-events:none; transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1); }
+    .wa-chat-box.open { transform:translateY(0) scale(1); opacity:1; pointer-events:all; }
+    .wa-chat-hdr { background:linear-gradient(135deg,#128c7e,#25d366); padding:16px 18px; display:flex; align-items:center; gap:12px; }
+    .wa-chat-avatar { width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:#fff; flex-shrink:0; }
+    .wa-chat-info strong { font-size:0.9rem; font-weight:800; color:#fff; display:block; }
+    .wa-chat-info span { font-size:0.72rem; color:rgba(255,255,255,0.8); display:flex; align-items:center; gap:5px; }
+    .wa-online-dot { width:7px; height:7px; background:#a8ff78; border-radius:50%; display:inline-block; animation:wap2 1.5s infinite; }
+    @keyframes wap2 { 0%,100%{opacity:1}50%{opacity:0.3} }
+    .wa-chat-body { padding:18px; }
+    .wa-chat-bubble { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:12px 12px 12px 3px; padding:12px 14px; font-size:0.83rem; color:#e2e8f0; line-height:1.6; margin-bottom:14px; }
+    .wa-quick-btns { display:flex; flex-direction:column; gap:7px; }
+    .wa-quick-btn { display:flex; align-items:center; gap:9px; padding:10px 14px; background:rgba(37,211,102,0.08); border:1px solid rgba(37,211,102,0.2); border-radius:10px; font-size:0.8rem; font-weight:600; color:#a7f3d0 !important; transition:all 0.25s; cursor:pointer; text-decoration:none!important; }
+    .wa-quick-btn:hover { background:rgba(37,211,102,0.18); transform:translateX(3px); }
+    .wa-quick-btn i { color:#25d366; font-size:0.85rem; width:16px; text-align:center; }
+    .wa-chat-footer { padding:14px 18px; border-top:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; gap:10px; }
+    .wa-chat-footer span { font-size:0.7rem; color:#64748b; }
+    .wa-chat-footer strong { color:#25d366; }
+    .wa-btn-main { width:58px; height:58px; border-radius:50%; background:linear-gradient(135deg,#25d366,#128c7e); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 28px rgba(37,211,102,0.5); transition:all 0.3s; cursor:pointer; border:none; flex-shrink:0; animation:wapulse 2.5s infinite; }
+    .wa-btn-main:hover { transform:scale(1.1); box-shadow:0 8px 40px rgba(37,211,102,0.7); }
+    .wa-btn-main i { color:#fff; font-size:1.6rem; }
+    .wa-close-btn { position:absolute; top:14px; right:14px; background:rgba(255,255,255,0.15); border:none; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.75rem; cursor:pointer; } 50%{box-shadow:0 6px 42px rgba(37,211,102,0.8),0 0 0 10px rgba(37,211,102,0.1)} }
+
+    /* ===== BACK TO TOP ===== */
+    .btt {
+        position:fixed; bottom:98px; right:28px; z-index:9989;
+        width:44px; height:44px; border-radius:12px;
+        background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3);
+        display:flex; align-items:center; justify-content:center;
+        color:var(--blue-b); font-size:1rem; cursor:pointer;
+        opacity:0; transform:translateY(10px);
+        transition:all 0.35s; pointer-events:none;
+    }
+    .btt.show { opacity:1; transform:translateY(0); pointer-events:all; }
+    .btt:hover { background:var(--blue); color:#fff; transform:translateY(-3px); }
+
+    /* ===== COOKIE CONSENT ===== */
+    .cookie-bar {
+        position:fixed; bottom:0; left:0; right:0; z-index:9995;
+        background:rgba(6,12,34,0.97); backdrop-filter:blur(20px);
+        border-top:1px solid rgba(59,130,246,0.2);
+        padding:18px 6%; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;
+        transform:translateY(100%); transition:transform 0.5s ease;
+        font-family:'Outfit',sans-serif;
+    }
+    .cookie-bar.show { transform:translateY(0); }
+    .cookie-text { font-size:0.85rem; color:var(--muted2); flex:1; min-width:260px; }
+    .cookie-text a { color:var(--blue-b)!important; }
+    .cookie-btns { display:flex; gap:10px; flex-shrink:0; }
+    .cookie-accept { background:var(--blue); color:#fff!important; font-size:0.82rem; font-weight:700; padding:9px 22px; border-radius:8px; border:none; cursor:pointer; font-family:'Outfit',sans-serif; transition:all 0.25s; }
+    .cookie-accept:hover { background:#2563eb; }
+    .cookie-decline { background:transparent; color:var(--muted2)!important; font-size:0.82rem; font-weight:600; padding:9px 16px; border-radius:8px; border:1px solid var(--border); cursor:pointer; font-family:'Outfit',sans-serif; transition:all 0.25s; }
+    .cookie-decline:hover { border-color:var(--border-blue); color:var(--white)!important; }
+
+    /* ===== FOOTER SOCIAL ===== */
+    .fsoc { display:flex; align-items:center; gap:10px; }
+    .fsoc a { width:36px; height:36px; border-radius:9px; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--muted2); font-size:0.9rem; transition:all 0.25s; }
+    .fsoc a:hover { background:var(--blue); border-color:var(--blue); color:#fff!important; transform:translateY(-3px); }
+    .fin { flex-wrap:wrap; gap:18px; }
+
+
+
+    /* JOURNEY TIMELINE */
+    .journey-section { padding:100px 6%; background:var(--bg); border-top:1px solid var(--border); }
+    .timeline { position:relative; max-width:760px; margin:52px auto 0; }
+    .timeline::before { content:''; position:absolute; left:50%; transform:translateX(-50%); top:0; bottom:0; width:2px; background:linear-gradient(to bottom,var(--blue),var(--cyan),transparent); }
+    .tl-item { display:flex; gap:40px; margin-bottom:48px; position:relative; align-items:flex-start; }
+    .tl-item:nth-child(even) { flex-direction:row-reverse; }
+    .tl-item:nth-child(even) .tl-content { text-align:right; }
+    .tl-dot { position:absolute; left:50%; transform:translateX(-50%); width:14px; height:14px; background:var(--blue); border:3px solid var(--bg); border-radius:50%; box-shadow:0 0 0 3px rgba(59,130,246,0.3); margin-top:6px; flex-shrink:0; z-index:1; }
+    .tl-content { flex:1; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px 22px; transition:border-color 0.3s; }
+    .tl-content:hover { border-color:var(--border-blue); }
+    .tl-year { font-family:'JetBrains Mono',monospace; font-size:0.7rem; font-weight:700; color:var(--blue-b); background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.2); padding:3px 10px; border-radius:5px; display:inline-block; margin-bottom:8px; }
+    .tl-content h3 { font-size:0.95rem; font-weight:800; color:var(--white); margin-bottom:6px; }
+    .tl-content p { font-size:0.82rem; color:var(--muted2); line-height:1.7; }
+
+    /* TEAM SECTION */
+    .team-section { padding:100px 6%; background:var(--bg2); border-top:1px solid var(--border); }
+    .team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; margin-top:48px; max-width:1000px; margin-left:auto; margin-right:auto; }
+    .team-card { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:28px 22px; text-align:center; transition:all 0.3s; position:relative; overflow:hidden; }
+    .team-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; border-radius:18px 18px 0 0; opacity:0; transition:opacity 0.3s; }
+    .team-card:hover { transform:translateY(-6px); border-color:var(--border-blue); }
+    .team-card:hover::before { opacity:1; }
+    .tc-blue::before { background:linear-gradient(90deg,var(--blue),var(--cyan)); }
+    .tc-purple::before { background:linear-gradient(90deg,#8b5cf6,#a78bfa); }
+    .tc-green::before { background:linear-gradient(90deg,#10b981,#34d399); }
+    .tc-amber::before { background:linear-gradient(90deg,#f59e0b,#fbbf24); }
+    .team-avatar { width:72px; height:72px; border-radius:50%; margin:0 auto 16px; display:flex; align-items:center; justify-content:center; font-size:1.6rem; font-weight:900; color:#fff; letter-spacing:-1px; }
+    .team-name { font-size:1rem; font-weight:800; color:var(--white); margin-bottom:4px; }
+    .team-role { font-size:0.75rem; font-weight:700; color:var(--blue-b); letter-spacing:0.5px; text-transform:uppercase; margin-bottom:10px; }
+    .team-desc { font-size:0.8rem; color:var(--muted2); line-height:1.6; }
+    .team-links { display:flex; justify-content:center; gap:8px; margin-top:14px; }
+    .team-links a { width:30px; height:30px; border-radius:8px; background:var(--surface2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:0.75rem; color:var(--muted2); transition:all 0.2s; }
+    .team-links a:hover { background:var(--blue); border-color:var(--blue); color:#fff!important; }
+
+    /* AWARDS / CERTS */
+    .awards-section { padding:80px 6%; background:var(--bg); border-top:1px solid var(--border); }
+    .awards-grid { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:40px; }
+    .award-card { display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 20px; transition:all 0.3s; }
+    .award-card:hover { border-color:var(--border-blue); transform:translateY(-3px); }
+    .award-icon { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .award-info strong { font-size:0.85rem; font-weight:800; color:var(--white); display:block; }
+    .award-info span { font-size:0.72rem; color:var(--muted); }
+
+    @media(max-width:768px){
+        .timeline::before{left:20px;}
+        .tl-item,.tl-item:nth-child(even){flex-direction:column;padding-left:48px;}
+        .tl-dot{left:20px;}
+        .tl-item:nth-child(even) .tl-content{text-align:left;}
+        .team-grid{grid-template-columns:repeat(2,1fr);}
+    }
+
+    /* ===== PAGE PROGRESS BAR ===== */
+    .progress-bar { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--blue),var(--cyan)); z-index:99999; width:0%; transition:width 0.1s linear; }
+
+    /* ===== ANNOUNCEMENT BAR ===== */
+    .ann-bar { position:fixed; top:0; left:0; right:0; z-index:10000; background:linear-gradient(90deg,#1e3a5f,#1a4080,#1e3a5f); border-bottom:1px solid rgba(59,130,246,0.3); height:36px; display:flex; align-items:center; justify-content:center; gap:12px; font-size:0.78rem; font-weight:600; color:#bfdbfe; animation:annslide 0.6s ease; overflow:hidden; }
+    @keyframes annslide { from{transform:translateY(-100%)} to{transform:translateY(0)} }
+    .ann-bar .ann-text { display:flex; align-items:center; gap:8px; }
+    .ann-bar .ann-badge { background:rgba(59,130,246,0.25); border:1px solid rgba(59,130,246,0.4); color:#60a5fa; font-size:0.68rem; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.5px; text-transform:uppercase; }
+    .ann-bar a { color:#7dd3fc!important; font-weight:700; border-bottom:1px solid rgba(125,211,252,0.4); transition:color 0.2s; }
+    .ann-bar a:hover { color:#fff!important; }
+    .ann-close { position:absolute; right:16px; background:none; border:none; color:rgba(191,219,254,0.5); font-size:1rem; cursor:pointer; line-height:1; padding:4px; transition:color 0.2s; }
+    .ann-close:hover { color:#fff; }
+    body.ann-visible header { top:50px!important; }
+    body.ann-visible .ann-bar { display:flex; }
+
+    /* ===== CALL FLOATING BUTTON ===== */
+    .call-btn { position:fixed; bottom:100px; right:94px; z-index:9988; width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,#3b82f6,#06b6d4); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(59,130,246,0.5); transition:all 0.3s; cursor:pointer; border:none; animation:callpulse 3s infinite; }
+    .call-btn:hover { transform:scale(1.12); box-shadow:0 6px 32px rgba(59,130,246,0.7); }
+    .call-btn i { color:#fff; font-size:1.2rem; }
+    .call-tooltip { position:absolute; right:58px; background:rgba(4,7,26,0.92); color:#fff; font-size:0.75rem; font-weight:600; padding:6px 12px; border-radius:8px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity 0.3s; font-family:'Outfit',sans-serif; border:1px solid rgba(255,255,255,0.1); }
+    .call-btn:hover .call-tooltip { opacity:1; }
+    @keyframes callpulse { 0%,100%{box-shadow:0 4px 20px rgba(59,130,246,0.5)} 50%{box-shadow:0 4px 30px rgba(59,130,246,0.8),0 0 0 8px rgba(59,130,246,0.08)} }
+
     </style>
+    <!-- Google Analytics — Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About KIDV Tech",
+  "url": "https://www.kidvtech.com/company.html",
+  "description": "KIDV Tech is an Ahmedabad-based IT company specializing in ERPNext, HR automation, AI solutions and cloud infrastructure for Indian businesses.",
+  "publisher": {"@type": "Organization","name": "KIDV Tech"}
+}
+    </script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="KIDV Tech">
 </head>
 <body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <div style="position:relative;display:flex;align-items:center;justify-content:center;">
+        <div class="pl-ring"></div>
+        <img src="logo.png" class="pl-logo" onerror="this.style.display='none'" alt="">
+    </div>
+</div>
 
 <canvas id="particles"></canvas>
 <div class="ring r1"></div>
@@ -523,6 +712,161 @@
     </div>
 </section>
 
+
+<!-- JOURNEY TIMELINE -->
+<section class="journey-section">
+    <div style="max-width:1280px;margin:0 auto;">
+        <div style="text-align:center;" class="rv">
+            <span style="font-size:0.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);display:block;margin-bottom:12px;">Our Story</span>
+            <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;color:var(--white);letter-spacing:-0.8px;">The KIDV Tech <span class="grad">Journey</span></h2>
+        </div>
+        <div class="timeline">
+            <div class="tl-item rv">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                    <span class="tl-year">2019</span>
+                    <h3>&#127932; Founded in Ahmedabad</h3>
+                    <p>KIDV Tech started with a simple mission — make enterprise-grade IT accessible to small and medium businesses across Gujarat.</p>
+                </div>
+                <div style="flex:1"></div>
+            </div>
+            <div class="tl-item rv">
+                <div class="tl-dot"></div>
+                <div style="flex:1"></div>
+                <div class="tl-content">
+                    <span class="tl-year">2020</span>
+                    <h3>&#127760; First 50 Clients</h3>
+                    <p>Delivered ERPNext implementations across manufacturing, trading, and retail sectors. Expanded team and established standard delivery processes.</p>
+                </div>
+            </div>
+            <div class="tl-item rv">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                    <span class="tl-year">2021</span>
+                    <h3>&#129302; AI & Automation Division</h3>
+                    <p>Launched dedicated AI automation practice — WhatsApp chatbots, OCR processing, and predictive analytics for Indian SMEs.</p>
+                </div>
+                <div style="flex:1"></div>
+            </div>
+            <div class="tl-item rv">
+                <div class="tl-dot"></div>
+                <div style="flex:1"></div>
+                <div class="tl-content">
+                    <span class="tl-year">2022</span>
+                    <h3>&#128241; Mobile App Practice</h3>
+                    <p>Expanded into Android and iOS mobile app development, serving logistics, healthcare, and retail clients.</p>
+                </div>
+            </div>
+            <div class="tl-item rv">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                    <span class="tl-year">2023</span>
+                    <h3>&#9729;&#65039; Cloud Infrastructure Services</h3>
+                    <p>Added managed cloud hosting on AWS, GCP, and DigitalOcean. Reached 150+ active clients across 10+ cities.</p>
+                </div>
+                <div style="flex:1"></div>
+            </div>
+            <div class="tl-item rv">
+                <div class="tl-dot" style="background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:0 0 0 4px rgba(59,130,246,0.25);"></div>
+                <div style="flex:1"></div>
+                <div class="tl-content" style="border-color:rgba(59,130,246,0.3);background:rgba(59,130,246,0.06);">
+                    <span class="tl-year" style="background:rgba(59,130,246,0.2);">2024–25</span>
+                    <h3>&#127775; 200+ Clients, 15+ Cities</h3>
+                    <p>Now serving 200+ businesses across India. Expanded service portfolio and launched integrated ERP + AI + Mobile solutions for enterprise clients.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- TEAM SECTION -->
+<section class="team-section">
+    <div style="max-width:1280px;margin:0 auto;">
+        <div style="text-align:center;margin-bottom:0;" class="rv">
+            <span style="font-size:0.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);display:block;margin-bottom:12px;">The People Behind The Work</span>
+            <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;color:var(--white);letter-spacing:-0.8px;">Meet Our <span class="grad">Team</span></h2>
+            <p style="font-size:0.95rem;color:var(--muted2);margin-top:14px;max-width:520px;margin-left:auto;margin-right:auto;">A passionate team of developers, analysts, and consultants dedicated to transforming Indian businesses through technology.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card tc-blue rv">
+                <div class="team-avatar" style="background:linear-gradient(135deg,#3b82f6,#06b6d4);">AK</div>
+                <div class="team-name">Amit Kachhal</div>
+                <div class="team-role">Founder & CEO</div>
+                <div class="team-desc">ERPNext architect with 8+ years experience in business automation and digital transformation.</div>
+                <div class="team-links">
+                    <a href="https://www.linkedin.com/company/kidvtech" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/917984486885" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="team-card tc-purple rv">
+                <div class="team-avatar" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa);">DT</div>
+                <div class="team-name">Dev Team</div>
+                <div class="team-role">Engineering</div>
+                <div class="team-desc">Full-stack developers specializing in Python, Frappe, React, Flutter and cloud infrastructure.</div>
+                <div class="team-links">
+                    <a href="contact.html"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="team-card tc-green rv">
+                <div class="team-avatar" style="background:linear-gradient(135deg,#10b981,#34d399);">BA</div>
+                <div class="team-name">Business Analysts</div>
+                <div class="team-role">Consulting</div>
+                <div class="team-desc">Domain experts in manufacturing, trading, HR compliance and financial workflows for Indian SMEs.</div>
+                <div class="team-links">
+                    <a href="contact.html"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="team-card tc-amber rv">
+                <div class="team-avatar" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">CS</div>
+                <div class="team-name">Client Success</div>
+                <div class="team-role">Support & Training</div>
+                <div class="team-desc">Dedicated support team ensuring smooth onboarding, training, and ongoing system health for all clients.</div>
+                <div class="team-links">
+                    <a href="contact.html"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- AWARDS & CERTIFICATIONS -->
+<section class="awards-section">
+    <div style="max-width:1000px;margin:0 auto;">
+        <div style="text-align:center;" class="rv">
+            <span style="font-size:0.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);display:block;margin-bottom:12px;">Recognized & Trusted</span>
+            <h2 style="font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:var(--white);letter-spacing:-0.5px;">Certifications & <span class="grad">Achievements</span></h2>
+        </div>
+        <div class="awards-grid">
+            <div class="award-card rv">
+                <div class="award-icon" style="background:rgba(59,130,246,0.1);"><i class="fas fa-certificate" style="color:#60a5fa"></i></div>
+                <div class="award-info"><strong>ERPNext Certified</strong><span>Implementation Partner</span></div>
+            </div>
+            <div class="award-card rv">
+                <div class="award-icon" style="background:rgba(6,182,212,0.1);"><i class="fab fa-google" style="color:#06b6d4"></i></div>
+                <div class="award-info"><strong>Google Cloud</strong><span>Trained Partner</span></div>
+            </div>
+            <div class="award-card rv">
+                <div class="award-icon" style="background:rgba(16,185,129,0.1);"><i class="fas fa-shield-alt" style="color:#10b981"></i></div>
+                <div class="award-info"><strong>GST Compliant</strong><span>Registered Business</span></div>
+            </div>
+            <div class="award-card rv">
+                <div class="award-icon" style="background:rgba(245,158,11,0.1);"><i class="fas fa-star" style="color:#f59e0b"></i></div>
+                <div class="award-info"><strong>4.9/5 Rating</strong><span>Google Business</span></div>
+            </div>
+            <div class="award-card rv">
+                <div class="award-icon" style="background:rgba(139,92,246,0.1);"><i class="fas fa-users" style="color:#8b5cf6"></i></div>
+                <div class="award-info"><strong>200+ Clients</strong><span>Across 15+ Cities</span></div>
+            </div>
+            <div class="award-card rv">
+                <div class="award-icon" style="background:rgba(236,72,153,0.1);"><i class="fas fa-project-diagram" style="color:#ec4899"></i></div>
+                <div class="award-info"><strong>350+ Projects</strong><span>Successfully Delivered</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- TAGLINE BANNER -->
 <div class="tagline-banner rv">
     <h2><span class="grad">Local Understanding.</span> Global Technology.</h2>
@@ -531,20 +875,20 @@
 
 <!-- FOOTER -->
 <footer>
-    <div class="fin">
+    <div class="fin" style="max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 0;">
         <a class="logo" href="index.html">
             <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
             <div class="logo-fallback">KT</div>
-            <div>
-                <span class="logo-name">KIDV <em>Tech</em></span>
-                <span class="logo-sub">Smart Business Solutions</span>
-            </div>
+            <div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div>
         </a>
-        <p class="fcopy">&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
-        <div class="flinks">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+        <div class="fsoc">
+            <a href="https://www.instagram.com/kidvtech" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/kidvtech" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/kidvtech" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/917984486885" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
+        <p class="fcopy">&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+        <div class="flinks"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html" style="margin-left:18px">Terms of Service</a></div>
     </div>
 </footer>
 
@@ -586,7 +930,90 @@ const ro=new IntersectionObserver(e=>e.forEach(e=>{
 }),{threshold:0.08});
 document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
 setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('vis')),1500);
+
+/* PRELOADER */
+window.addEventListener('load',()=>{ setTimeout(()=>document.getElementById('preloader').classList.add('hide'),400); });
+
+/* BACK TO TOP */
+window.addEventListener('scroll',()=>{ document.getElementById('btt').classList.toggle('show',scrollY>400); });
+
+/* COOKIE CONSENT */
+(function(){
+    if(!localStorage.getItem('kc')){
+        setTimeout(()=>document.getElementById('cookieBar').classList.add('show'),1800);
+    }
+})();
+function cookieAccept(){ localStorage.setItem('kc','1'); document.getElementById('cookieBar').classList.remove('show'); }
+function cookieDecline(){ localStorage.setItem('kc','0'); document.getElementById('cookieBar').classList.remove('show'); }
+
+
+/* PWA SERVICE WORKER */
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+}
 </script>
+
+
+<!-- WHATSAPP CHAT WIDGET -->
+<div class="wa-widget">
+    <div class="wa-chat-box" id="waChatBox">
+        <div class="wa-chat-hdr" style="position:relative;">
+            <div class="wa-chat-avatar"><i class="fab fa-whatsapp"></i></div>
+            <div class="wa-chat-info">
+                <strong>KIDV Tech Support</strong>
+                <span><span class="wa-online-dot"></span> Online Now</span>
+            </div>
+            <button class="wa-close-btn" onclick="toggleWaChat()">✕</button>
+        </div>
+        <div class="wa-chat-body">
+            <div class="wa-chat-bubble">👋 Hi there! How can we help you today? Choose an option below:</div>
+            <div class="wa-quick-btns">
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20a%20quote%20for%20ERPNext%20implementation." target="_blank"><i class="fas fa-layer-group"></i> ERPNext Inquiry</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20information%20about%20HR%20and%20Payroll%20software." target="_blank"><i class="fas fa-users"></i> HR & Payroll Info</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20a%20website%20or%20mobile%20app%20developed." target="_blank"><i class="fas fa-desktop"></i> Website / App Development</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20information%20about%20AI%20automation." target="_blank"><i class="fas fa-robot"></i> AI Automation</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20have%20a%20general%20inquiry." target="_blank"><i class="fas fa-comment-alt"></i> General Inquiry</a>
+            </div>
+        </div>
+        <div class="wa-chat-footer">
+            <span>Powered by <strong>WhatsApp</strong> · Replies within minutes</span>
+        </div>
+    </div>
+    <button class="wa-btn-main" onclick="toggleWaChat()" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp" id="waIcon"></i>
+    </button>
+</div>
+<!-- BACK TO TOP -->
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="ann-bar" id="annBar">
+    <div class="ann-text">
+        <span class="ann-badge">Free</span>
+        <span>&#127775; ERPNext Live Demo Available &mdash; Book your free 30-minute session &nbsp;<a href="contact.html">Schedule Now &rarr;</a></span>
+    </div>
+    <button class="ann-close" onclick="closeAnn()" title="Close">&#10005;</button>
+</div>
+
+<!-- CALL FLOATING BUTTON -->
+<a href="tel:+917984486885" class="call-btn" title="Call Us">
+    <i class="fas fa-phone-alt"></i>
+    <span class="call-tooltip">&#128222; +91 79844 86885</span>
+</a>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+<!-- COOKIE CONSENT -->
+<div class="cookie-bar" id="cookieBar">
+    <p class="cookie-text">🍪 We use cookies to improve your experience. By continuing, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <div class="cookie-btns">
+        <button class="cookie-decline" onclick="cookieDecline()">Decline</button>
+        <button class="cookie-accept" onclick="cookieAccept()">Accept All</button>
+    </div>
+</div>
 
 </body>
 </html>
