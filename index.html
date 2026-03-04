@@ -370,6 +370,9 @@
     .cbtns { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; }
     .cinfo { display:flex; justify-content:center; gap:28px; margin-top:38px; flex-wrap:wrap; }
     .ci { display:flex; align-items:center; gap:9px; color:var(--muted2); font-size:0.87rem; font-weight:500; }
+    a.ci { text-decoration:none!important; transition:all 0.2s; cursor:pointer; }
+    a.ci:hover { color:var(--white)!important; transform:translateY(-2px); }
+    a.ci:hover i { color:var(--cyan); }
     .ci i { color:var(--blue-b); font-size:0.95rem; }
 
     /* FOOTER */
@@ -474,7 +477,7 @@
     .pl-logo { position:absolute; width:28px; height:28px; }
 
     /* ===== WHATSAPP CHAT WIDGET ===== */
-    .wa-widget { position:fixed; bottom:28px; right:28px; z-index:9990; display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
+    .wa-widget { position:fixed; bottom:28px; right:28px; z-index:9990; display:flex; flex-direction:column; align-items:flex-end; gap:10px; pointer-events:none; }
     .wa-chat-box { background:rgba(4,7,26,0.97); backdrop-filter:blur(24px); border:1px solid rgba(37,211,102,0.25); border-radius:18px; width:300px; box-shadow:0 20px 60px rgba(0,0,0,0.5); overflow:hidden; transform:translateY(10px) scale(0.96); opacity:0; pointer-events:none; transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1); }
     .wa-chat-box.open { transform:translateY(0) scale(1); opacity:1; pointer-events:all; }
     .wa-chat-hdr { background:linear-gradient(135deg,#128c7e,#25d366); padding:16px 18px; display:flex; align-items:center; gap:12px; }
@@ -492,14 +495,14 @@
     .wa-chat-footer { padding:14px 18px; border-top:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; gap:10px; }
     .wa-chat-footer span { font-size:0.7rem; color:#64748b; }
     .wa-chat-footer strong { color:#25d366; }
-    .wa-btn-main { width:58px; height:58px; border-radius:50%; background:linear-gradient(135deg,#25d366,#128c7e); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 28px rgba(37,211,102,0.5); transition:all 0.3s; cursor:pointer; border:none; flex-shrink:0; animation:wapulse 2.5s infinite; }
+    .wa-btn-main { width:58px; height:58px; border-radius:50%; background:linear-gradient(135deg,#25d366,#128c7e); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 28px rgba(37,211,102,0.5); transition:all 0.3s; cursor:pointer; border:none; flex-shrink:0; animation:wapulse 2.5s infinite; pointer-events:all; }
     .wa-btn-main:hover { transform:scale(1.1); box-shadow:0 8px 40px rgba(37,211,102,0.7); }
     .wa-btn-main i { color:#fff; font-size:1.6rem; }
     .wa-close-btn { position:absolute; top:14px; right:14px; background:rgba(255,255,255,0.15); border:none; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.75rem; cursor:pointer; } 50%{box-shadow:0 6px 42px rgba(37,211,102,0.8),0 0 0 10px rgba(37,211,102,0.1)} }
 
     /* ===== BACK TO TOP ===== */
     .btt {
-        position:fixed; bottom:98px; right:28px; z-index:9989;
+        position:fixed; bottom:100px; right:28px; z-index:9989;
         width:44px; height:44px; border-radius:12px;
         background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3);
         display:flex; align-items:center; justify-content:center;
@@ -553,25 +556,23 @@
     /* ===== PAGE PROGRESS BAR ===== */
     .progress-bar { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--blue),var(--cyan)); z-index:99999; width:0%; transition:width 0.1s linear; }
 
-    /* ===== ANNOUNCEMENT BAR ===== */
-    .ann-bar { position:fixed; top:0; left:0; right:0; z-index:10000; background:linear-gradient(90deg,#1e3a5f,#1a4080,#1e3a5f); border-bottom:1px solid rgba(59,130,246,0.3); height:36px; display:flex; align-items:center; justify-content:center; gap:12px; font-size:0.78rem; font-weight:600; color:#bfdbfe; animation:annslide 0.6s ease; overflow:hidden; }
-    @keyframes annslide { from{transform:translateY(-100%)} to{transform:translateY(0)} }
-    .ann-bar .ann-text { display:flex; align-items:center; gap:8px; }
-    .ann-bar .ann-badge { background:rgba(59,130,246,0.25); border:1px solid rgba(59,130,246,0.4); color:#60a5fa; font-size:0.68rem; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.5px; text-transform:uppercase; }
-    .ann-bar a { color:#7dd3fc!important; font-weight:700; border-bottom:1px solid rgba(125,211,252,0.4); transition:color 0.2s; }
-    .ann-bar a:hover { color:#fff!important; }
-    .ann-close { position:absolute; right:16px; background:none; border:none; color:rgba(191,219,254,0.5); font-size:1rem; cursor:pointer; line-height:1; padding:4px; transition:color 0.2s; }
-    .ann-close:hover { color:#fff; }
-    body.ann-visible header { top:50px!important; }
-    body.ann-visible .ann-bar { display:flex; }
-
     /* ===== CALL FLOATING BUTTON ===== */
-    .call-btn { position:fixed; bottom:100px; right:94px; z-index:9988; width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,#3b82f6,#06b6d4); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(59,130,246,0.5); transition:all 0.3s; cursor:pointer; border:none; animation:callpulse 3s infinite; }
+    .call-btn { position:fixed; bottom:160px; right:28px; z-index:9992; width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,#3b82f6,#06b6d4); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(59,130,246,0.5); transition:all 0.3s; cursor:pointer; border:none; animation:callpulse 3s infinite; }
     .call-btn:hover { transform:scale(1.12); box-shadow:0 6px 32px rgba(59,130,246,0.7); }
     .call-btn i { color:#fff; font-size:1.2rem; }
     .call-tooltip { position:absolute; right:58px; background:rgba(4,7,26,0.92); color:#fff; font-size:0.75rem; font-weight:600; padding:6px 12px; border-radius:8px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity 0.3s; font-family:'Outfit',sans-serif; border:1px solid rgba(255,255,255,0.1); }
     .call-btn:hover .call-tooltip { opacity:1; }
     @keyframes callpulse { 0%,100%{box-shadow:0 4px 20px rgba(59,130,246,0.5)} 50%{box-shadow:0 4px 30px rgba(59,130,246,0.8),0 0 0 8px rgba(59,130,246,0.08)} }
+
+
+    @media(max-width:600px){
+        .fin { flex-direction:column; align-items:flex-start; gap:14px; }
+        .fsoc { order:-1; }
+        .call-btn { bottom:160px; right:20px; }
+        .btt { bottom:100px; right:20px; }
+        .wa-widget { bottom:20px; right:20px; }
+        .call-tooltip { display:none; }
+    }
 
     </style>
     <!-- Google Analytics — Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
@@ -685,13 +686,13 @@
         </div>
         <div class="hcontact">
             <a href="tel:+917984486885" class="hc-item">
-                <div class="hc-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="hc-icon"><i class="fas fa-phone fa-flip-horizontal"></i></div>
                 <div><span class="hc-label">Call Us Now</span><span class="hc-val">+91 79844 86885</span></div>
             </a>
             <div class="hc-div"></div>
-            <a href="/cdn-cgi/l/email-protection#2d4c4044596d4644495b59484e45034e4240" class="hc-item">
+            <a href="/cdn-cgi/l/email-protection#284945415c6843414c5e5c4d4b40064b4745" class="hc-item">
                 <div class="hc-icon"><i class="fas fa-envelope"></i></div>
-                <div><span class="hc-label">Email Us</span><span class="hc-val"><span class="__cf_email__" data-cfemail="1574787c61557e7c71636170767d3b767a78">[email&#160;protected]</span></span></div>
+                <div><span class="hc-label">Email Us</span><span class="hc-val"><span class="__cf_email__" data-cfemail="96f7fbffe2d6fdfff2e0e2f3f5feb8f5f9fb">[email&#160;protected]</span></span></div>
             </a>
             <div class="hc-div"></div>
             <a href="https://wa.me/917984486885" target="_blank" class="hc-item">
@@ -991,43 +992,43 @@
         </div>
 
         <div class="faq-item rv" onclick="toggleFaq(this)">
-            <div class="faq-q"><h3>ERPNext software implement karva ma ketlo samay lage?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
-            <div class="faq-a"><p>Project ni complexity par depend kare chhe. Simple setup (1-2 modules) 2-3 weeks ma complete thaay. Full implementation (GST, HR, Inventory, Manufacturing sathe) 4-8 weeks laage. Aapne free consultation ma accurate timeline aapishun.</p></div>
+            <div class="faq-q"><h3>How long does ERPNext implementation take?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+            <div class="faq-a"><p>It depends on the complexity of your requirements. A simple 1-2 module setup takes 2-3 weeks. A full implementation with GST, HR, Inventory, and Manufacturing modules typically takes 4-8 weeks. We provide an accurate timeline during your free consultation.</p></div>
         </div>
 
         <div class="faq-item rv" onclick="toggleFaq(this)">
-            <div class="faq-q"><h3>Shu KIDV Tech ERPNext implementation Gujarat bahar pan kare?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
-            <div class="faq-a"><p>Haa! Aapne Gujarat, Rajasthan, Maharashtra, Delhi NCR ane pure India ma remote implementation karie chhiye. Training online/on-site badhu possible chhe. Abhi tak 15+ cities ma successful projects deliver karyaa chhe.</p></div>
+            <div class="faq-q"><h3>Does KIDV Tech serve clients outside Gujarat?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+            <div class="faq-a"><p>Yes! We serve clients across Gujarat, Rajasthan, Maharashtra, Delhi NCR, and all of India via remote implementation. Both online and on-site training are available. We have successfully delivered projects in 15+ cities across India.</p></div>
         </div>
 
         <div class="faq-item rv" onclick="toggleFaq(this)">
-            <div class="faq-q"><h3>Biometric attendance system existing HR software sathe connect thai shake?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
-            <div class="faq-a"><p>Haa, aapna biometric system most popular devices (Essl, ZKTeco, Suprema) sathe compatible chhe. Aapnu existing software ho to pan API integration possible chhe. Free demo booking mate <a href="contact.html">yahan click karo</a>.</p></div>
+            <div class="faq-q"><h3>Can biometric attendance integrate with existing HR software?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+            <div class="faq-a"><p>Yes! Our system is compatible with all major biometric devices including Essl, ZKTeco, and Suprema. API integration with your existing HR software is also possible. <a href="contact.html">Book a free demo</a> to see it in action.</p></div>
         </div>
 
         <div class="faq-item rv" onclick="toggleFaq(this)">
-            <div class="faq-q"><h3>Website development ma SEO include chhe ke alag charge laage?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
-            <div class="faq-a"><p>Badha websites ma basic on-page SEO (meta tags, sitemap, speed optimization, mobile-friendly) included chhe. Ongoing SEO campaign (keyword ranking, backlinks, monthly reports) alag service chhe — discuss karva <a href="contact.html">contact karo</a>.</p></div>
+            <div class="faq-q"><h3>Is SEO included in website development or charged separately?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+            <div class="faq-a"><p>All websites include basic on-page SEO — meta tags, sitemap, speed optimization, and mobile responsiveness. Ongoing SEO campaigns (keyword rankings, backlinks, monthly reporting) are a separate service. <a href="contact.html">Contact us</a> to discuss your requirements.</p></div>
         </div>
 
         <div class="faq-item rv" onclick="toggleFaq(this)">
-            <div class="faq-q"><h3>AI chatbot develop karvama ketlo kharcho thay?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
-            <div class="faq-a"><p>WhatsApp Business chatbot ₹15,000 thi start thaay. ERP-integrated AI chatbot with custom flows ₹40,000+ laage. Actual quote project requirements par based hoy. <a href="contact.html">Free consultation book karo</a> — aapna specific use case mate best option discuss karishun.</p></div>
+            <div class="faq-q"><h3>How much does AI chatbot development cost?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+            <div class="faq-a"><p>A WhatsApp Business chatbot starts from ₹15,000. An ERP-integrated AI chatbot with custom conversation flows starts from ₹40,000+. Final pricing depends on your specific requirements. <a href="contact.html">Book a free consultation</a> and we'll recommend the best option for your use case.</p></div>
         </div>
 
         <div class="faq-item rv" onclick="toggleFaq(this)">
-            <div class="faq-q"><h3>Project delivery pachhi support available chhe ke nahi?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
-            <div class="faq-a"><p>Haa, badha projects sathe free support period include chhe (website: 1 month, ERP/HR: 3 months, Enterprise: 6 months). Aanu pachi Annual Maintenance Contract (AMC) avail karavo. Emergency support 24/7 available chhe.</p></div>
+            <div class="faq-q"><h3>Is support available after project delivery?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+            <div class="faq-a"><p>Yes, all projects include a free support period — Website: 1 month, ERP/HR: 3 months, Enterprise: 6 months. After this period, an Annual Maintenance Contract (AMC) is available. Emergency support is available 24/7 for critical issues.</p></div>
         </div>
 
         <div class="faq-item rv" onclick="toggleFaq(this)">
-            <div class="faq-q"><h3>Data security — client data safe chhe ne?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
-            <div class="faq-a"><p>100%. Aapna badha systems SSL/TLS encrypted chhe. Client data third-party sathe share nathi thatu. Server backups daily automated chhe. Aapna privacy commitments vanchva <a href="privacy-policy.html">Privacy Policy</a> juo.</p></div>
+            <div class="faq-q"><h3>How secure is client data with KIDV Tech?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+            <div class="faq-a"><p>Absolutely. All systems are SSL/TLS encrypted. Client data is never shared with third parties. Daily automated server backups are in place. Read our full <a href="privacy-policy.html">Privacy Policy</a> for complete details on data protection.</p></div>
         </div>
 
         <div class="faq-item rv" onclick="toggleFaq(this)">
-            <div class="faq-q"><h3>GST invoice ane PF/ESIC compliance automatic handle thay?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
-            <div class="faq-a"><p>Haa! ERPNext ma GST invoicing, e-invoice, GSTR-1/GSTR-3B auto-generation built-in chhe. HR system ma PF, ESIC, TDS, Professional Tax badhu auto-calculate thaay. Government portal par direct file karva ni facility pan chhe.</p></div>
+            <div class="faq-q"><h3>Does the system handle GST invoicing and PF/ESIC compliance automatically?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+            <div class="faq-a"><p>Yes! ERPNext includes built-in GST invoicing, e-invoicing, and auto-generation of GSTR-1/GSTR-3B. The HR system automatically calculates PF, ESIC, TDS, and Professional Tax. Direct filing to government portals is also supported.</p></div>
         </div>
     </div>
 </section>
@@ -1043,10 +1044,11 @@
             <a href="contact.html" class="btn-p"><i class="fas fa-calendar-check"></i> Get Free Consultation</a>
             <a href="product.html" class="btn-g"><i class="fas fa-th-large"></i> View All Solutions</a>
         </div>
-        <div class="cinfo">
-            <div class="ci"><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f594989c81b59e9c91838190969ddb969a98">[email&#160;protected]</a></div>
-            <div class="ci"><i class="fab fa-whatsapp"></i> WhatsApp Us</div>
-            <div class="ci"><i class="fas fa-map-marker-alt"></i> Ahmedabad, India</div>
+                <div class="cinfo">
+            <a href="/cdn-cgi/l/email-protection#ed8c808499ad8684899b99888e85c38e8280" class="ci"><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="f99894908db992909d8f8d9c9a91d79a9694">[email&#160;protected]</span></a>
+            <a href="https://wa.me/917984486885" target="_blank" class="ci"><i class="fab fa-whatsapp" style="color:#25d366"></i> WhatsApp Us</a>
+            <a href="https://maps.google.com/?q=Ahmedabad,Gujarat,India" target="_blank" class="ci"><i class="fas fa-map-marker-alt"></i> Ahmedabad, India</a>
+        </div>
         </div>
     </div>
 </section>
@@ -1165,19 +1167,47 @@ function toggleFaq(el) {
 <!-- PROGRESS BAR -->
 <div class="progress-bar" id="progressBar"></div>
 
-<!-- ANNOUNCEMENT BAR -->
-<div class="ann-bar" id="annBar">
-    <div class="ann-text">
-        <span class="ann-badge">Free</span>
-        <span>&#127775; ERPNext Live Demo Available &mdash; Book your free 30-minute session &nbsp;<a href="contact.html">Schedule Now &rarr;</a></span>
+<!-- WHATSAPP CHAT WIDGET -->
+<div class="wa-widget">
+    <div class="wa-chat-box" id="waChatBox">
+        <div class="wa-chat-hdr">
+            <div class="wa-chat-avatar"><i class="fab fa-whatsapp"></i></div>
+            <div class="wa-chat-info"><strong>KIDV Tech Support</strong><span><span class="wa-online-dot"></span> Online Now</span></div>
+            <button class="wa-close-btn" onclick="toggleWaChat()">&#10005;</button>
+        </div>
+        <div class="wa-chat-body">
+            <div class="wa-chat-bubble">&#128075; Hi! How can we help you today?</div>
+            <div class="wa-quick-btns">
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20a%20quote%20for%20ERPNext%20implementation." target="_blank"><i class="fas fa-layer-group"></i> ERPNext Inquiry</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20information%20about%20HR%20and%20Payroll%20software." target="_blank"><i class="fas fa-users"></i> HR &amp; Payroll Info</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20a%20website%20or%20mobile%20app%20developed." target="_blank"><i class="fas fa-desktop"></i> Website / App Dev</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20have%20a%20general%20inquiry." target="_blank"><i class="fas fa-comment-alt"></i> General Inquiry</a>
+            </div>
+        </div>
+        <div class="wa-chat-footer"><span>Powered by <strong>WhatsApp</strong> &middot; Replies within minutes</span></div>
     </div>
-    <button class="ann-close" onclick="closeAnn()" title="Close">&#10005;</button>
+    <button class="wa-btn-main" onclick="toggleWaChat()" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp" id="waIcon"></i>
+    </button>
 </div>
 
 <!-- CALL FLOATING BUTTON -->
 <a href="tel:+917984486885" class="call-btn" title="Call Us">
-    <i class="fas fa-phone-alt"></i>
+    <i class="fas fa-phone fa-flip-horizontal"></i>
     <span class="call-tooltip">&#128222; +91 79844 86885</span>
 </a>
+
+<!-- BACK TO TOP -->
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top"><i class="fas fa-chevron-up"></i></button>
-<d
+
+<!-- COOKIE CONSENT -->
+<div class="cookie-bar" id="cookieBar">
+    <p class="cookie-text">&#127850; We use cookies to improve your experience. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <div class="cookie-btns">
+        <button class="cookie-decline" onclick="cookieDecline()">Decline</button>
+        <button class="cookie-accept" onclick="cookieAccept()">Accept All</button>
+    </div>
+</div>
+
+</body>
+</html>
