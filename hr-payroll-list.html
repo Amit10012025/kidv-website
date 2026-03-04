@@ -98,7 +98,7 @@
     .pl-logo { position:absolute; width:28px; height:28px; }
 
     /* ===== WHATSAPP CHAT WIDGET ===== */
-    .wa-widget { position:fixed; bottom:28px; right:28px; z-index:9990; display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
+    .wa-widget { position:fixed; bottom:28px; right:28px; z-index:9990; display:flex; flex-direction:column; align-items:flex-end; gap:10px; pointer-events:none; }
     .wa-chat-box { background:rgba(4,7,26,0.97); backdrop-filter:blur(24px); border:1px solid rgba(37,211,102,0.25); border-radius:18px; width:300px; box-shadow:0 20px 60px rgba(0,0,0,0.5); overflow:hidden; transform:translateY(10px) scale(0.96); opacity:0; pointer-events:none; transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1); }
     .wa-chat-box.open { transform:translateY(0) scale(1); opacity:1; pointer-events:all; }
     .wa-chat-hdr { background:linear-gradient(135deg,#128c7e,#25d366); padding:16px 18px; display:flex; align-items:center; gap:12px; }
@@ -116,14 +116,14 @@
     .wa-chat-footer { padding:14px 18px; border-top:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; gap:10px; }
     .wa-chat-footer span { font-size:0.7rem; color:#64748b; }
     .wa-chat-footer strong { color:#25d366; }
-    .wa-btn-main { width:58px; height:58px; border-radius:50%; background:linear-gradient(135deg,#25d366,#128c7e); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 28px rgba(37,211,102,0.5); transition:all 0.3s; cursor:pointer; border:none; flex-shrink:0; animation:wapulse 2.5s infinite; }
+    .wa-btn-main { width:58px; height:58px; border-radius:50%; background:linear-gradient(135deg,#25d366,#128c7e); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 28px rgba(37,211,102,0.5); transition:all 0.3s; cursor:pointer; border:none; flex-shrink:0; animation:wapulse 2.5s infinite; pointer-events:all; }
     .wa-btn-main:hover { transform:scale(1.1); box-shadow:0 8px 40px rgba(37,211,102,0.7); }
     .wa-btn-main i { color:#fff; font-size:1.6rem; }
     .wa-close-btn { position:absolute; top:14px; right:14px; background:rgba(255,255,255,0.15); border:none; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.75rem; cursor:pointer; } 50%{box-shadow:0 6px 42px rgba(37,211,102,0.8),0 0 0 10px rgba(37,211,102,0.1)} }
 
     /* ===== BACK TO TOP ===== */
     .btt {
-        position:fixed; bottom:98px; right:28px; z-index:9989;
+        position:fixed; bottom:100px; right:28px; z-index:9989;
         width:44px; height:44px; border-radius:12px;
         background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3);
         display:flex; align-items:center; justify-content:center;
@@ -177,25 +177,23 @@
     /* ===== PAGE PROGRESS BAR ===== */
     .progress-bar { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--blue),var(--cyan)); z-index:99999; width:0%; transition:width 0.1s linear; }
 
-    /* ===== ANNOUNCEMENT BAR ===== */
-    .ann-bar { position:fixed; top:0; left:0; right:0; z-index:10000; background:linear-gradient(90deg,#1e3a5f,#1a4080,#1e3a5f); border-bottom:1px solid rgba(59,130,246,0.3); height:36px; display:flex; align-items:center; justify-content:center; gap:12px; font-size:0.78rem; font-weight:600; color:#bfdbfe; animation:annslide 0.6s ease; overflow:hidden; }
-    @keyframes annslide { from{transform:translateY(-100%)} to{transform:translateY(0)} }
-    .ann-bar .ann-text { display:flex; align-items:center; gap:8px; }
-    .ann-bar .ann-badge { background:rgba(59,130,246,0.25); border:1px solid rgba(59,130,246,0.4); color:#60a5fa; font-size:0.68rem; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.5px; text-transform:uppercase; }
-    .ann-bar a { color:#7dd3fc!important; font-weight:700; border-bottom:1px solid rgba(125,211,252,0.4); transition:color 0.2s; }
-    .ann-bar a:hover { color:#fff!important; }
-    .ann-close { position:absolute; right:16px; background:none; border:none; color:rgba(191,219,254,0.5); font-size:1rem; cursor:pointer; line-height:1; padding:4px; transition:color 0.2s; }
-    .ann-close:hover { color:#fff; }
-    body.ann-visible header { top:50px!important; }
-    body.ann-visible .ann-bar { display:flex; }
-
     /* ===== CALL FLOATING BUTTON ===== */
-    .call-btn { position:fixed; bottom:100px; right:94px; z-index:9988; width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,#3b82f6,#06b6d4); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(59,130,246,0.5); transition:all 0.3s; cursor:pointer; border:none; animation:callpulse 3s infinite; }
+    .call-btn { position:fixed; bottom:160px; right:28px; z-index:9992; width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,#3b82f6,#06b6d4); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(59,130,246,0.5); transition:all 0.3s; cursor:pointer; border:none; animation:callpulse 3s infinite; }
     .call-btn:hover { transform:scale(1.12); box-shadow:0 6px 32px rgba(59,130,246,0.7); }
     .call-btn i { color:#fff; font-size:1.2rem; }
     .call-tooltip { position:absolute; right:58px; background:rgba(4,7,26,0.92); color:#fff; font-size:0.75rem; font-weight:600; padding:6px 12px; border-radius:8px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity 0.3s; font-family:'Outfit',sans-serif; border:1px solid rgba(255,255,255,0.1); }
     .call-btn:hover .call-tooltip { opacity:1; }
     @keyframes callpulse { 0%,100%{box-shadow:0 4px 20px rgba(59,130,246,0.5)} 50%{box-shadow:0 4px 30px rgba(59,130,246,0.8),0 0 0 8px rgba(59,130,246,0.08)} }
+
+
+    @media(max-width:600px){
+        .fin { flex-direction:column; align-items:flex-start; gap:14px; }
+        .fsoc { order:-1; }
+        .call-btn { bottom:160px; right:20px; }
+        .btt { bottom:100px; right:20px; }
+        .wa-widget { bottom:20px; right:20px; }
+        .call-tooltip { display:none; }
+    }
 
     </style>
     <!-- Google Analytics — Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
@@ -423,18 +421,9 @@ if ('serviceWorker' in navigator) {
 <!-- PROGRESS BAR -->
 <div class="progress-bar" id="progressBar"></div>
 
-<!-- ANNOUNCEMENT BAR -->
-<div class="ann-bar" id="annBar">
-    <div class="ann-text">
-        <span class="ann-badge">Free</span>
-        <span>&#127775; ERPNext Live Demo Available &mdash; Book your free 30-minute session &nbsp;<a href="contact.html">Schedule Now &rarr;</a></span>
-    </div>
-    <button class="ann-close" onclick="closeAnn()" title="Close">&#10005;</button>
-</div>
-
 <!-- CALL FLOATING BUTTON -->
 <a href="tel:+917984486885" class="call-btn" title="Call Us">
-    <i class="fas fa-phone-alt"></i>
+    <i class="fas fa-phone"></i>
     <span class="call-tooltip">&#128222; +91 79844 86885</span>
 </a>
 
