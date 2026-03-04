@@ -50,7 +50,50 @@
     .wa-btn i{color:#fff;font-size:1.5rem;}
     .wa-btn:hover{transform:scale(1.12);}
     @keyframes wap{0%,100%{box-shadow:0 6px 28px rgba(37,211,102,0.5)}50%{box-shadow:0 6px 42px rgba(37,211,102,0.8),0 0 0 10px rgba(37,211,102,0.1)}}
+
+    /* ===== PAGE PROGRESS BAR ===== */
+    .progress-bar { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--blue),var(--cyan)); z-index:99999; width:0%; transition:width 0.1s linear; }
+
+    /* ===== CALL FLOATING BUTTON ===== */
+    .call-btn { position:fixed; bottom:160px; right:28px; z-index:9992; width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,#3b82f6,#06b6d4); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(59,130,246,0.5); transition:all 0.3s; cursor:pointer; border:none; animation:callpulse 3s infinite; }
+    .call-btn:hover { transform:scale(1.12); box-shadow:0 6px 32px rgba(59,130,246,0.7); }
+    .call-btn i { color:#fff; font-size:1.2rem; }
+    .call-tooltip { position:absolute; right:58px; background:rgba(4,7,26,0.92); color:#fff; font-size:0.75rem; font-weight:600; padding:6px 12px; border-radius:8px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity 0.3s; font-family:'Outfit',sans-serif; border:1px solid rgba(255,255,255,0.1); }
+    .call-btn:hover .call-tooltip { opacity:1; }
+    @keyframes callpulse { 0%,100%{box-shadow:0 4px 20px rgba(59,130,246,0.5)} 50%{box-shadow:0 4px 30px rgba(59,130,246,0.8),0 0 0 8px rgba(59,130,246,0.08)} }
+
+
+    /* WHATSAPP WIDGET */
+    .wa-widget{position:fixed;bottom:28px;right:28px;z-index:9990;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+    .wa-chat-box{background:rgba(4,7,26,0.97);backdrop-filter:blur(24px);border:1px solid rgba(37,211,102,0.25);border-radius:18px;width:300px;box-shadow:0 20px 60px rgba(0,0,0,0.5);overflow:hidden;transform:translateY(10px) scale(0.96);opacity:0;pointer-events:none;transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1);}
+    .wa-chat-box.open{transform:translateY(0) scale(1);opacity:1;pointer-events:all;}
+    .wa-chat-hdr{background:linear-gradient(135deg,#128c7e,#25d366);padding:16px 18px;display:flex;align-items:center;gap:12px;position:relative;}
+    .wa-chat-avatar{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#fff;flex-shrink:0;}
+    .wa-chat-info strong{font-size:0.9rem;font-weight:800;color:#fff;display:block;}
+    .wa-chat-info span{font-size:0.72rem;color:rgba(255,255,255,0.8);display:flex;align-items:center;gap:5px;}
+    .wa-online-dot{width:7px;height:7px;background:#a8ff78;border-radius:50%;display:inline-block;animation:blink 1.5s infinite;}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+    .wa-chat-body{padding:18px;}
+    .wa-chat-bubble{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:12px 12px 12px 3px;padding:12px 14px;font-size:0.83rem;color:#e2e8f0;line-height:1.6;margin-bottom:14px;}
+    .wa-quick-btns{display:flex;flex-direction:column;gap:7px;}
+    .wa-quick-btn{display:flex;align-items:center;gap:9px;padding:10px 14px;background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.2);border-radius:10px;font-size:0.8rem;font-weight:600;color:#a7f3d0!important;transition:all 0.25s;pointer-events:all;}
+    .wa-quick-btn:hover{background:rgba(37,211,102,0.18);transform:translateX(3px);}
+    .wa-quick-btn i{color:#25d366;font-size:0.85rem;width:16px;text-align:center;}
+    .wa-chat-footer{padding:14px 18px;border-top:1px solid rgba(255,255,255,0.06);}
+    .wa-chat-footer span{font-size:0.7rem;color:#64748b;}
+    .wa-chat-footer strong{color:#25d366;}
+    .wa-btn-main{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c7e);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 28px rgba(37,211,102,0.5);transition:all 0.3s;cursor:pointer;border:none;flex-shrink:0;animation:wapulse 2.5s infinite;}
+    .wa-btn-main:hover{transform:scale(1.1);}
+    .wa-btn-main i{color:#fff;font-size:1.6rem;}
+    .wa-close-btn{position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.15);border:none;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.75rem;cursor:pointer;pointer-events:all;}
+    @keyframes wapulse{0%,100%{box-shadow:0 6px 28px rgba(37,211,102,0.5)}50%{box-shadow:0 6px 42px rgba(37,211,102,0.8),0 0 0 10px rgba(37,211,102,0.1)}}
+
     </style>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="KIDV Tech">
 </head>
 <body>
 <canvas id="particles"></canvas>
@@ -85,6 +128,37 @@
 
 <!-- WhatsApp -->
 <!-- BACK TO TOP -->
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- CALL FLOATING BUTTON -->
+<a href="tel:+917984486885" class="call-btn" title="Call Us">
+    <i class="fas fa-phone"></i>
+    <span class="call-tooltip">&#128222; +91 79844 86885</span>
+</a>
+<!-- WHATSAPP CHAT WIDGET -->
+<div class="wa-widget">
+    <div class="wa-chat-box" id="waChatBox">
+        <div class="wa-chat-hdr">
+            <div class="wa-chat-avatar"><i class="fab fa-whatsapp"></i></div>
+            <div class="wa-chat-info"><strong>KIDV Tech Support</strong><span><span class="wa-online-dot"></span> Online Now</span></div>
+            <button class="wa-close-btn" onclick="toggleWaChat()">&#10005;</button>
+        </div>
+        <div class="wa-chat-body">
+            <div class="wa-chat-bubble">&#128075; Hi! How can we help you today?</div>
+            <div class="wa-quick-btns">
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20ERPNext%20information." target="_blank"><i class="fas fa-layer-group"></i> ERPNext Inquiry</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20HR%20Payroll%20info." target="_blank"><i class="fas fa-users"></i> HR &amp; Payroll Info</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20have%20a%20general%20inquiry." target="_blank"><i class="fas fa-comment-alt"></i> General Inquiry</a>
+            </div>
+        </div>
+        <div class="wa-chat-footer"><span>Powered by <strong>WhatsApp</strong> &middot; Replies within minutes</span></div>
+    </div>
+    <button class="wa-btn-main" onclick="toggleWaChat()" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp" id="waIcon"></i>
+    </button>
+</div>
+
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top"><i class="fas fa-chevron-up"></i></button>
 <!-- COOKIE -->
 <div class="cookie-bar" id="cookieBar"><p class="cookie-text">🍪 We use cookies to improve your experience. See our <a href="privacy-policy.html">Privacy Policy</a>.</p><div class="cookie-btns"><button class="cookie-decline" onclick="cookieDecline()">Decline</button><button class="cookie-accept" onclick="cookieAccept()">Accept All</button></div></div>
@@ -98,6 +172,22 @@
 // Auto redirect to home after 15 seconds
 let t = 15;
 const iv = setInterval(()=>{t--;if(t<=0){clearInterval(iv);window.location='index.html';}},1000);
+
+/* PROGRESS BAR */
+window.addEventListener('scroll', function() {
+    const doc = document.documentElement;
+    const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    document.getElementById('progressBar').style.width = pct + '%';
+});
+
+
+
+/* PWA SERVICE WORKER */
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+}
 </script>
 </body>
 </html>
