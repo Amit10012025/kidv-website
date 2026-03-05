@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KIDV Tech Blog — Expert insights on ERPNext, AI automation, HR software, cloud hosting and digital transformation for Gujarat businesses.">
+    <meta name="keywords" content="KIDV Tech blog, ERPNext tips, AI automation India, HR software Gujarat, IT insights Ahmedabad">
+    <meta name="author" content="KIDV Tech">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog & Insights | KIDV Tech">
+    <meta property="og:description" content="Expert IT insights, ERPNext guides, AI automation tips and digital transformation articles for Gujarat businesses.">
+    <meta property="og:image" content="https://www.kidvtech.com/logo.png">
+    <meta property="og:url" content="https://www.kidvtech.com/blog.html">
+    <link rel="canonical" href="https://www.kidvtech.com/blog.html">
+    <title>Blog & Insights | KIDV Tech</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
+    <link rel="manifest" href="manifest.json">
+    <style>
+    :root{--bg:#04071a;--bg2:#060c22;--surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.07);--border:rgba(255,255,255,0.08);--border-blue:rgba(59,130,246,0.3);--blue:#3b82f6;--blue-b:#60a5fa;--cyan:#06b6d4;--white:#ffffff;--text:#e2e8f0;--muted:#64748b;--muted2:#94a3b8;--green:#10b981;}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    a,a:link,a:visited,a:hover,a:active{text-decoration:none!important;color:inherit;outline:none;}
+    ::-webkit-scrollbar{width:4px;} ::-webkit-scrollbar-thumb{background:var(--blue);border-radius:99px;}
+    #particles{position:fixed;inset:0;z-index:0;pointer-events:none;}
+    .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));z-index:99999;width:0%;transition:width 0.1s linear;}
+    header{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:1320px;z-index:1000;padding:0 26px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,7,26,0.75);backdrop-filter:blur(24px);border:1px solid rgba(59,130,246,0.18);border-radius:16px;transition:all 0.4s;}
+    header.scrolled{background:rgba(4,7,26,0.97);box-shadow:0 0 0 1px rgba(59,130,246,0.25),0 20px 60px rgba(59,130,246,0.1);}
+    header::after{content:'';position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(59,130,246,0.5),rgba(6,182,212,0.5),transparent);}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo-img{width:48px;height:48px;border-radius:12px;object-fit:contain;background:rgba(255,255,255,0.05);border:1.5px solid rgba(59,130,246,0.35);padding:4px;flex-shrink:0;}
+    .logo-fallback{width:48px;height:48px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:none;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#fff;}
+    .logo-name{font-size:1.15rem;font-weight:800;color:var(--white);letter-spacing:-0.3px;display:block;}
+    .logo-name em{color:var(--blue-b);font-style:normal;}
+    .logo-sub{font-size:0.58rem;font-weight:600;color:var(--muted);letter-spacing:2px;text-transform:uppercase;display:block;margin-top:2px;}
+    nav{display:flex;align-items:center;gap:4px;}
+    nav a,nav a:link,nav a:visited,nav a:active,nav a:hover{font-size:0.9rem;font-weight:500;color:var(--muted2)!important;text-decoration:none!important;padding:8px 16px;border-radius:8px;transition:all 0.2s;}
+    nav a:hover{color:var(--white)!important;background:var(--surface2);}
+    nav a.active{color:var(--white)!important;}
+    .btn-nav,.btn-nav:link,.btn-nav:visited,.btn-nav:active{background:var(--blue)!important;color:var(--white)!important;font-weight:700!important;padding:10px 24px!important;border-radius:10px!important;box-shadow:0 0 24px rgba(59,130,246,0.45);margin-left:8px;}
+    .btn-nav:hover{background:#2563eb!important;transform:translateY(-1px)!important;}
+    .hamburger{display:none;background:none;border:none;color:var(--white);font-size:1.3rem;cursor:pointer;}
+    .m-nav{display:none;position:fixed;inset:0;background:rgba(4,7,26,0.97);backdrop-filter:blur(20px);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+    .m-nav.open{display:flex;}
+    .m-nav a{font-size:1.8rem;font-weight:800;color:var(--white);}
+    .m-nav a:hover{color:var(--blue-b);}
+    .m-close{position:absolute;top:22px;right:22px;background:none;border:none;color:var(--muted2);font-size:1.5rem;cursor:pointer;}
+    #preloader{position:fixed;inset:0;background:var(--bg);z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity 0.6s ease,visibility 0.6s ease;}
+    #preloader.hide{opacity:0;visibility:hidden;pointer-events:none;}
+    .pl-ring{width:54px;height:54px;border:3px solid rgba(59,130,246,0.15);border-top:3px solid var(--blue);border-radius:50%;animation:plspin 0.9s linear infinite;}
+    @keyframes plspin{to{transform:rotate(360deg)}}
+    .pl-logo{position:absolute;width:28px;height:28px;}
+
+    /* BLOG HERO */
+    .blog-hero{position:relative;z-index:2;padding:140px 6% 64px;text-align:center;max-width:900px;margin:0 auto;}
+    .blog-hero-label{font-size:0.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);display:block;margin-bottom:16px;animation:up 0.6s both;}
+    .blog-hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:900;color:var(--white);letter-spacing:-1.5px;line-height:1.15;animation:up 0.6s 0.1s both;}
+    .blog-hero h1 span{background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .blog-hero p{font-size:1rem;color:var(--muted2);margin-top:14px;line-height:1.7;animation:up 0.6s 0.2s both;}
+
+    /* FILTER TABS */
+    .filter-wrap{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 5% 40px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;animation:up 0.6s 0.3s both;}
+    .filter-btn{font-size:0.78rem;font-weight:600;padding:8px 18px;border-radius:99px;border:1px solid var(--border);color:var(--muted2);cursor:pointer;transition:all 0.2s;background:var(--surface);}
+    .filter-btn:hover,.filter-btn.active{background:var(--blue);border-color:var(--blue);color:#fff;}
+
+    /* FEATURED POST */
+    .featured-wrap{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 5% 40px;}
+    .featured-post{background:var(--surface);border:1px solid var(--border);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1fr 1.1fr;transition:border-color 0.3s;animation:up 0.7s 0.3s both;}
+    .featured-post:hover{border-color:var(--border-blue);}
+    .featured-img{background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(6,182,212,0.08));min-height:320px;display:flex;align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden;}
+    .featured-img::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(59,130,246,0.2),transparent 60%);}
+    .feat-icon-big{font-size:5rem;position:relative;z-index:1;}
+    .feat-tag-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+    .feat-cat{font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);}
+    .feat-badge{background:rgba(245,158,11,0.15);color:#fcd34d;font-size:0.65rem;font-weight:700;padding:3px 10px;border-radius:99px;letter-spacing:1px;}
+    .featured-body{padding:40px;}
+    .featured-body h2{font-size:1.6rem;font-weight:800;color:var(--white);letter-spacing:-0.5px;line-height:1.3;margin-bottom:14px;}
+    .featured-body p{font-size:0.9rem;color:var(--muted2);line-height:1.8;margin-bottom:20px;}
+    .feat-meta{display:flex;align-items:center;gap:18px;font-size:0.78rem;color:var(--muted);margin-bottom:24px;}
+    .feat-meta span{display:flex;align-items:center;gap:6px;}
+    .read-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff!important;font-size:0.85rem;font-weight:700;padding:12px 24px;border-radius:10px;transition:all 0.2s;}
+    .read-btn:hover{background:#2563eb;transform:translateX(4px);}
+
+    /* BLOG GRID */
+    .blog-section{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 5% 80px;}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .blog-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:all 0.3s;animation:up 0.6s both;}
+    .blog-card:hover{border-color:var(--border-blue);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+    .bc-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden;}
+    .bc-body{padding:22px;}
+    .bc-cat{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+    .bc-body h3{font-size:0.95rem;font-weight:800;color:var(--white);line-height:1.4;margin-bottom:10px;}
+    .bc-body p{font-size:0.8rem;color:var(--muted2);line-height:1.7;margin-bottom:16px;}
+    .bc-footer{display:flex;align-items:center;justify-content:space-between;}
+    .bc-meta{font-size:0.72rem;color:var(--muted);display:flex;align-items:center;gap:6px;}
+    .bc-link{font-size:0.78rem;font-weight:700;color:var(--blue-b)!important;display:flex;align-items:center;gap:5px;transition:gap 0.2s;}
+    .bc-link:hover{gap:8px;}
+
+    /* CTA STRIP */
+    .blog-cta{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 5% 80px;}
+    .cta-card{background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(6,182,212,0.05));border:1px solid rgba(59,130,246,0.25);border-radius:24px;padding:50px;text-align:center;}
+    .cta-card h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:var(--white);margin-bottom:12px;}
+    .cta-card h2 span{background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .cta-card p{font-size:0.95rem;color:var(--muted2);margin-bottom:28px;}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .cta-btn-p{background:var(--blue);color:#fff!important;font-size:0.9rem;font-weight:700;padding:13px 28px;border-radius:10px;display:flex;align-items:center;gap:8px;transition:all 0.2s;}
+    .cta-btn-p:hover{background:#2563eb;transform:translateY(-2px);}
+    .cta-btn-w{background:rgba(37,211,102,0.1);border:1.5px solid rgba(37,211,102,0.3);color:#4ade80!important;font-size:0.9rem;font-weight:700;padding:13px 28px;border-radius:10px;display:flex;align-items:center;gap:8px;transition:all 0.2s;}
+    .cta-btn-w:hover{background:rgba(37,211,102,0.18);}
+
+    /* FOOTER */
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:34px 6%;position:relative;z-index:2;}
+    .fin{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+    .fcopy{font-size:0.8rem;color:var(--muted);}
+    .flinks a{font-size:0.8rem;color:var(--muted);margin-left:18px;transition:color 0.2s;}
+    .flinks a:hover{color:var(--white)!important;}
+    .fsoc{display:flex;align-items:center;gap:10px;}
+    .fsoc a{width:36px;height:36px;border-radius:9px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted2);font-size:0.9rem;transition:all 0.25s;}
+    .fsoc a:hover{background:var(--blue);border-color:var(--blue);color:#fff!important;transform:translateY(-3px);}
+
+    /* FLOATING WIDGETS */
+    .wa-widget{position:fixed;bottom:28px;right:28px;z-index:9990;display:flex;flex-direction:column;align-items:flex-end;gap:10px;pointer-events:none;}
+    .wa-chat-box{background:rgba(4,7,26,0.97);backdrop-filter:blur(24px);border:1px solid rgba(37,211,102,0.25);border-radius:18px;width:300px;box-shadow:0 20px 60px rgba(0,0,0,0.5);overflow:hidden;transform:translateY(10px) scale(0.96);opacity:0;pointer-events:none;transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1);}
+    .wa-chat-box.open{transform:translateY(0) scale(1);opacity:1;pointer-events:all;}
+    .wa-chat-hdr{background:linear-gradient(135deg,#128c7e,#25d366);padding:16px 18px;display:flex;align-items:center;gap:12px;position:relative;}
+    .wa-chat-avatar{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#fff;flex-shrink:0;}
+    .wa-chat-info strong{font-size:0.9rem;font-weight:800;color:#fff;display:block;}
+    .wa-chat-info span{font-size:0.72rem;color:rgba(255,255,255,0.8);display:flex;align-items:center;gap:5px;}
+    .wa-online-dot{width:7px;height:7px;background:#a8ff78;border-radius:50%;display:inline-block;animation:blink 1.5s infinite;}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+    .wa-chat-body{padding:18px;}
+    .wa-chat-bubble{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:12px 12px 12px 3px;padding:12px 14px;font-size:0.83rem;color:#e2e8f0;line-height:1.6;margin-bottom:14px;}
+    .wa-quick-btns{display:flex;flex-direction:column;gap:7px;}
+    .wa-quick-btn{display:flex;align-items:center;gap:9px;padding:10px 14px;background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.2);border-radius:10px;font-size:0.8rem;font-weight:600;color:#a7f3d0!important;transition:all 0.25s;pointer-events:all;}
+    .wa-quick-btn:hover{background:rgba(37,211,102,0.18);transform:translateX(3px);}
+    .wa-quick-btn i{color:#25d366;font-size:0.85rem;width:16px;text-align:center;}
+    .wa-chat-footer{padding:14px 18px;border-top:1px solid rgba(255,255,255,0.06);}
+    .wa-chat-footer span{font-size:0.7rem;color:#64748b;}
+    .wa-chat-footer strong{color:#25d366;}
+    .wa-btn-main{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c7e);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 28px rgba(37,211,102,0.5);transition:all 0.3s;cursor:pointer;border:none;animation:wapulse 2.5s infinite;pointer-events:all;}
+    .wa-btn-main:hover{transform:scale(1.1);}
+    .wa-btn-main i{color:#fff;font-size:1.6rem;}
+    .wa-close-btn{position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.15);border:none;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.75rem;cursor:pointer;pointer-events:all;}
+    @keyframes wapulse{0%,100%{box-shadow:0 6px 28px rgba(37,211,102,0.5)}50%{box-shadow:0 6px 42px rgba(37,211,102,0.8),0 0 0 10px rgba(37,211,102,0.1)}}
+    .call-btn{position:fixed;bottom:160px;right:28px;z-index:9992;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(59,130,246,0.5);transition:all 0.3s;animation:callpulse 3s infinite;}
+    .call-btn:hover{transform:scale(1.12);}
+    .call-btn i{color:#fff;font-size:1.2rem;}
+    .call-tooltip{position:absolute;right:58px;background:rgba(4,7,26,0.92);color:#fff;font-size:0.75rem;font-weight:600;padding:6px 12px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.3s;border:1px solid rgba(255,255,255,0.1);}
+    .call-btn:hover .call-tooltip{opacity:1;}
+    @keyframes callpulse{0%,100%{box-shadow:0 4px 20px rgba(59,130,246,0.5)}50%{box-shadow:0 4px 30px rgba(59,130,246,0.8),0 0 0 8px rgba(59,130,246,0.08)}}
+    .btt{position:fixed;bottom:100px;right:28px;z-index:9989;width:44px;height:44px;border-radius:12px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);display:flex;align-items:center;justify-content:center;color:var(--blue-b);font-size:1rem;cursor:pointer;opacity:0;transform:translateY(10px);transition:all 0.35s;pointer-events:none;}
+    .btt.show{opacity:1;transform:translateY(0);pointer-events:all;}
+    .btt:hover{background:var(--blue);color:#fff;transform:translateY(-3px);}
+    .cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:9995;background:rgba(6,12,34,0.97);backdrop-filter:blur(20px);border-top:1px solid rgba(59,130,246,0.2);padding:18px 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;transform:translateY(100%);transition:transform 0.5s ease;}
+    .cookie-bar.show{transform:translateY(0);}
+    .cookie-text{font-size:0.85rem;color:var(--muted2);flex:1;min-width:260px;}
+    .cookie-text a{color:var(--blue-b)!important;}
+    .cookie-btns{display:flex;gap:10px;}
+    .cookie-accept{background:var(--blue);color:#fff!important;font-size:0.82rem;font-weight:700;padding:9px 22px;border-radius:8px;border:none;cursor:pointer;}
+    .cookie-decline{background:transparent;color:var(--muted2)!important;font-size:0.82rem;font-weight:600;padding:9px 16px;border-radius:8px;border:1px solid var(--border);cursor:pointer;}
+    @keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:900px){.featured-post{grid-template-columns:1fr;}.featured-img{min-height:180px;}.blog-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){nav{display:none;}.hamburger{display:block;}.blog-grid{grid-template-columns:1fr;}.call-btn{bottom:160px;right:20px;}.btt{bottom:100px;right:20px;}.wa-widget{bottom:20px;right:20px;}.call-tooltip{display:none;}}
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Blog","name":"KIDV Tech Blog","description":"IT insights, ERPNext guides and digital transformation tips for Gujarat businesses","url":"https://www.kidvtech.com/blog.html","publisher":{"@type":"Organization","name":"KIDV Tech","logo":{"@type":"ImageObject","url":"https://www.kidvtech.com/logo.png"}}}
+    </script>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<div id="preloader"><div style="position:relative;display:flex;align-items:center;justify-content:center;"><div class="pl-ring"></div><img src="logo.png" class="pl-logo" onerror="this.style.display='none'" alt=""></div></div>
+<canvas id="particles"></canvas>
+
+<div class="m-nav" id="mnav">
+    <button class="m-close" onclick="cmnav()">&#10005;</button>
+    <a href="index.html" onclick="cmnav()">Home</a>
+    <a href="company.html" onclick="cmnav()">Company</a>
+    <a href="product.html" onclick="cmnav()">Product</a>
+    <a href="blog.html" onclick="cmnav()">Blog</a>
+    <a href="contact.html" onclick="cmnav()">Contact</a>
+</div>
+
+<header id="hdr">
+    <a class="logo" href="index.html">
+        <img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="logo-fallback">KT</div>
+        <div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div>
+    </a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="company.html">Company</a>
+        <a href="product.html">Product</a>
+        <a href="blog.html" class="active" style="color:var(--white)!important;">Blog</a>
+        <a href="contact.html" class="btn-nav">Get in Touch</a>
+    </nav>
+    <button class="hamburger" onclick="omnav()"><i class="fas fa-bars"></i></button>
+</header>
+
+<!-- HERO -->
+<div class="blog-hero">
+    <span class="blog-hero-label"><i class="fas fa-rss" style="margin-right:7px"></i>Insights & Expertise</span>
+    <h1>IT Knowledge for <span>Smart Businesses</span></h1>
+    <p>Expert guides on ERPNext, AI Automation, HR Software and digital transformation — written for Gujarat business owners in plain language.</p>
+</div>
+
+<!-- FILTER TABS -->
+<div class="filter-wrap" id="filterWrap">
+    <button class="filter-btn active" onclick="filterPosts('all',this)">All Articles</button>
+    <button class="filter-btn" onclick="filterPosts('erp',this)">ERPNext</button>
+    <button class="filter-btn" onclick="filterPosts('ai',this)">AI Automation</button>
+    <button class="filter-btn" onclick="filterPosts('hr',this)">HR & Payroll</button>
+    <button class="filter-btn" onclick="filterPosts('web',this)">Website & SEO</button>
+    <button class="filter-btn" onclick="filterPosts('cloud',this)">Cloud Hosting</button>
+</div>
+
+<!-- FEATURED POST -->
+<div class="featured-wrap">
+    <div class="featured-post" data-cat="erp">
+        <div class="featured-img">
+            <span class="feat-icon-big">⚡</span>
+        </div>
+        <div class="featured-body">
+            <div class="feat-tag-row">
+                <span class="feat-cat">ERPNext</span>
+                <span class="feat-badge">✦ FEATURED</span>
+            </div>
+            <h2>How ERPNext Transformed a Gujarat Manufacturing Unit — From Excel Chaos to Full Automation</h2>
+            <p>A Surat-based textile manufacturer was managing inventory, GST billing and purchase orders across 12 different Excel sheets. Within 6 weeks of ERPNext implementation, they eliminated manual errors and saved 4 hours daily. Here's the full story.</p>
+            <div class="feat-meta">
+                <span><i class="fas fa-calendar"></i> March 1, 2026</span>
+                <span><i class="fas fa-clock"></i> 8 min read</span>
+                <span><i class="fas fa-user"></i> KIDV Tech Team</span>
+            </div>
+            <a href="contact.html" class="read-btn">Read Full Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- BLOG GRID -->
+<div class="blog-section">
+    <div class="blog-grid" id="blogGrid">
+
+        <!-- Post 1 -->
+        <div class="blog-card" data-cat="ai" style="animation-delay:0s">
+            <div class="bc-img" style="background:linear-gradient(135deg,rgba(168,85,247,0.12),rgba(59,130,246,0.08));">🤖</div>
+            <div class="bc-body">
+                <div class="bc-cat" style="color:#a78bfa;"><i class="fas fa-robot"></i> AI Automation</div>
+                <h3>5 Ways AI Chatbots Are Helping Gujarat Businesses Capture More Leads on WhatsApp</h3>
+                <p>WhatsApp chatbots that reply instantly 24/7, qualify leads and book appointments — real examples from Ahmedabad retailers.</p>
+                <div class="bc-footer">
+                    <span class="bc-meta"><i class="fas fa-clock"></i> 5 min read · Feb 20, 2026</span>
+                    <a href="contact.html" class="bc-link">Read <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="blog-card" data-cat="hr" style="animation-delay:0.08s">
+            <div class="bc-img" style="background:linear-gradient(135deg,rgba(245,158,11,0.12),rgba(239,68,68,0.06));">👥</div>
+            <div class="bc-body">
+                <div class="bc-cat" style="color:#fcd34d;"><i class="fas fa-users"></i> HR & Payroll</div>
+                <h3>PF, ESIC & TDS Compliance in 2026 — What Every Gujarat Business Must Know</h3>
+                <p>Updated rules, deadlines and how automated HR software eliminates compliance risk and late payment penalties.</p>
+                <div class="bc-footer">
+                    <span class="bc-meta"><i class="fas fa-clock"></i> 6 min read · Feb 15, 2026</span>
+                    <a href="contact.html" class="bc-link">Read <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="blog-card" data-cat="web" style="animation-delay:0.16s">
+            <div class="bc-img" style="background:linear-gradient(135deg,rgba(16,185,129,0.12),rgba(6,182,212,0.06));">🌐</div>
+            <div class="bc-body">
+                <div class="bc-cat" style="color:#6ee7b7;"><i class="fas fa-search"></i> Website & SEO</div>
+                <h3>Why Your Business Website Is Not Showing on Google — And How to Fix It in 30 Days</h3>
+                <p>Local SEO checklist for Gujarat businesses: Google Business Profile, schema markup, page speed and keyword strategy.</p>
+                <div class="bc-footer">
+                    <span class="bc-meta"><i class="fas fa-clock"></i> 7 min read · Feb 10, 2026</span>
+                    <a href="contact.html" class="bc-link">Read <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 4 -->
+        <div class="blog-card" data-cat="cloud" style="animation-delay:0.24s">
+            <div class="bc-img" style="background:linear-gradient(135deg,rgba(6,182,212,0.12),rgba(59,130,246,0.06));">☁️</div>
+            <div class="bc-body">
+                <div class="bc-cat" style="color:#67e8f9;"><i class="fas fa-server"></i> Cloud Hosting</div>
+                <h3>Shared Hosting vs Cloud Hosting: Which Is Right for Your Gujarat Business in 2026?</h3>
+                <p>Cost comparison, performance benchmarks and real uptime data to help you make the right hosting decision.</p>
+                <div class="bc-footer">
+                    <span class="bc-meta"><i class="fas fa-clock"></i> 4 min read · Feb 5, 2026</span>
+                    <a href="contact.html" class="bc-link">Read <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 5 -->
+        <div class="blog-card" data-cat="erp" style="animation-delay:0.32s">
+            <div class="bc-img" style="background:linear-gradient(135deg,rgba(59,130,246,0.12),rgba(139,92,246,0.06));">📊</div>
+            <div class="bc-body">
+                <div class="bc-cat" style="color:#60a5fa;"><i class="fas fa-layer-group"></i> ERPNext</div>
+                <h3>ERPNext vs Tally: Which Is Better for an Indian SME Business in 2026?</h3>
+                <p>Side-by-side comparison of features, GST compliance, mobile access, cost and scalability for growing businesses.</p>
+                <div class="bc-footer">
+                    <span class="bc-meta"><i class="fas fa-clock"></i> 9 min read · Jan 28, 2026</span>
+                    <a href="contact.html" class="bc-link">Read <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 6 -->
+        <div class="blog-card" data-cat="ai" style="animation-delay:0.4s">
+            <div class="bc-img" style="background:linear-gradient(135deg,rgba(245,158,11,0.1),rgba(239,68,68,0.08));">📄</div>
+            <div class="bc-body">
+                <div class="bc-cat" style="color:#fcd34d;"><i class="fas fa-robot"></i> AI Automation</div>
+                <h3>OCR Document Processing: How AI Is Eliminating Manual Data Entry in Indian Offices</h3>
+                <p>How businesses are using AI to automatically extract data from invoices, POs and forms — reducing processing time by 90%.</p>
+                <div class="bc-footer">
+                    <span class="bc-meta"><i class="fas fa-clock"></i> 6 min read · Jan 20, 2026</span>
+                    <a href="contact.html" class="bc-link">Read <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 7 -->
+        <div class="blog-card" data-cat="hr" style="animation-delay:0.48s">
+            <div class="bc-img" style="background:linear-gradient(135deg,rgba(16,185,129,0.12),rgba(245,158,11,0.06));">📅</div>
+            <div class="bc-body">
+                <div class="bc-cat" style="color:#6ee7b7;"><i class="fas fa-users"></i> HR & Payroll</div>
+                <h3>Biometric Attendance Integration With Payroll: Step-by-Step Guide for SMEs</h3>
+                <p>How to connect your biometric device to HR software and generate 100% accurate payslips automatically each month.</p>
+                <div class="bc-footer">
+                    <span class="bc-meta"><i class="fas fa-clock"></i> 5 min read · Jan 12, 2026</span>
+                    <a href="contact.html" class="bc-link">Read <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 8 -->
+        <div class="blog-card" data-cat="web" style="animation-delay:0.56s">
+            <div class="bc-img" style="background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(16,185,129,0.08));">📱</div>
+            <div class="bc-body">
+                <div class="bc-cat" style="color:#60a5fa;"><i class="fas fa-mobile-alt"></i> Website & SEO</div>
+                <h3>Progressive Web Apps (PWA): Why Your Business Website Should Work Like a Mobile App</h3>
+                <p>PWAs load 3x faster, work offline and boost engagement. Here's why every Gujarat business website should be PWA-ready.</p>
+                <div class="bc-footer">
+                    <span class="bc-meta"><i class="fas fa-clock"></i> 5 min read · Jan 5, 2026</span>
+                    <a href="contact.html" class="bc-link">Read <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 9 -->
+        <div class="blog-card" data-cat="erp" style="animation-delay:0.64s">
+            <div class="bc-img" style="background:linear-gradient(135deg,rgba(239,68,68,0.1),rgba(168,85,247,0.06));">🔄</div>
+            <div class="bc-body">
+                <div class="bc-cat" style="color:#60a5fa;"><i class="fas fa-layer-group"></i> ERPNext</div>
+                <h3>ERPNext Data Migration: How to Move Your Existing Business Data Without Losing Anything</h3>
+                <p>A checklist and best practices for migrating master data, opening balances, inventory and HR records to ERPNext safely.</p>
+                <div class="bc-footer">
+                    <span class="bc-meta"><i class="fas fa-clock"></i> 7 min read · Dec 28, 2025</span>
+                    <a href="contact.html" class="bc-link">Read <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CTA STRIP -->
+<div class="blog-cta">
+    <div class="cta-card">
+        <h2>Ready to Transform Your Business With <span>Smart IT?</span></h2>
+        <p>Get a free consultation — no sales pitch, just honest advice on what will work for your business.</p>
+        <div class="cta-btns">
+            <a href="contact.html" class="cta-btn-p"><i class="fas fa-calendar-check"></i> Book Free Consultation</a>
+            <a href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20read%20your%20blog%20and%20would%20like%20a%20free%20consultation." target="_blank" class="cta-btn-w"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="fin">
+        <a class="logo" href="index.html"><img src="logo.png" alt="KIDV Tech" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="logo-fallback">KT</div><div><span class="logo-name">KIDV <em>Tech</em></span><span class="logo-sub">Smart Business Solutions</span></div></a>
+        <div class="fsoc">
+            <a href="https://www.instagram.com/kidvtech" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/kidvtech" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/kidvtech" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/917984486885" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="fcopy">&copy; 2026 <b>KIDV Tech</b>. All Rights Reserved.</p>
+        <div class="flinks"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html" style="margin-left:18px">Terms of Service</a></div>
+    </div>
+</footer>
+
+<!-- WHATSAPP -->
+<div class="wa-widget">
+    <div class="wa-chat-box" id="waChatBox">
+        <div class="wa-chat-hdr"><div class="wa-chat-avatar"><i class="fab fa-whatsapp"></i></div><div class="wa-chat-info"><strong>KIDV Tech Support</strong><span><span class="wa-online-dot"></span> Online Now</span></div><button class="wa-close-btn" onclick="toggleWaChat()">&#10005;</button></div>
+        <div class="wa-chat-body">
+            <div class="wa-chat-bubble">&#128075; Hi! Saw our blog? Let's discuss your project!</div>
+            <div class="wa-quick-btns">
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20ERPNext%20information." target="_blank"><i class="fas fa-layer-group"></i> ERPNext Inquiry</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20need%20HR%20Payroll%20info." target="_blank"><i class="fas fa-users"></i> HR &amp; Payroll Info</a>
+                <a class="wa-quick-btn" href="https://wa.me/917984486885?text=Hello%20KIDV%20Tech%2C%20I%20have%20a%20general%20inquiry." target="_blank"><i class="fas fa-comment-alt"></i> General Inquiry</a>
+            </div>
+        </div>
+        <div class="wa-chat-footer"><span>Powered by <strong>WhatsApp</strong> &middot; Replies within minutes</span></div>
+    </div>
+    <button class="wa-btn-main" onclick="toggleWaChat()"><i class="fab fa-whatsapp" id="waIcon"></i></button>
+</div>
+
+<a href="tel:+917984486885" class="call-btn" title="Call Us">
+    <i class="fas fa-phone fa-flip-horizontal"></i>
+    <span class="call-tooltip">&#128222; +91 79844 86885</span>
+</a>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+
+<div class="cookie-bar" id="cookieBar">
+    <p class="cookie-text">&#127850; We use cookies. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <div class="cookie-btns">
+        <button class="cookie-decline" onclick="cookieDecline()">Decline</button>
+        <button class="cookie-accept" onclick="cookieAccept()">Accept All</button>
+    </div>
+</div>
+
+<script>
+/* PARTICLES */
+(function(){const c=document.getElementById('particles'),ctx=c.getContext('2d');let W,H,pts=[];function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}resize();window.addEventListener('resize',resize);for(let i=0;i<60;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.2+0.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,a:Math.random()*.35+.06});function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(96,165,250,${p.a})`;ctx.fill();});requestAnimationFrame(draw);}draw();})();
+
+/* SCROLL */
+window.addEventListener('scroll',()=>{
+    document.getElementById('hdr').classList.toggle('scrolled',scrollY>20);
+    document.getElementById('btt').classList.toggle('show',scrollY>400);
+    document.getElementById('progressBar').style.width=(document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight)*100)+'%';
+});
+
+/* PRELOADER */
+window.addEventListener('load',()=>{ setTimeout(()=>document.getElementById('preloader').classList.add('hide'),400); });
+
+/* SCROLL REVEAL */
+const rv=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('up-done');});},{threshold:0.1});
+document.querySelectorAll('.blog-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';rv.observe(el);});
+
+/* NAV */
+function omnav(){document.getElementById('mnav').classList.add('open');document.body.style.overflow='hidden';}
+function cmnav(){document.getElementById('mnav').classList.remove('open');document.body.style.overflow='';}
+
+/* FILTER */
+function filterPosts(cat, btn){
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.blog-card, .featured-post').forEach(card=>{
+        const c = card.dataset.cat;
+        if(cat==='all' || c===cat){ card.style.display=''; }
+        else { card.style.display='none'; }
+    });
+}
+
+/* COOKIE */
+(function(){ if(!localStorage.getItem('kc')){ setTimeout(()=>document.getElementById('cookieBar').classList.add('show'),1800); } })();
+function cookieAccept(){ localStorage.setItem('kc','1'); document.getElementById('cookieBar').classList.remove('show'); }
+function cookieDecline(){ localStorage.setItem('kc','0'); document.getElementById('cookieBar').classList.remove('show'); }
+
+/* WA */
+function toggleWaChat(){ const box=document.getElementById('waChatBox'); const icon=document.getElementById('waIcon'); box.classList.toggle('open'); icon.className=box.classList.contains('open')?'fas fa-times':'fab fa-whatsapp'; }
+if(!sessionStorage.getItem('waShown')){ setTimeout(()=>{ document.getElementById('waChatBox').classList.add('open'); document.getElementById('waIcon').className='fas fa-times'; sessionStorage.setItem('waShown','1'); },8000); }
+
+if('serviceWorker' in navigator){ window.addEventListener('load',()=>{ navigator.serviceWorker.register('/sw.js').catch(()=>{}); }); }
+</script>
+</body>
+</html>
