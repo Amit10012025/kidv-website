@@ -108,8 +108,11 @@
     .pc-feat{display:flex;align-items:center;gap:8px;font-size:0.81rem;color:var(--muted2);}
     .pc-feat::before{content:'✓';color:var(--green);font-weight:700;font-size:0.85rem;flex-shrink:0;}
 
-    .pc-btn{display:inline-flex;align-items:center;gap:7px;font-size:0.82rem;font-weight:700;color:var(--blue-b);border:1px solid rgba(59,130,246,0.3);padding:9px 16px;border-radius:8px;transition:all 0.25s;align-self:flex-start;}
-    .prod-card:hover .pc-btn{background:var(--blue);color:var(--white);border-color:var(--blue);}
+    .pc-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:auto;}
+    .pc-btn{display:inline-flex;align-items:center;gap:7px;font-size:0.82rem;font-weight:700;color:var(--blue-b);background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.3);padding:9px 18px;border-radius:9px;transition:all 0.25s;white-space:nowrap;}
+    .prod-card:hover .pc-btn{background:var(--blue);color:var(--white)!important;border-color:var(--blue);}
+    .pc-quote{display:inline-flex;align-items:center;gap:7px;font-size:0.82rem;font-weight:700;color:#25d366!important;background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.28);padding:9px 18px;border-radius:9px;transition:all 0.25s;white-space:nowrap;text-decoration:none!important;}
+    .pc-quote:hover{background:rgba(37,211,102,0.18);color:#25d366!important;transform:translateY(-2px);}
 
     /* BOTTOM CTA */
     .prod-cta{position:relative;z-index:2;padding:0 6% 100px;}
@@ -278,6 +281,7 @@
     <a href="index.html" onclick="cmnav()">Home</a>
     <a href="company.html" onclick="cmnav()">Company</a>
     <a href="product.html" onclick="cmnav()">Product</a>
+    <a href="blog.html" onclick="cmnav()">Blog</a>
     <a href="contact.html" onclick="cmnav()">Contact</a>
 </div>
 
@@ -291,6 +295,7 @@
         <a href="index.html">Home</a>
         <a href="company.html">Company</a>
         <a href="product.html" class="active">Product</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html" class="btn-nav">Get in Touch</a>
     </nav>
     <button class="hamburger" onclick="omnav()"><i class="fas fa-bars"></i></button>
