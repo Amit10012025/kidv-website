@@ -147,6 +147,7 @@
     .btn-submit:hover{background:#2563eb;transform:translateY(-2px);box-shadow:0 0 50px rgba(59,130,246,0.6);}
     .btn-submit.loading{opacity:0.7;pointer-events:none;}
 
+    .error-msg{display:none;align-items:center;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:10px;padding:14px 18px;font-size:0.85rem;color:#fca5a5;margin-top:14px;}
     .success-msg{display:none;text-align:center;padding:20px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);border-radius:12px;color:#34d399;font-weight:600;margin-top:16px;}
 
     /* FOOTER */
@@ -305,6 +306,7 @@
     <a href="index.html" onclick="cmnav()">Home</a>
     <a href="company.html" onclick="cmnav()">Company</a>
     <a href="product.html" onclick="cmnav()">Product</a>
+    <a href="blog.html" onclick="cmnav()">Blog</a>
     <a href="contact.html" onclick="cmnav()">Contact</a>
 </div>
 
@@ -319,6 +321,7 @@
         <a href="index.html">Home</a>
         <a href="company.html">Company</a>
         <a href="product.html">Product</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html" class="btn-nav">Get in Touch</a>
     </nav>
     <button class="hamburger" onclick="omnav()"><i class="fas fa-bars"></i></button>
@@ -427,6 +430,10 @@
                     <i class="fas fa-check-circle" style="margin-right:8px"></i>
                     Thank you! We'll get back to you within 24 hours.
                 </div>
+                <div class="error-msg" id="errorMsg">
+                    <i class="fas fa-exclamation-circle" style="margin-right:8px"></i>
+                    Something went wrong. Please call us at <a href="tel:+917984486885" style="color:#fca5a5!important">+91 79844 86885</a> or WhatsApp us.
+                </div>
             </div>
         </div>
     </div>
@@ -450,7 +457,59 @@
     </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+/* ============================================================
+   EMAILJS CONFIGURATION
+   Replace the 3 values below after creating your EmailJS account.
+   Setup guide: See SETUP-GUIDE.html for step-by-step instructions.
+   ============================================================ */
+const EMAILJS_PUBLIC_KEY   = 'YOUR_PUBLIC_KEY';    // EmailJS → Account → Public Key
+const EMAILJS_SERVICE_ID   = 'YOUR_SERVICE_ID';    // EmailJS → Email Services → Service ID
+const EMAILJS_TEMPLATE_ID  = 'YOUR_TEMPLATE_ID';   // EmailJS → Email Templates → Template ID
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
+
+function handleSubmit(e) {
+    e.preventDefault();
+    const btn    = document.getElementById('submitBtn');
+    const form   = document.getElementById('kidvContactForm');
+    const success = document.getElementById('successMsg');
+    const error   = document.getElementById('errorMsg');
+
+    // Loading state
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    success.style.display = 'none';
+    error.style.display   = 'none';
+
+    // If keys not configured yet → fallback to WhatsApp
+    if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+        const name    = form.querySelector('[name="name"]').value;
+        const service = form.querySelector('[name="solution"]').value;
+        const message = form.querySelector('[name="message"]').value;
+        const wa = 'https://wa.me/917984486885?text=' +
+            encodeURIComponent('Hello KIDV Tech!\nName: ' + name + '\nService: ' + service + '\nMessage: ' + message);
+        window.open(wa, '_blank');
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        success.style.display = 'flex';
+        return;
+    }
+
+    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+        .then(() => {
+            success.style.display = 'flex';
+            form.reset();
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        })
+        .catch(() => {
+            error.style.display = 'flex';
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i> Try Again';
+        });
+}
+
 /* PRELOADER */
 window.addEventListener('load',()=>{ setTimeout(()=>document.getElementById('preloader').classList.add('hide'),400); });
 
@@ -498,7 +557,7 @@ if ('serviceWorker' in navigator) {
     <span class="call-tooltip">&#128222; +91 79844 86885</span>
 </a>
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top"><i class="fas fa-chevron-up"></i></button>
-<i class="fas fa-chevron-up"></i></button>
+<i class="fas fa-chevron-up"></i>
 
 <!-- COOKIE CONSENT -->
 <div class="cookie-bar" id="cookieBar">
