@@ -4,13 +4,138 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+  <!-- Home -->
+  <url>
+    <loc>https://www.kidvtech.com/</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-<url>
-  <loc>https://www.kidvtech.com/</loc>
-  <lastmod>2026-01-11T05:15:04+00:00</lastmod>
-</url>
+  <url>
+    <loc>https://www.kidvtech.com/index.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
+  <!-- Company & Contact -->
+  <url>
+    <loc>https://www.kidvtech.com/company.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kidvtech.com/contact.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Products & Services -->
+  <url>
+    <loc>https://www.kidvtech.com/product.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kidvtech.com/services.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kidvtech.com/software.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Service List Pages -->
+  <url>
+    <loc>https://www.kidvtech.com/erp-list.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kidvtech.com/hr-payroll-list.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kidvtech.com/ai-automation-list.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kidvtech.com/cloud-hosting-list.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kidvtech.com/mobile-app-list.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kidvtech.com/website-list.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Specific Product Pages -->
+  <url>
+    <loc>https://www.kidvtech.com/erpnext.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kidvtech.com/aisolutions.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://www.kidvtech.com/blog.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://www.kidvtech.com/privacy-policy.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kidvtech.com/terms-of-service.html</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
 
 </urlset>
